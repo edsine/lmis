@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "title":"Indicators",
+        "items":[
+            {
+                "title":"Used filters",
+                "text":"Indicators by subject: Population "
+            },
+            {
+                "title":"Frequency",
+                "text":"Annual - Quarterly - Monthly"
+            },
+            {
+                "title":"Reference area",
+                "text":"Reference area"
+            },
+            {
+                "title":"Measure",
+                "text":"Measure"
+            },
+            {
+                "title":"Attendance in school or training",
+                "text":"Attendance in school or training"
+            },
+            {
+                "title":"Educational attainment",
+                "text":"Educational attainment"
+            }
+        ]
+    }
+]
