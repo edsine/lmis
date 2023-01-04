@@ -1,32 +1,19 @@
 "use strict";
 const { Model } = require("sequelize");
-const bcrypt = require("bcryptjs");
-
 module.exports = (sequelize, DataTypes) => {
-  class Indicator extends Model {
+  class State extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {}
+    static associate(models) {
+      // define association here
+    }
   }
-  Indicator.init(
+  State.init(
     {
-      title: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        unique: true,
-      },
-      content: {
-        type: DataTypes.TEXT,
-        allowNull: true,
-      },
-      dimensions: DataTypes.STRING,
-      imagePath: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+      name: DataTypes.STRING,
       createdAt: {
         type: DataTypes.DATE,
         allowNull: true,
@@ -43,13 +30,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Indicator",
-      paranoid: true,
-      timestamps: true,
-      //underscored: true,
-      //freezeTableName: true
+      modelName: "State",
     }
   );
-
-  return Indicator;
+  return State;
 };
