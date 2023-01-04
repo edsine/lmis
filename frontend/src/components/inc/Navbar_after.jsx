@@ -38,7 +38,7 @@ function Navbarbefore() {
             <li><Link to='/'>Contact LMIS</Link></li>
           </ul>
         </li>
-        <li><Link to="/about">About LMIS</Link></li>
+        {/* <li><Link to="/about">Contact</Link></li> */}
       </ul>
     </nav>{/* .navbar */}
     <i className="mobile-nav-toggle mobile-nav-show bi bi-list" />

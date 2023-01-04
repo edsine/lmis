@@ -21,15 +21,15 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      created: {
+      createdAt: {
         allowNull: true,
         type: Sequelize.DATE
       },
-      updated: {
+      updatedAt: {
         allowNull: true,
         type: Sequelize.DATE
       },
-      deleted: {
+      deletedAt: {
         allowNull: true,
         type: Sequelize.DATE
       }

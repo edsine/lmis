@@ -16,6 +16,7 @@ var rolesRouter = require('./routes/roles');
 var permsRouter = require('./routes/permissions');
 var authRouter = require('./routes/auth');
 var productRouter = require('./routes/products');
+var sectorRouter = require('./routes/sector');
 var population = require("./routes/population.js");
 var employment = require("./routes/employment.js");
 var employee = require("./routes/employee.js");
@@ -54,6 +55,7 @@ app.use('/api/v1/indicators', indicatorsRouter);
 app.use('/api/v1/roles', rolesRouter);
 app.use('/api/v1/permissions', permsRouter);
 app.use('/api/v1/products', productRouter);
+app.use('/api/v1/sectors', sectorRouter);
 
 //API data
 app.get("/api/v2/population", population.showAll);
