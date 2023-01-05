@@ -10,13 +10,9 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
 
-    await queryInterface.addColumn(
+    await queryInterface.removeColumn(
       "IndicatorDetails", // table name
-      "indicator_id", // new field name
-      {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      }
+      "data" // field name
     );
   },
 
@@ -27,9 +23,14 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.removeColumn(
+
+    await queryInterface.addColumn(
       "IndicatorDetails", // table name
-      "indicator_id" // field name
+      "data", // field name
+      {
+        type: Sequelize.JSONB,
+        allowNull: false,
+      }
     );
   },
 };
