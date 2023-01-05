@@ -33,5 +33,9 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
+    await queryInterface.removeColumn(
+      "Indicators", // table name
+      "dimensions" // field name
+    );
   },
 };

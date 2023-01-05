@@ -27,5 +27,9 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
+    await queryInterface.removeColumn(
+      "IndicatorDetails", // table name
+      "sampleExcelPath" // field name
+    );
   }
 };

@@ -32,11 +32,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
      createdAt: {
-         field: 'created_at',
          type: DataTypes.DATE,
      },
      updatedAt: {
-         field: 'updated_at',
          type: DataTypes.DATE,
      }
 	

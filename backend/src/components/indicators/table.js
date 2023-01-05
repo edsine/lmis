@@ -139,9 +139,9 @@ function Table({columns, data, handleEditClick, confirmDelete, editContentId, ha
                   <td>{cell.title}</td>
                   <td>{cell.content}</td>
                   <td>{cell.imagePath}</td>
-                  <td>{cell.created_at
+                  <td>{cell.createdAt
                                   ? format(
-                                      new Date(cell.created_at),
+                                      new Date(cell.createdAt),
                                       "dd MM, yyyy H:i:s"
                                     )
                                   : format(new Date(), "dd MM, yyyy H:i:s")}</td>
@@ -255,7 +255,7 @@ function App(props) {
 	},
 	{
 		Header: "Date Created",
-		accessor: "created_at",
+		accessor: "createdAt",
 	},
 	  
   ];
