@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from "react";
 import IndicatorService from "../../services/indicator.service";
+import Select from "react-select";
+import CreatableSelect from "react-select/creatable";
+import { dimensions } from "../../common/dimensions";
+
+const chartTypes = [
+  { value: "line", label: "Line" },
+  { value: "bar", label: "Bar" },
+  { value: "pie", label: "Pie" },
+  { value: "scatter", label: "Scatter" },
+];
+
+
 
 const Editable = ({
   editFormData,
   handleEditFormChange,
+  handleFeasibleChartsEditChange,
+  handleDimensionsEditChange,
   handleCancelClick,
   EditImageHandler,
 }) => {
@@ -59,23 +73,21 @@ const Editable = ({
           />
         </td>
         <td>
-          <input
-            type="text"
-            required
-            placeholder="Dimensions"
-            name="dimensions"
-            value={editFormData.dimensions}
-            onChange={handleEditFormChange}
+          <Select
+            value={JSON.parse(editFormData.dimensions)}
+            options={dimensions}
+            onChange={handleDimensionsEditChange}
+            isMulti
+            form="dimensions"
           />
         </td>
         <td>
-          <input
-            type="text"
-            required
-            placeholder="Feasible Charts"
-            name="feasibleCharts"
-            value={editFormData.feasibleCharts}
-            onChange={handleEditFormChange}
+          <Select
+            value={JSON.parse(editFormData.feasibleCharts)}
+            options={chartTypes}
+            onChange={handleFeasibleChartsEditChange}
+            isMulti
+            form="feasibleCharts"
           />
         </td>
         <td>

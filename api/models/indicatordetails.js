@@ -18,8 +18,8 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       description: DataTypes.TEXT,
       measure: DataTypes.STRING,
-      dimensions: DataTypes.STRING,
-      feasibleCharts: DataTypes.STRING,
+      dimensions: DataTypes.JSON,
+      feasibleCharts: DataTypes.JSON,
       sampleExcelPath: {
         type: DataTypes.STRING,
         allowNull: true,
