@@ -21,29 +21,21 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      indicator_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      sampleExcelPath: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       dimensions: {
         allowNull: false,
-        type: Sequelize.STRING,
-        get() {
-          return this.getDataValue("dimensions").split(";");
-        },
-        set(val) {
-          this.setDataValue("dimensions", val.join(";"));
-        },
+        type: Sequelize.JSON,
       },
       feasibleCharts: {
         allowNull: false,
-        type: Sequelize.STRING,
-        get() {
-          return this.getDataValue("feasibleCharts").split(";");
-        },
-        set(val) {
-          this.setDataValue("feasibleCharts", val.join(";"));
-        },
-      },
-      data: {
-        allowNull: false,
-        type: Sequelize.JSONB,
+        type: Sequelize.JSON,
       },
       createdAt: {
         allowNull: false,

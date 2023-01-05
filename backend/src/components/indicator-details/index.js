@@ -16,6 +16,17 @@ import { format, compareAsc } from "date-fns";
 import { useSelector } from "react-redux";
 import authHeader from "../../services/auth-header";
 import ImageUpload from "../ImageUpload/ImageUpload";
+import Select from "react-select";
+import CreatableSelect from "react-select/creatable";
+import { dimensions } from "../../common/dimensions";
+
+const chartTypes = [
+  { value: "line", label: "Line" },
+  { value: "bar", label: "Bar" },
+  { value: "pie", label: "Pie" },
+  { value: "scatter", label: "Scatter" },
+];
+
 
 const axios = require("axios");
 
@@ -224,12 +235,36 @@ const IndicatorDetails = () => {
   };
   // Add contact function
   const handleAddFormChange = (event) => {
-    //event.preventDefault();
+    event.preventDefault();
     const fieldName = event.target.getAttribute("name");
     const fieldValue = event.target.value;
     const newFormData = { ...addFormData };
     newFormData[fieldName] = fieldValue;
     setAddFormData(newFormData);
+  };
+
+  const handleFeasibleChartsChange = (value) => {
+    const newFormData = { ...addFormData };
+    newFormData["feasibleCharts"] = JSON.stringify(value);
+    setAddFormData(newFormData);
+  };
+
+  const handleFeasibleChartsEditChange = (value) => {
+    const newFormData = { ...editFormData };
+    newFormData["feasibleCharts"] = JSON.stringify(value);
+    setEditFormData(newFormData);
+  };
+
+  const handleDimensionsChange = (value) => {
+    const newFormData = { ...addFormData };
+    newFormData["dimensions"] = JSON.stringify(value);
+    setAddFormData(newFormData);
+  };
+
+  const handleDimensionsEditChange = (value) => {
+    const newFormData = { ...editFormData };
+    newFormData["dimensions"] = JSON.stringify(value);
+    setEditFormData(newFormData);
   };
 
   const fileData = () => {
@@ -455,16 +490,14 @@ const IndicatorDetails = () => {
 
                       <div className="form-group mb-3">
                         <label className="text-black font-w500">
-                          Dimensions (Seperate values with ';')
+                          Dimensions
                         </label>
                         <div className="contact-name">
-                          <input
-                            type="text"
-                            className="form-control"
-                            autoComplete="off"
-                            name="dimensions"
-                            onChange={handleAddFormChange}
-                            placeholder="Dimensions"
+                          <Select
+                            options={dimensions}
+                            onChange={handleDimensionsChange}
+                            isMulti
+                            form="dimensions"
                           />
                           <span className="validation-text"></span>
                         </div>
@@ -472,16 +505,14 @@ const IndicatorDetails = () => {
 
                       <div className="form-group mb-3">
                         <label className="text-black font-w500">
-                          Feasible Charts (Seperate values with ';')
+                          Feasible Charts
                         </label>
                         <div className="contact-name">
-                          <input
-                            type="text"
-                            className="form-control"
-                            autoComplete="off"
-                            name="feasibleCharts"
-                            onChange={handleAddFormChange}
-                            placeholder="Feasible Charts"
+                          <Select
+                            options={chartTypes}
+                            onChange={handleFeasibleChartsChange}
+                            isMulti
+                            form="feasibleCharts"
                           />
                           <span className="validation-text"></span>
                         </div>
@@ -574,6 +605,10 @@ const IndicatorDetails = () => {
                       handleEditFormChange={handleEditFormChange}
                       editFormData={editFormData}
                       EditImageHandler={EditImageHandler}
+                      handleFeasibleChartsEditChange={
+                        handleFeasibleChartsEditChange
+                      }
+                      handleDimensionsEditChange={handleDimensionsEditChange}
                     />
                   )}
                 </form>

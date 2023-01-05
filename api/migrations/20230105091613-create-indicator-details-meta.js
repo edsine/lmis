@@ -1,4 +1,7 @@
 "use strict";
+
+const { defaultDimensions } = require("../utils/dimensions");
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -28,6 +31,17 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
+
+    for (const dimension in defaultDimensions) {
+      await queryInterface.addColumn(
+        "IndicatorDetailsMeta", // table name
+        defaultDimensions[dimension].value, // field name
+        {
+          type: Sequelize.STRING,
+          allowNull: true,
+        }
+      );
+    }
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable("IndicatorDetailsMeta");

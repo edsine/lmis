@@ -70,6 +70,8 @@ function Table({
   editContentId,
   handleCancelClick,
   handleEditFormChange,
+  handleFeasibleChartsEditChange,
+  handleDimensionsEditChange,
   editFormData,
   EditImageHandler,
 }) {
@@ -104,6 +106,8 @@ function Table({
       editContentId,
       handleCancelClick,
       handleEditFormChange,
+      handleFeasibleChartsEditChange,
+      handleDimensionsEditChange,
       editFormData,
       EditImageHandler,
     },
@@ -142,6 +146,10 @@ function Table({
                 <Editable
                   editFormData={editFormData}
                   handleEditFormChange={handleEditFormChange}
+                  handleFeasibleChartsEditChange={
+                    handleFeasibleChartsEditChange
+                  }
+                  handleDimensionsEditChange={handleDimensionsEditChange}
                   handleCancelClick={handleCancelClick}
                   EditImageHandler={EditImageHandler}
                 />
@@ -154,7 +162,7 @@ function Table({
                   <td>{cell.dimensions}</td>
                   <td>{cell.feasibleCharts}</td>
                   <td>{cell.sampleExcelPath}</td>
-                  <td></td>
+                  <td>{cell.indicator.title}</td>
                   <td>
                     {cell.createdAt
                       ? format(new Date(cell.createdAt), "dd MM, yyyy H:i:s")
