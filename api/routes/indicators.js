@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Indicator = require("../models").Indicator;
+const IndicatorDetails = require("../models").IndicatorDetails;
 const Role = require("../models").Role;
 const Permission = require("../models").Permission;
 const passport = require("passport");
@@ -136,6 +137,12 @@ router.get("/", requireToken, function (req, res) {
   // helper.checkPermission(req.user.role_id, 'user_get_all').then((rolePerm) => {
   Indicator.findAll({
     attributes: ["id", "title", "content", "imagePath", "createdAt"],
+    include: [
+      {
+        model: IndicatorDetails,
+        as: "indicatorDetails",
+      },
+    ],
   })
     .then((indicator) => res.status(200).send(indicator))
     .catch((error) => {
@@ -156,7 +163,14 @@ router.get(
     helper
       .checkPermission(req.user.role_id, "user_get")
       .then((rolePerm) => {
-        Indicator.findByPk(req.params.id)
+        Indicator.findByPk(req.params.id, {
+          include: [
+            {
+              model: IndicatorDetails,
+              as: "indicatorDetails",
+            },
+          ],
+        })
           .then((indicator) => res.status(200).send(indicator))
           .catch((error) => {
             res.status(400).send(error);
