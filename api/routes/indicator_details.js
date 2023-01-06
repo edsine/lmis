@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const IndicatorDetails = require("../models").IndicatorDetails;
+const IndicatorDetailsMeta = require("../models").IndicatorDetailsMeta;
 const Indicator = require("../models").Indicator;
 const passport = require("passport");
 const passport1 = require("../config/passport");
@@ -118,7 +119,14 @@ router.get(
     helper
       .checkPermission(req.user.role_id, "indicator_detail_get")
       .then((rolePerm) => {
-        IndicatorDetails.findByPk(req.params.id)
+        IndicatorDetails.findByPk(req.params.id, {
+          include: [
+            {
+              model: IndicatorDetailsMeta,
+              as: "IndicatorDetailsMeta",
+            },
+          ],
+        })
           .then((indicatorDetail) => res.status(200).send(indicatorDetail))
           .catch((error) => {
             res.status(400).send(error);

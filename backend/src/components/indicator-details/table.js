@@ -74,6 +74,7 @@ function Table({
   handleDimensionsEditChange,
   editFormData,
   EditImageHandler,
+  handleDataViewClick,
 }) {
   const [filterInput, setFilterInput] = useState("");
 
@@ -110,6 +111,7 @@ function Table({
       handleDimensionsEditChange,
       editFormData,
       EditImageHandler,
+      handleDataViewClick,
     },
     useFilters,
     usePagination
@@ -170,6 +172,12 @@ function Table({
                   </td>
                   <td>
                     <div className="d-flex">
+                      <button
+                        className="btn btn-secondary shadow btn-xs sharp me-2"
+                        onClick={(event) => handleDataViewClick(cell)}
+                      >
+                        <i className="fas fa-document"></i>
+                      </button>
                       <Link
                         className="btn btn-secondary	 shadow btn-xs sharp me-2"
                         onClick={(event) => handleEditClick(event, cell)}
@@ -266,6 +274,10 @@ function App(props) {
   const handleEditClick = props.handleEditClick;
   const handleCancelClick = props.handleCancelClick;
   const handleEditFormChange = props.handleEditFormChange;
+  const handleDataViewClick = props.handleDataViewClick;
+
+  const handleFeasibleChartsEditChange = props.handleFeasibleChartsEditChange;
+  const handleDimensionsEditChange = props.handleDimensionsEditChange;
 
   const columns = [
     {
@@ -318,6 +330,9 @@ function App(props) {
         handleEditFormChange={handleEditFormChange}
         editFormData={editFormData}
         EditImageHandler={EditImageHandler}
+        handleDataViewClick={handleDataViewClick}
+        handleDimensionsEditChange={handleDimensionsEditChange}
+        handleFeasibleChartsEditChange={handleFeasibleChartsEditChange}
       />
     </Styles>
   );

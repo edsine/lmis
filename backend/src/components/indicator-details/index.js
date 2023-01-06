@@ -19,6 +19,7 @@ import ImageUpload from "../ImageUpload/ImageUpload";
 import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { dimensions } from "../../common/dimensions";
+import IndicatorDetailsMeta from "../indicator-details-meta";
 
 const chartTypes = [
   { value: "line", label: "Line" },
@@ -26,7 +27,6 @@ const chartTypes = [
   { value: "pie", label: "Pie" },
   { value: "scatter", label: "Scatter" },
 ];
-
 
 const axios = require("axios");
 
@@ -37,6 +37,18 @@ const IndicatorDetails = () => {
   const [error, setError] = useState(false);
   const [tabledata, setTableData] = useState({});
   const [indicators, setIndicators] = useState(null);
+  const [showDataComponent, setShowDataComponent] = useState(false);
+  const [indicatorDetails, setIndicatorDetails] = useState(null);
+
+  //Edit start
+  //const [editModal, setEditModal] = useState(false);
+  // Edit function editable page loop
+  const [editContentId, setEditContentId] = useState(null);
+
+  //Modal box
+  const [addCard, setAddCard] = useState(false);
+  const [addFile, setAddFile] = useState(null);
+  const [editFile, setEditPhoto] = useState(null);
 
   let navigate = useNavigate();
   const { user: currentUser } = useSelector((state) => state.auth);
@@ -211,11 +223,6 @@ const IndicatorDetails = () => {
     console.log(response); //just checking if works
   };
 
-  //Modal box
-  const [addCard, setAddCard] = useState(false);
-  const [addFile, setAddFile] = useState(null);
-  const [editFile, setEditPhoto] = useState(null);
-
   //Add data
   const [addFormData, setAddFormData] = useState({
     title: "",
@@ -320,11 +327,6 @@ const IndicatorDetails = () => {
     }
   };
 
-  //Edit start
-  //const [editModal, setEditModal] = useState(false);
-  // Edit function editable page loop
-  const [editContentId, setEditContentId] = useState(null);
-
   // Edit function button click to edit
   const handleEditClick = (event, content) => {
     event.preventDefault();
@@ -409,215 +411,232 @@ const IndicatorDetails = () => {
     }
   };
 
-  return (
-    <>
-      {loading ? <Loader /> : ""}
-      <PageTitle activeMenu="Page" motherMenu="Indicators" />
-      <div className="col-12">
-        <Modal className="modal fade" show={addCard} onHide={setAddCard}>
-          <div className="" role="document">
-            <div className="">
-              <form enctype="multipart/form-data">
-                <div className="modal-header">
-                  <h4 className="modal-title fs-20">
-                    Add New Indicator Details
-                  </h4>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    onClick={() => setAddCard(false)}
-                    data-dismiss="modal"
-                  >
-                    <span></span>
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <i
-                    className="flaticon-cancel-12 close"
-                    data-dismiss="modal"
-                  ></i>
-                  <div className="add-contact-box">
-                    <div className="add-contact-content">
-                      <div className="form-group mb-3">
-                        <label className="text-black font-w500">Title</label>
-                        <div className="contact-name">
-                          <input
-                            type="text"
-                            className="form-control"
-                            autoComplete="off"
-                            name="title"
-                            required="required"
-                            onChange={handleAddFormChange}
-                            placeholder="Title"
-                          />
-                          <span className="validation-text"></span>
-                        </div>
-                      </div>
+  const handleDataViewClick = (indicatorDetails) => {
+    setIndicatorDetails(indicatorDetails);
+    setShowDataComponent(true);
+  };
 
-                      <div className="form-group mb-3">
-                        <label className="text-black font-w500">
-                          Description
-                        </label>
-                        <div className="contact-name">
-                          <textarea
-                            type="text"
-                            className="form-control"
-                            autoComplete="off"
-                            name="description"
-                            rows="4"
-                            required="required"
-                            onChange={handleAddFormChange}
-                            placeholder="Description"
-                          ></textarea>
-                          <span className="validation-text"></span>
+  if (showDataComponent) {
+    return (
+      <IndicatorDetailsMeta
+        setShowDataComponent={setShowDataComponent}
+        indicatorDetails={indicatorDetails}
+      />
+    );
+  } else {
+    return (
+      <div>
+        {loading ? <Loader /> : ""}
+        <PageTitle activeMenu="Page" motherMenu="Indicators" />
+        <div className="col-12">
+          <Modal className="modal fade" show={addCard} onHide={setAddCard}>
+            <div className="" role="document">
+              <div className="">
+                <form enctype="multipart/form-data">
+                  <div className="modal-header">
+                    <h4 className="modal-title fs-20">
+                      Add New Indicator Details
+                    </h4>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      onClick={() => setAddCard(false)}
+                      data-dismiss="modal"
+                    >
+                      <span></span>
+                    </button>
+                  </div>
+                  <div className="modal-body">
+                    <i
+                      className="flaticon-cancel-12 close"
+                      data-dismiss="modal"
+                    ></i>
+                    <div className="add-contact-box">
+                      <div className="add-contact-content">
+                        <div className="form-group mb-3">
+                          <label className="text-black font-w500">Title</label>
+                          <div className="contact-name">
+                            <input
+                              type="text"
+                              className="form-control"
+                              autoComplete="off"
+                              name="title"
+                              required="required"
+                              onChange={handleAddFormChange}
+                              placeholder="Title"
+                            />
+                            <span className="validation-text"></span>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="form-group mb-3">
-                        <label className="text-black font-w500">Measure</label>
-                        <div className="contact-name">
-                          <input
-                            type="text"
-                            className="form-control"
-                            autoComplete="off"
-                            name="measure"
-                            onChange={handleAddFormChange}
-                            placeholder="Measure"
-                          />
-                          <span className="validation-text"></span>
+                        <div className="form-group mb-3">
+                          <label className="text-black font-w500">
+                            Description
+                          </label>
+                          <div className="contact-name">
+                            <textarea
+                              type="text"
+                              className="form-control"
+                              autoComplete="off"
+                              name="description"
+                              rows="4"
+                              required="required"
+                              onChange={handleAddFormChange}
+                              placeholder="Description"
+                            ></textarea>
+                            <span className="validation-text"></span>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="form-group mb-3">
-                        <label className="text-black font-w500">
-                          Dimensions
-                        </label>
-                        <div className="contact-name">
-                          <Select
-                            options={dimensions}
-                            onChange={handleDimensionsChange}
-                            isMulti
-                            form="dimensions"
-                          />
-                          <span className="validation-text"></span>
+                        <div className="form-group mb-3">
+                          <label className="text-black font-w500">
+                            Measure
+                          </label>
+                          <div className="contact-name">
+                            <input
+                              type="text"
+                              className="form-control"
+                              autoComplete="off"
+                              name="measure"
+                              onChange={handleAddFormChange}
+                              placeholder="Measure"
+                            />
+                            <span className="validation-text"></span>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="form-group mb-3">
-                        <label className="text-black font-w500">
-                          Feasible Charts
-                        </label>
-                        <div className="contact-name">
-                          <Select
-                            options={chartTypes}
-                            onChange={handleFeasibleChartsChange}
-                            isMulti
-                            form="feasibleCharts"
-                          />
-                          <span className="validation-text"></span>
+                        <div className="form-group mb-3">
+                          <label className="text-black font-w500">
+                            Dimensions
+                          </label>
+                          <div className="contact-name">
+                            <Select
+                              options={dimensions}
+                              onChange={handleDimensionsChange}
+                              isMulti
+                              form="dimensions"
+                            />
+                            <span className="validation-text"></span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="form-group mb-3">
-                        <label className="text-black font-w500">
-                          Indicator
-                        </label>
-                        <div className="contact-name">
-                          <select
-                            name="indicator_id"
-                            className="form-control"
-                            onChange={handleAddFormChange}
-                          >
-                            <option></option>
-                            {indicators &&
-                              indicators.map((indicator, index) => (
-                                <option key={index} value={indicator.id}>
-                                  {indicator.title}
-                                </option>
-                              ))}
-                          </select>
-                          <span className="validation-text"></span>
-                        </div>
-                      </div>
-                      <div className="form-group mb-3">
-                        <label className="text-black font-w500">
-                          Sample Excel
-                        </label>
-                        <div className="contact-name">
-                          <input
-                            type="file"
-                            name="sampleExcelPath"
-                            id="sampleExcelPath"
-                            className="form-control"
-                            onChange={imageHandler}
-                          />
-                          {fileData()}
 
-                          <span className="validation-text"></span>
+                        <div className="form-group mb-3">
+                          <label className="text-black font-w500">
+                            Feasible Charts
+                          </label>
+                          <div className="contact-name">
+                            <Select
+                              options={chartTypes}
+                              onChange={handleFeasibleChartsChange}
+                              isMulti
+                              form="feasibleCharts"
+                            />
+                            <span className="validation-text"></span>
+                          </div>
+                        </div>
+                        <div className="form-group mb-3">
+                          <label className="text-black font-w500">
+                            Indicator
+                          </label>
+                          <div className="contact-name">
+                            <select
+                              name="indicator_id"
+                              className="form-control"
+                              onChange={handleAddFormChange}
+                            >
+                              <option></option>
+                              {indicators &&
+                                indicators.map((indicator, index) => (
+                                  <option key={index} value={indicator.id}>
+                                    {indicator.title}
+                                  </option>
+                                ))}
+                            </select>
+                            <span className="validation-text"></span>
+                          </div>
+                        </div>
+                        <div className="form-group mb-3">
+                          <label className="text-black font-w500">
+                            Sample Excel
+                          </label>
+                          <div className="contact-name">
+                            <input
+                              type="file"
+                              name="sampleExcelPath"
+                              id="sampleExcelPath"
+                              className="form-control"
+                              onChange={imageHandler}
+                            />
+                            {fileData()}
+
+                            <span className="validation-text"></span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="modal-footer">
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    onClick={handleAddFormSubmit}
-                  >
-                    Add
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setAddCard(false)}
-                    className="btn btn-danger"
-                  >
-                    {" "}
-                    <i className="flaticon-delete-1"></i> Discard
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </Modal>
-        <div className="card">
-          <div className="card-header">
-            <h4 className="card-title">List of indicator details</h4>
-            <p className="card-title text-right">
-              <Link
-                className="btn btn-primary shadow sharp me-2"
-                onClick={() => setAddCard(true)}
-              >
-                <i className="fa fa-plus"></i> &nbsp;Add
-              </Link>
-            </p>
-          </div>
-          <div className="card-body">
-            <div className="w-100 table-responsive">
-              <div id="example_wrapper" className="dataTables_wrapper">
-                <form onSubmit={handleEditFormSubmit}>
-                  {showTable && (
-                    <Table
-                      tabledata={tabledata}
-                      confirmDelete={confirmDelete}
-                      handleEditClick={handleEditClick}
-                      editContentId={editContentId}
-                      handleCancelClick={handleCancelClick}
-                      handleEditFormChange={handleEditFormChange}
-                      editFormData={editFormData}
-                      EditImageHandler={EditImageHandler}
-                      handleFeasibleChartsEditChange={
-                        handleFeasibleChartsEditChange
-                      }
-                      handleDimensionsEditChange={handleDimensionsEditChange}
-                    />
-                  )}
+                  <div className="modal-footer">
+                    <button
+                      type="submit"
+                      className="btn btn-primary"
+                      onClick={handleAddFormSubmit}
+                    >
+                      Add
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setAddCard(false)}
+                      className="btn btn-danger"
+                    >
+                      {" "}
+                      <i className="flaticon-delete-1"></i> Discard
+                    </button>
+                  </div>
                 </form>
+              </div>
+            </div>
+          </Modal>
+          <div className="card">
+            <div className="card-header">
+              <h4 className="card-title">List of indicator details</h4>
+              <p className="card-title text-right">
+                <Link
+                  className="btn btn-primary shadow sharp me-2"
+                  onClick={() => setAddCard(true)}
+                >
+                  <i className="fa fa-plus"></i> &nbsp;Add
+                </Link>
+              </p>
+            </div>
+            <div className="card-body">
+              <div className="w-100 table-responsive">
+                <div id="example_wrapper" className="dataTables_wrapper">
+                  <form onSubmit={handleEditFormSubmit}>
+                    {showTable && (
+                      <Table
+                        tabledata={tabledata}
+                        confirmDelete={confirmDelete}
+                        handleEditClick={handleEditClick}
+                        editContentId={editContentId}
+                        handleCancelClick={handleCancelClick}
+                        handleEditFormChange={handleEditFormChange}
+                        editFormData={editFormData}
+                        EditImageHandler={EditImageHandler}
+                        handleFeasibleChartsEditChange={
+                          handleFeasibleChartsEditChange
+                        }
+                        handleDimensionsEditChange={handleDimensionsEditChange}
+                        handleDataViewClick={handleDataViewClick}
+                      />
+                    )}
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
-  );
+    );
+  }
 };
 export default IndicatorDetails;

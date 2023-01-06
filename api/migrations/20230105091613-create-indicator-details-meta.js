@@ -12,7 +12,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      indicator_id: {
+      indicator_details_id: {
         type: Sequelize.INTEGER,
       },
       data: {
