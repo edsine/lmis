@@ -9,18 +9,16 @@ import axios from "axios";
 import authHeader from "../../../services/auth-header";
 import { API_URL } from "../../../constants/constant";
 
-
 class Population extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      loading: false, 
+      loading: false,
       showTable: false,
       error: false,
-      tabledata:{}
+      tabledata: {},
     };
-    this.loadClickHandler()
+    this.loadClickHandler();
   }
 
   // :::::::: CSV parser ::::::::::
@@ -32,23 +30,23 @@ class Population extends Component {
   };
   //::::::::::::::::::::::::::::::::
 
-   
-
   //::::::::: for putting all data in CSV to MySQL :::::::::::
   handleForce = (data, fileInfo) => {
     this.setState({ loading: true });
 
     let d = JSON.stringify({ ...data });
 
-   /*  fetch("http://localhost:3001/api/v1/bulkcreate", {
+    /*  fetch("http://localhost:3001/api/v1/bulkcreate", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: d,
-    }) */ 
-    axios.post(API_URL+"bulkpopulation", data, { headers: authHeader() })
+    }) */
+
+    axios
+      .post(API_URL + "bulkpopulation", data, { headers: authHeader() })
       .then((response) => {
         //alert(JSON.stringify(response))
         this.setState({ loading: false });
@@ -60,8 +58,8 @@ class Population extends Component {
         }
       })
       .then((responseJson) => {
-        this.setState({tabledata:responseJson});
-        this.setState({showTable:true});
+        this.setState({ tabledata: responseJson });
+        this.setState({ showTable: true });
         console.log(responseJson);
       })
       .catch((error) => {
@@ -69,17 +67,17 @@ class Population extends Component {
         console.log(error, this.state);
       });
   };
-  
 
   loadClickHandler = () => {
     //
-    this.setState({loading:true});
+    this.setState({ loading: true });
     //fetch(this.API_URL+"population")
-    axios.get(API_URL+"population", { headers: authHeader() })
+    axios
+      .get(API_URL + "population", { headers: authHeader() })
       .then((response) => {
         //alert(JSON.stringify(response))
         if (response) {
-          this.setState({loading:false});
+          this.setState({ loading: false });
           //localStorage.setItem("population",JSON.stringify(response.data))
           return response.data;
         } else {
@@ -87,92 +85,93 @@ class Population extends Component {
         }
       })
       .then((data) => {
-        this.setState({tabledata:data});
-        this.setState({showTable:true});
+        this.setState({ tabledata: data });
+        this.setState({ showTable: true });
         //console.log(data);
       })
       .catch((err) => {
-        this.setState({error:true});
+        this.setState({ error: true });
         console.log(err);
-
       });
   };
 
-//:::::::::::
+  //:::::::::::
 
-deleteClickHandler = ()=>{
-  this.setState({ loading: true });
-  this.setState({ loaded: false });
+  deleteClickHandler = () => {
+    this.setState({ loading: true });
+    this.setState({ loaded: false });
 
-
-  fetch(API_URL+"population", {
-    method: "DELETE"
-  })
-    .then((response) => {
-      this.setState({ loading: false });
-      this.setState({ loaded: true });
-
-      if (response.ok) {
-        this.loadClickHandler();
-        return response.json();
-      } else {
-        throw new Error("Something went wrong");
-      }
+    fetch(API_URL + "population", {
+      method: "DELETE",
     })
-    .then((responseJson) => {
-      console.log(responseJson);
-    })
-    .catch((error) => {
-      this.setState({ error: true });
-      console.log(error, this.state);
-    });
+      .then((response) => {
+        this.setState({ loading: false });
+        this.setState({ loaded: true });
 
-}
-
-  
+        if (response.ok) {
+          this.loadClickHandler();
+          return response.json();
+        } else {
+          throw new Error("Something went wrong");
+        }
+      })
+      .then((responseJson) => {
+        console.log(responseJson);
+      })
+      .catch((error) => {
+        this.setState({ error: true });
+        console.log(error, this.state);
+      });
+  };
 
   render() {
     if (this.state.loading) return <Loader />;
     if (this.state.error) return <CsvError />;
     return (
-    <>
-      <PageTitle activeMenu="Page" motherMenu="Import" />
-	<div className="col-12">
-      <div className="wrapper">
-        <div className="section2">
-          <div className="container1">
+      <>
+        <PageTitle activeMenu="Page" motherMenu="Import" />
+        <div className="col-12">
+          <div className="wrapper">
+            <div className="section2">
+              <div className="container1">
                 <CSVReader
                   cssClass="react-csv-input"
                   label="Select CSV:"
                   onFileLoaded={this.handleForce.bind(this)}
                   parserOptions={this.papaparseOptions}
                 />
-                
+              </div>
+              <button
+                className="btn btn-primary"
+                style={{ display: "none" }}
+                onClick={this.loadClickHandler}
+              >
+                <span>Load Data </span>
+              </button>
+            </div>
           </div>
-          <button className="btn btn-primary" style={{ display: 'none' }} onClick={this.loadClickHandler}>
-            <span>Load Data </span>
-          </button>
-        </div>
-        
-        </div>
-        
-        <div>
 
-        <div className="section2">
-          
-        {
-          (this.state.showTable)&&  
-          <button className="button" style={{backgroundColor:"red", display: 'none'}} onClick={this.deleteClickHandler}>
-            <span>Wipe Data </span>
-          </button>
-          }
+          <div>
+            <div className="section2">
+              {this.state.showTable && (
+                <button
+                  className="button"
+                  style={{ backgroundColor: "red", display: "none" }}
+                  onClick={this.deleteClickHandler}
+                >
+                  <span>Wipe Data </span>
+                </button>
+              )}
+            </div>
+
+            <div className="section3">
+              {this.state.showTable && (
+                <Table tabledata={this.state.tabledata} />
+              )}
+            </div>
+          </div>
         </div>
-
-
-        <div className="section3">{this.state.showTable && <Table tabledata={this.state.tabledata} />}</div>
-      </div>
-	 </div>
-   </>
+      </>
     );
   }
 }

@@ -1,5 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
+const { defaultDimensions } = require("../utils/dimensions");
 module.exports = (sequelize, DataTypes) => {
   class IndicatorDetailsMeta extends Model {
     /**
@@ -11,17 +12,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
+
+  const otherFields = {};
+  for (const dimension in defaultDimensions) {
+    otherFields[defaultDimensions[dimension].value] = DataTypes.STRING;
+  }
   IndicatorDetailsMeta.init(
     {
-      indicator_id: DataTypes.INTEGER,
-      data: DataTypes.JSONB,
-      indexes: [
-        {
-          fields: ["data"],
-          using: "gin",
-          operator: "jsonb_path_ops",
-        },
-      ],
+      indicator_details_id: DataTypes.INTEGER,
+      ...otherFields,
     },
     {
       sequelize,

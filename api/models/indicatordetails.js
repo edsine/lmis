@@ -10,7 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      IndicatorDetails.belongsTo(models.Indicator, {foreignKey: 'indicator_id', as: 'indicator'})
+      IndicatorDetails.belongsTo(models.Indicator, {
+        foreignKey: "indicator_id",
+        as: "indicator",
+      });
+      IndicatorDetails.hasMany(models.IndicatorDetailsMeta, {
+        foreignKey: "indicator_details_id",
+        as: "indicatorDetailsMeta",
+      });
     }
   }
   IndicatorDetails.init(
