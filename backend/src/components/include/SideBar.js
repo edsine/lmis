@@ -238,6 +238,7 @@ const SideBar = () => {
               <i className="fas fa-clone"></i>
               <span className="nav-text">Import CSV</span>
             </Link>
+            
             <ul>
               <li>
                 <Link className="has-arrow" to="#">
@@ -296,6 +297,30 @@ const SideBar = () => {
               </li>
             </ul>
           </li>
+          <li className={`"widget" ? "mm-active" : ""}`}>
+
+          <Link className="has-arrow ai-icon" to="pages/homestat/">
+              <i className="fas fa-clone"></i>
+              <span className="nav-text"> CMS</span>
+            </Link>
+            <ul>
+              <li>
+                <Link className="has-arrow" to="#">
+                 Home Page CMS
+                </Link>
+                <ul>
+                  <li>
+                    <Link
+                      className={`${path === "homestat" ? "mm-active" : ""}`}
+                      to="/homestat"
+                    >
+                      Statistical Info
+                    </Link>{" "}
+                  </li>
+                  </ul>
+                  </li>
+                  </ul>
+            </li>
           <li className={`"widget" ? "mm-active" : ""}`}>
             <Link to="widget" className="ai-icon">
               <i className="fas fa-user-check"></i>

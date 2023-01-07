@@ -12,6 +12,8 @@ import Profile from "./components/Profile";
 import BoardAdmin from "./components/BoardAdmin";
 import Dashboard from "./components/dashboard";
 import Widget from "./components/widget";
+import Homepage from "./components/pages/homepage";
+import HomepageStats from "./components/pages/homepage_stats";
 
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
@@ -119,6 +121,8 @@ const App = () => {
       <Route path="/child-labour" element={<ChildLabour />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/admin" element={<BoardAdmin />} />
+      <Route path="/pages/home" element={<Homepage/>}/>
+      <Route path="/pages/homestat" element={<HomepageStats/>}/>
       </Routes>
       </div>
       </div>
@@ -135,11 +139,6 @@ const App = () => {
           
         </Routes>
       </div>
-      {/* {currentUser && (
-      <Footer/>
-  )} */}
-      
-      {/* <AuthVerify logOut={logOut}/> */}
     </>
   );
 };

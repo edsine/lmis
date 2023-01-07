@@ -17,6 +17,8 @@ var permsRouter = require('./routes/permissions');
 var authRouter = require('./routes/auth');
 var productRouter = require('./routes/products');
 var sectorRouter = require('./routes/sector');
+var homestatRouter = require("./routes/homestat");
+var homestat = require('./routes/homestat_data.js');
 var population = require("./routes/population.js");
 var employment = require("./routes/employment.js");
 var employee = require("./routes/employee.js");
@@ -45,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(bodyParser.urlencoded({ extended: true }));
 
 var cors = require('cors');
+// const { default: HomepageStats } = require('../backend/src/components/pages/homepage_stats');
 app.use(cors());
 
 
@@ -56,6 +59,7 @@ app.use('/api/v1/roles', rolesRouter);
 app.use('/api/v1/permissions', permsRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/sectors', sectorRouter);
+app.use('/api/v1/homestat', homestatRouter)
 
 //API data
 app.get("/api/v2/population", population.showAll);
@@ -65,6 +69,8 @@ app.get("/api/v2/working_poverty", working_poverty.showAll);
 app.get("/api/v2/unemployment", unemployment.showAll);
 app.get("/api/v2/child_labour", child_labour.showAll);
 app.get("/api/v2/indicators", api.showAll);
+app.get('/api/v1/homestat', homestat.showAll);
+
 
 
 //Population Indicators
@@ -169,6 +175,11 @@ app.put("/childlabour/:childlabourId", child_labour.update);
 app.delete("/childlabour/:childlabourId", child_labour.delete);
 // DELETE call to delete all the records
 app.delete("/childlabour", child_labour.deleteAll);
+
+// HOME STATS
+
+// app.post("/api/v1/homestat", HomepageStats.create);
+//app.get("/api/v1/homestat/:statID", homestat.findOne);
 
 
 
