@@ -137,9 +137,9 @@ function Table({columns, data, handleEditClick, confirmDelete, editContentId, ha
                   <td>{cell.fullname}</td>
                   <td>{cell.phone}</td>
                   <td>{cell.email}</td>
-                  <td>{cell.created_at
+                  <td>{cell.createdAt
                                   ? format(
-                                      new Date(cell.created_at),
+                                      new Date(cell.createdAt),
                                       "dd MM, yyyy H:i:s"
                                     )
                                   : format(new Date(), "dd MM, yyyy H:i:s")}</td>
@@ -252,7 +252,7 @@ function App(props) {
 	},
 	{
 		Header: "Date Registered",
-		accessor: "created_at",
+		accessor: "createdAt",
 	  },
 	  
   ];

@@ -18,11 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     role_id: DataTypes.INTEGER,
     perm_id: DataTypes.INTEGER,
      createdAt: {
-         field: 'created_at',
          type: DataTypes.DATE,
      },
      updatedAt: {
-         field: 'updated_at',
          type: DataTypes.DATE,
      }
   }, {

@@ -19,11 +19,9 @@ module.exports = (sequelize, DataTypes) => {
     prod_image: DataTypes.STRING,
     prod_price: DataTypes.STRING,
      createdAt: {
-         field: 'created_at',
          type: DataTypes.DATE,
      },
      updatedAt: {
-         field: 'updated_at',
          type: DataTypes.DATE,
      }
   }, {
