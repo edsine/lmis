@@ -17,6 +17,7 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "apexcharts": "^3.36.3",
+    "axios": "^1.2.2",
     "bootstrap": "^5.2.2",
     "cdbreact": "^1.5.3",
     "chart.js": "^2.9.3",

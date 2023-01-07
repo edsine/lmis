@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Content from "./Content";
 import { CDBCard, CDBCardBody, CDBDataTable, CDBRow, CDBCol, CDBContainer } from 'cdbreact';
 import Common from '../inc/Common';
+import Button from 'react-bootstrap/Button';
 
 const IndicatorDetails = (props) => {
     const [data, setData] = useState(null);
@@ -57,15 +58,17 @@ const IndicatorDetails = (props) => {
             ],
             rows: data?.map((item, index) => {
                 item.action = (
-                    <Link key={index} to={{
+                    <Button variant="success"><Link key={index} to={{
                         pathname: '/indicator-details-meta',
                         state: {
                             id: item.id,
                             columns: item.dimensions
                         }
                     }}><div className="social">
-                            <small style={{ color: 'red' }}>View data</small>
+                            <small style={{ color: '#ffffff' }}>View data</small>
                         </div></Link>
+                        </Button>
+                    
                 )
                 return item;
             })
