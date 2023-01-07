@@ -16,24 +16,27 @@ const Indicator = () => {
    }, []);
 
    return (
-    posts.map((post) => {
-        return (   
+      posts.map((post) => {
+         return (
 
             <div className="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={300}>
-            <div className="member">
-              <img src={post.imagePath} style={{height: '280px', width: '350px', objectFit: 'cover'}} className="img-fluid" alt="" />
-              <h4>{post.title}</h4>
-              <p>{post.content}</p>
-             
-              <Link  to={'/search/6'}><div className="social">
-              <small style={{color: 'red'}}>Read more</small> 
-              </div></Link>
-              </div>
-          
-          </div>
-        );
-    })
-);
+               <div className="member">
+                  <img src={post.imagePath} style={{ height: '280px', width: '350px', objectFit: 'cover' }} className="img-fluid" alt="" />
+                  <h4>{post.title}</h4>
+                  <p>{post.content}</p>
+                  
+                  <Link to={{
+                     pathname: '/indicator-details',
+                     state: post.id
+                  }}><div className="social">
+                     <small style={{ color: 'red' }}>Read more</small>
+                  </div></Link>
+               </div>
+
+            </div>
+         );
+      })
+   );
 };
 
 export default Indicator;

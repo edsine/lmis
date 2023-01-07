@@ -16,10 +16,8 @@ import Act from '../images/gr.jpg'
 import Neds from '../images/NEDS.jpg'
 import Nmis from '../images/NMIS.jpg'
 import Nurhi from '../images/NURHI.jpg'
-import Nship from '../images/lmis_welcome.png'
 import Vacs from '../images/VACS.jpg'
 import Chea from '../images/unsplash_h5xEHzfepNk.png'
-import Im from '../images/rice.jpg'
 import Nur from '../images/stats-img.svg'
 import Common from '../inc/Common';
 import ApexMixed from '../apexcharts/ApexMixed'
@@ -86,9 +84,9 @@ function Home() {
             <div className="row gy-4 mt-5">
               <div className="col-xl-3 col-md-6 card-white" data-aos="fade-up" data-aos-delay={100}>
                 <div className="icon-box zoom">
-                  <div className="" style={{ fontSize: '23px', color: 'lightgrey' }}>200M Approximately</div>
+                  <div className="" style={{ fontSize: '23px', color: 'lightgrey' }}>218,955,834</div>
                   <hr />
-                  <h4 className="title"><a href className="stretched-link">National Population 2022</a></h4>
+                  <h4 className="title"><a href className="stretched-link">National Population 2023</a></h4>
                 </div>
               </div>
               {/*End Icon Box */}
@@ -128,6 +126,7 @@ function Home() {
             <div className="my-1 col-md-6">
               <div className='shadow'>
                 <div className="card-body card-body1">
+                <h5>Nigeria Employed Age Distribution</h5>
                   <ApexCand />
                 </div>
               </div>
@@ -264,9 +263,25 @@ function Home() {
             <p> The LMIS queries in real-time the databases of the actors with a shared understanding that interventions in the labor market are far-ranging. The LMIS Portal provides information on drivers, barriers, needs and aspirations of Nigerians (home and abroad) through data and insights. The main purpose of a Labor Market Information System (LMIS) is the production of information and analysis for policy makers and other labor market stakeholders. LMIS assists in job matching, job searching, and providing information about market needs, developing job profiles, and improving application skills.</p>
             <a className="cta-btn" href="#">Explore More</a>
           </div>
-        </section>{/* End Call To Action Section */}
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* End Call To Action Section */}
         {/* ======= Our Services Section ======= */}
-        <section id="services" className="services sections-bg">
+
+
+        {/* <section id="services" className="services sections-bg">
           <div className="container" data-aos="fade-up">
             <div className="section-header">
               <h2>Our Services</h2>
@@ -281,8 +296,12 @@ function Home() {
                   <p>Over 2.3 million observations to explore</p>
                   <a href="#" className="readmore stretched-link" >Read more <i className="bi bi-arrow-right" /></a>
                 </div>
-              </div>{/* End Service Item */}
-              <div className="col-lg-4 col-md-6">
+              </div> */}
+
+        {/* End Service Item */}
+
+
+        {/* <div className="col-lg-4 col-md-6">
                 <div className="service-item position-relative">
                   <div className="icon">
                     <i className="bi bi-broadcast" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
@@ -291,8 +310,11 @@ function Home() {
                   <p>browse numerous data over 23 different sectors</p>
                   <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                 </div>
-              </div>{/* End Service Item */}
-              <div className="col-lg-4 col-md-6">
+              </div> */}
+
+        {/* End Service Item */}
+
+        {/* <div className="col-lg-4 col-md-6">
                 <div className="service-item position-relative">
                   <div className="icon">
                     <i className="bi bi-bounding-box-circles" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
@@ -301,8 +323,12 @@ function Home() {
                   <p>Browse data across 48 different Occupations</p>
                   <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                 </div>
-              </div>{/* End Service Item */}
-              <div className="col-lg-4 col-md-6">
+              </div> */}
+
+        {/* End Service Item */}
+
+
+        {/* <div className="col-lg-4 col-md-6">
                 <div className="service-item position-relative">
                   <div className="icon">
                     <i className="bi bi-bounding-box-circles" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
@@ -311,8 +337,12 @@ function Home() {
                   <p>Non et tem ea fuga sit provident adipisci neque.</p>
                   <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                 </div>
-              </div>{/* End Service Item */}
-              <div className="col-lg-4 col-md-6">
+              </div> */}
+
+
+        {/* End Service Item */}
+
+        {/* <div className="col-lg-4 col-md-6">
                 <div className="service-item position-relative">
                   <div className="icon">
                     <i className="bi bi-calendar4-week" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
@@ -321,8 +351,13 @@ function Home() {
                   <p>Cumque et suscipit saepe. Est maiores autem  ut</p>
                   <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                 </div>
-              </div>{/* End Service Item */}
-              <div className="col-lg-4 col-md-6">
+              </div> */}
+
+
+        {/* End Service Item */}
+
+
+        {/* <div className="col-lg-4 col-md-6">
                 <div className="service-item position-relative">
                   <div className="icon">
                     <i className="bi bi-chat-square-text" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
@@ -331,45 +366,158 @@ function Home() {
                   <p>Hic molestias ea quibusdam eos. Fugiat enim.</p>
                   <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                 </div>
-              </div>{/* End Service Item */}
-            </div>
-          </div>
-        </section>{/* End Our Services Section */}
+              </div> */}
 
-        {/* ======= About Us Section ======= */}
-        <section id="about" className="about">
-          <div className="container" data-aos="fade-up">
-            <div className="section-header">
-              <h2>Welcome</h2>
-              <p>The Labour Market Information System (LMIS) is a solution that uses artificial intelligence, adaptive intuition, and recognition from all labor data sources to populate labour market information</p>
-            </div>
-            <div className="row gy-4">
-              <div className="col-lg-6">
-                <h3>Recent Publications</h3>
-                <img src={Im} className="img-fluid rounded-4 mb-4" alt="" />
-                <p>Labor is the main asset for the world’s poorest people. This means that the labor market is the primary vehicle through which the proceeds of economic growth are spread to households and individuals. Therefore, understanding the labor market is crucial to achieve Nigeria’s aspiration to lift 100 million people out of poverty by 2030 – an ambitious objective, since even before the COVID-19 crisis around 4 in 10 Nigerians were living below the national poverty line.</p>
+
+        {/* End Service Item */}
+
+
+        {/* </div>
+          </div>
+        </section> */}
+
+        {/* End Our Services Section */}
+
+
+
+
+
+
+
+
+
+        <div className="container">
+          <header className="blog-header pt-5 mt-5">
+            <div className="row flex-nowrap justify-content-between align-items-center mb-5">
+              <div className="col-4 pt-1">
 
               </div>
-              <div className="col-lg-6">
-                <div className="content ps-0 ps-lg-5">
+              <div className="col-4 text-center">
+                <h4><a className="blog-header-logo text-dark" href="#"><b>Labour Market Intelligence</b></a></h4>
+                <hr />
+              </div>
 
-                  <ul>
-                    <li><i className="bi bi-check-circle-fill" /> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                    <li><i className="bi bi-check-circle-fill" /> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                    <li><i className="bi bi-check-circle-fill" /> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                  </ul>
-                  <p>
-                    This paper provides a coherent picture from labor market data and imposes some analytic interpretations on this picture. Thus, a brief overview of the Nigerian economy is carried out, with emphasis on the characteristics of the productive structure, the export activities and the trends of the Nigerian labor market since 1970 can be understood as the outcome of four circumstances: a disequilibrium urban wage rate, the increase of the real exchange rate due to the oil boom, a massive increase in public sector employment and a relative contraction in the rural labor force.
-                  </p>
-                  <div className="position-relative mt-4">
-                    <img src={Nship} className="img-fluid rounded-4" alt="" />
-                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" className="glightbox play-btn" />
-                  </div>
+              <div className="col-4 d-flex justify-content-end align-items-center">
+
+              </div>
+            </div>
+          </header>
+
+
+          {/* <div className="jumbotron p-2 p-md-5 text-white rounded bg-white">
+     <div className="col-md-12  card box-shadow p-4">
+     <center>  <h3 className="mb-0">
+            <a className="text-dark" href="#">Enterpreneurship</a>
+           </h3></center> 
+
+           <p className="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+           <a href="#">View Details</a>
+     </div>
+   </div> */}
+
+
+          <div className="row mb-2">
+            <div className="col-md-4">
+              <div className="card flex-md-row mb-6 box-shadow h-md-250">
+                <div className="card-body d-flex flex-column ">
+                  <center><BiBuildings size={40} className="" color="#488134" /></center>
+
+                  <center>  <h2 className="mb-0">
+                    <a className="text-dark" href="#">Research</a>
+                  </h2></center>
+
+                  <center> <Link to="/trends">
+                    <small className="d-inline-block mb-2" style={{ color: 'skyblue' }}>View Details</small>
+                  </Link></center>
+                </div>
+
+
+
+              </div>
+
+            </div>
+            <div className="col-md-4">
+              <div className="card flex-md-row mb-4 box-shadow h-md-250">
+                <div className="card-body d-flex flex-column ">
+                  <center><BiBuildings size={40} className="" color="#488134" /></center>
+
+                  <center>  <h2 className="mb-0">
+                    <a className="text-dark" href="#">Hot Occupation</a>
+                  </h2></center>
+
+                  <center> <Link to="/trends">
+                    <small className="d-inline-block mb-2" style={{ color: 'skyblue' }}>View Details</small>
+                  </Link></center>
+                </div>
+
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card flex-md-row mb-4 box-shadow h-md-250">
+                <div className="card-body d-flex flex-column ">
+                  <center><BiBuildings size={40} className="" color="#488134" /></center>
+
+                  <center>  <h2 className="mb-0">
+                    <a className="text-dark" href="#">Enterpreneurship</a>
+                  </h2></center>
+
+                  <center> <Link to="/trends">
+                    <small className="d-inline-block mb-2" style={{ color: 'grey' }}>View Details</small>
+                  </Link></center>
+                </div>
+
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card flex-md-row mb-6 box-shadow h-md-250">
+                <div className="card-body d-flex flex-column ">
+                  <center><BiBuildings size={40} className="" color="#488134" /></center>
+
+                  <center>  <h2 className="mb-0">
+                    <a className="text-dark" href="#">Overseas Employment</a>
+                  </h2></center>
+
+                  <center> <Link to="/trends">
+                    <small className="d-inline-block mb-2" style={{ color: 'grey' }}>View Details</small>
+                  </Link></center>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card flex-md-row mb-4 box-shadow h-md-250">
+                <div className="card-body d-flex flex-column ">
+                  <center><BiBuildings size={40} className="" color="#488134" /></center>
+
+                  <center>  <h2 className="mb-0">
+                    <a className="text-dark" href="#">Employment Trends</a>
+                  </h2></center>
+
+                  <center> <Link to="/trends">
+                    <small className="d-inline-block mb-2" style={{ color: 'grey' }}>View Details</small>
+                  </Link></center>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card flex-md-row mb-4 box-shadow h-md-250">
+                <div className="card-body d-flex flex-column ">
+                  <center><BiBuildings size={40} className="" color="#488134" /></center>
+
+                  <center>  <h2 className="mb-0">
+                    <a className="text-dark" href="#">Statistics</a>
+                  </h2></center>
+
+                  <center> <Link to="/trends">
+                    <small className="d-inline-block mb-2" style={{ color: 'grey' }}>View Details</small>
+                  </Link></center>
                 </div>
               </div>
             </div>
           </div>
-        </section>{/* End About Us Section */}
+        </div>
+
+
+  
 
         {/* ======= Our Team Section ======= */}
         <section id="team" className="team">

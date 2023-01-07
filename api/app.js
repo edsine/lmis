@@ -65,11 +65,13 @@ app.use("/api/v1/permissions", permsRouter);
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/sectors", sectorRouter);
 
+
 app.post("/api/v1/indicator-details-meta/:indicatorDetailsId", indicatorDetailsMetaRouter.bulkCreate);
 app.get("/api/v1/indicator-details-meta/:indicatorDetailsId", indicatorDetailsMetaRouter.findAll);
 
 //API data
 
+app.get("/api/v2/indicator-details/:indicatorId", api.findByIndicator);
 app.get("/api/v2/population", population.showAll);
 app.get("/api/v2/employment", employment.showAll);
 app.get("/api/v2/employee", employee.showAll);

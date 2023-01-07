@@ -14,7 +14,7 @@ function Navbarbefore() {
       <h1>LMIS<span>.</span></h1>
     </Link>
     <nav id="navbar" className="navbar">
-      <ul>
+      <ul className='px-5'>
         <li><Link  to="/">Home</Link></li>
         <li> <Link  to="/Indicators">Indicators</Link></li>
         <li><Link to="/sector">Sectors</Link></li>
@@ -38,7 +38,7 @@ function Navbarbefore() {
             <li><Link to='/'>Contact LMIS</Link></li>
           </ul>
         </li>
-        {/* <li><Link to="/about">Contact</Link></li> */}
+        <li><Link to="/about">About LMIS</Link></li>
       </ul>
     </nav>{/* .navbar */}
     <i className="mobile-nav-toggle mobile-nav-show bi bi-list" />

@@ -11,6 +11,8 @@ import ApexCandle from '../apexcharts/ApexCandle'
 import ApexCand from '../apexcharts/ApexCand'
 import ApexRadar from '../apexcharts/ApexRadar'
 import ApexBob from '../apexcharts/ApexBob'
+import Im from '../images/rice.jpg'
+import Nship from '../images/lmis_welcome.png'
 
 // import { CDBContainer } from 'cdbreact';
 // import Service4 from '../images/services4.jpg';
@@ -136,6 +138,45 @@ function Aboutus() {
     return (
         <div>
             <Common />
+
+
+            {/* ======= About Us Section ======= */}
+        <section id="about" className="about">
+          <div className="container" data-aos="fade-up">
+            <div className="section-header">
+              <h2>Welcome</h2>
+              <p>The Labour Market Information System (LMIS) is a solution that uses artificial intelligence, adaptive intuition, and recognition from all labor data sources to populate labour market information</p>
+            </div>
+            <div className="row gy-4">
+              <div className="col-lg-6">
+                <h3>Recent Publications</h3>
+                <img src={Im} className="img-fluid rounded-4 mb-4" alt="" />
+                <p>Labor is the main asset for the world’s poorest people. This means that the labor market is the primary vehicle through which the proceeds of economic growth are spread to households and individuals. Therefore, understanding the labor market is crucial to achieve Nigeria’s aspiration to lift 100 million people out of poverty by 2030 – an ambitious objective, since even before the COVID-19 crisis around 4 in 10 Nigerians were living below the national poverty line.</p>
+
+              </div>
+              <div className="col-lg-6">
+                <div className="content ps-0 ps-lg-5">
+
+                  <ul>
+                    <li><i className="bi bi-check-circle-fill" /> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                    <li><i className="bi bi-check-circle-fill" /> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                    <li><i className="bi bi-check-circle-fill" /> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                  </ul>
+                  <p>
+                    This paper provides a coherent picture from labor market data and imposes some analytic interpretations on this picture. Thus, a brief overview of the Nigerian economy is carried out, with emphasis on the characteristics of the productive structure, the export activities and the trends of the Nigerian labor market since 1970 can be understood as the outcome of four circumstances: a disequilibrium urban wage rate, the increase of the real exchange rate due to the oil boom, a massive increase in public sector employment and a relative contraction in the rural labor force.
+                  </p>
+                  <div className="position-relative mt-4">
+                    <img src={Nship} className="img-fluid rounded-4" alt="" />
+                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" className="glightbox play-btn" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* ======= End About Us Section ======= */}
+
+
             <section className="section border-top">
                 <div className="container">
                     <div className="row">

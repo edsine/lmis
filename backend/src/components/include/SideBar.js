@@ -523,7 +523,7 @@ const SideBar = () => {
             <strong>LMIS Admin Dashboard</strong> © 2022 All Rights Reserved
           </p>
           <p className="fs-12">
-            Made with <span className="heart"></span> by PGL Nigeria
+            Powered by <span className="heart"></span> Edsine
           </p>
         </div>
       </PerfectScrollbar>
