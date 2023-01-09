@@ -182,15 +182,16 @@ function Table({ columns, data }) {
 
 function App(props) {
   const { tableData, tableColumns } = props;
-  console.log(tableColumns);
 
-  const newTableColumns = tableColumns.map(
+
+
+  const newTableColumns = tableColumns ? JSON.parse(tableColumns).map(
     ({ value: accessor, label: Header, ...rest }) => ({
       accessor,
       Header,
       ...rest,
     })
-  );
+  ) : [];
 
   const columns = [
     {
