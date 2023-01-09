@@ -1,5 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
+const Indicator = require("../models").Indicator;
 module.exports = (sequelize, DataTypes) => {
   class IndicatorDetails extends Model {
     /**
@@ -9,6 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      IndicatorDetails.belongsTo(models.Indicator, {
+        foreignKey: "indicator_id",
+        as: "indicator",
+      });
+      IndicatorDetails.hasMany(models.IndicatorDetailsMeta, {
+        foreignKey: "indicator_details_id",
+        as: "indicatorDetailsMeta",
+      });
     }
   }
   IndicatorDetails.init(
@@ -16,9 +25,8 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       description: DataTypes.TEXT,
       measure: DataTypes.STRING,
-      dimensions: DataTypes.STRING,
-      feasibleCharts: DataTypes.STRING,
-      data: DataTypes.JSONB,
+      dimensions: DataTypes.JSON,
+      feasibleCharts: DataTypes.JSON,
       sampleExcelPath: {
         type: DataTypes.STRING,
         allowNull: true,

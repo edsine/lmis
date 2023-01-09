@@ -1,12 +1,12 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-const PORT = process.env.PORT || 3001
-const db = require('./models')
-const sequelize = require('sequelize')
-const passport    = require('passport');
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
+const PORT = process.env.PORT || 3001;
+const db = require("./models");
+const sequelize = require("sequelize");
+const passport = require("passport");
 //const bodyParser = require("body-parser");
 
 var indexRouter = require('./routes/index');
@@ -19,6 +19,16 @@ var productRouter = require('./routes/products');
 var sectorRouter = require('./routes/sector');
 var homestatRouter = require("./routes/homestat");
 var homestat = require('./routes/homestat_data.js');
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
+var indicatorsRouter = require("./routes/indicators");
+var indicatorDetailsRouter = require("./routes/indicator_details");
+var indicatorDetailsMetaRouter = require("./routes/indicator_details_meta");
+var rolesRouter = require("./routes/roles");
+var permsRouter = require("./routes/permissions");
+var authRouter = require("./routes/auth");
+var productRouter = require("./routes/products");
+var sectorRouter = require("./routes/sector");
 var population = require("./routes/population.js");
 var employment = require("./routes/employment.js");
 var employee = require("./routes/employee.js");
@@ -30,15 +40,20 @@ var api = require("./routes/api.js");
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "jade");
 
-app.use(logger('dev'));
-app.use(express.json({limit: "100mb", parameterLimit: 100000000}));
-app.use(express.urlencoded({limit: '100mb', extended: true, parameterLimit: 100000000}));
+app.use(logger("dev"));
+app.use(express.json({ limit: "100mb", parameterLimit: 100000000 }));
+app.use(
+  express.urlencoded({
+    limit: "100mb",
+    extended: true,
+    parameterLimit: 100000000,
+  })
+);
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, "public")));
 
 //app.use(bodyParser.json({limit: "100mb", parameterLimit: 100000000}));
 //app.use(bodyParser.urlencoded({limit: '100mb', extended: true, parameterLimit: 100000000}));
@@ -47,9 +62,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(bodyParser.urlencoded({ extended: true }));
 
 var cors = require('cors');
-// const { default: HomepageStats } = require('../backend/src/components/pages/homepage_stats');
 app.use(cors());
 
+app.use("/", indexRouter);
+app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/users", usersRouter);
+app.use("/api/v1/indicators", indicatorsRouter);
+app.use("/api/v1/indicator-details", indicatorDetailsRouter);
+// app.use("/api/v1/indicator-details-meta", indicatorDetailsMetaRouter);
+app.use("/api/v1/roles", rolesRouter);
+app.use("/api/v1/permissions", permsRouter);
+app.use("/api/v1/products", productRouter);
+app.use("/api/v1/sectors", sectorRouter);
 
 app.use('/', indexRouter);
 app.use('/api/v1/auth', authRouter);
@@ -59,9 +83,10 @@ app.use('/api/v1/roles', rolesRouter);
 app.use('/api/v1/permissions', permsRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/sectors', sectorRouter);
-app.use('/api/v1/homestat', homestatRouter)
 
 //API data
+
+app.get("/api/v2/indicator-details/:indicatorId", api.findByIndicator);
 app.get("/api/v2/population", population.showAll);
 app.get("/api/v2/employment", employment.showAll);
 app.get("/api/v2/employee", employee.showAll);
@@ -74,7 +99,8 @@ app.get('/api/v1/homestat', homestat.showAll);
 
 
 //Population Indicators
-// POST call route to create records in bulk 
+// POST call route to create records in bulk
+
 app.post("/api/v1/bulkpopulation", population.bulkCreate);
 //app.post("/bulkcreate", customers.bulkCreate);
 // POST call to create single record
@@ -94,7 +120,7 @@ app.delete("/population", population.deleteAll);
 app.get("/api/v1/population/series/year", population.CustomApi);
 
 //Employment Indicators
-// POST call route to create records in bulk 
+// POST call route to create records in bulk
 app.post("/api/v1/bulkemployment", employment.bulkCreate);
 //app.post("/bulkcreate", customers.bulkCreate);
 // POST call to create single record
@@ -111,7 +137,7 @@ app.delete("/employment/:employmentId", employment.delete);
 app.delete("/employment", employment.deleteAll);
 
 //Employees Indicators
-// POST call route to create records in bulk 
+// POST call route to create records in bulk
 app.post("/api/v1/bulkemployees", employee.bulkCreate);
 //app.post("/bulkcreate", customers.bulkCreate);
 // POST call to create single record
@@ -128,7 +154,7 @@ app.delete("/employee/:employeeId", employee.delete);
 app.delete("/employee", employee.deleteAll);
 
 //Working poverty Indicators
-// POST call route to create records in bulk 
+// POST call route to create records in bulk
 app.post("/api/v1/bulkworkingpoverty", working_poverty.bulkCreate);
 //app.post("/bulkcreate", customers.bulkCreate);
 // POST call to create single record
@@ -145,7 +171,7 @@ app.delete("/workingpoverty/:workingPovertyId", working_poverty.delete);
 app.delete("/workingpoverty", working_poverty.deleteAll);
 
 //Unemployment Indicators
-// POST call route to create records in bulk 
+// POST call route to create records in bulk
 app.post("/api/v1/bulkunemployment", unemployment.bulkCreate);
 // POST call to create single record
 app.post("/unemployment", unemployment.create);
@@ -161,7 +187,7 @@ app.delete("/unemployment/:unemploymentId", unemployment.delete);
 app.delete("/unemployment", unemployment.deleteAll);
 
 //Child Labour Indicators
-// POST call route to create records in bulk 
+// POST call route to create records in bulk
 app.post("/api/v1/bulkchildlabour", child_labour.bulkCreate);
 // POST call to create single record
 app.post("/childlabour", child_labour.create);
@@ -176,32 +202,27 @@ app.delete("/childlabour/:childlabourId", child_labour.delete);
 // DELETE call to delete all the records
 app.delete("/childlabour", child_labour.deleteAll);
 
-// HOME STATS
-
-// app.post("/api/v1/homestat", HomepageStats.create);
-//app.get("/api/v1/homestat/:statID", homestat.findOne);
-
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render("error");
 });
 
 //synchronizing the database and forcing it to false so we dont lose data
 //db.sequelize.sync({ force: true }).then(() => {
- //   console.log("db has been re sync")
+//   console.log("db has been re sync")
 //})
 
 // Run server on port

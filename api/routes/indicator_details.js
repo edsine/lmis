@@ -1,14 +1,44 @@
 const express = require("express");
 const router = express.Router();
 const IndicatorDetails = require("../models").IndicatorDetails;
+const IndicatorDetailsMeta = require("../models").IndicatorDetailsMeta;
+const Indicator = require("../models").Indicator;
 const passport = require("passport");
 const passport1 = require("../config/passport");
 const Helper = require("../utils/helper");
 const multer = require("multer");
+const UPLOAD_URL = "http://localhost:3001/data/uploads/";
 const helper = new Helper();
 
 const requireToken = passport1.authenticateJWT;
 const requireCredentials = passport1.authenticateCredentials;
+
+const MIME_TYPE_MAP = {
+  "image/png": "png",
+  "image/jpeg": "jpg",
+  "image/jpg": "jpg",
+  "image/gif": "gif",
+};
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    console.log(req, file);
+    const isValid = MIME_TYPE_MAP[file.mimetype];
+
+    let error = new Error("Invalid mime type");
+    if (isValid) {
+      error = null;
+    }
+    cb(error, "public/data/uploads");
+  },
+  filename: (req, file, cb) => {
+    const name = file.originalname.toLowerCase().split(" ").join("-");
+
+    console.log(name);
+    const ext = MIME_TYPE_MAP[file.mimetype];
+    cb(null, Date.now() + "." + ext);
+  },
+});
 
 // Create a new Indicator Details
 router.post(
@@ -25,7 +55,6 @@ router.post(
           !req.body.measure ||
           !req.body.dimensions ||
           !req.body.feasibleCharts ||
-          !req.body.data ||
           !req.body.indicator_id
         ) {
           res.status(400).send({
@@ -38,20 +67,20 @@ router.post(
             measure: req.body.measure,
             dimensions: req.body.dimensions,
             feasibleCharts: req.body.feasibleCharts,
-            data: req.body.data,
             indicator_id: req.body.indicator_id,
-            sampleExcelPath: UPLOAD_URL + req.file.filename,
+            sampleExcelPath: req.file ? UPLOAD_URL + req.file.filename : "",
           })
             .then((indicatorDetail) =>
               res.status(201).send({ message: indicatorDetail })
             )
             .catch((error) => {
-              console.log(error);
+              // console.log(error);
               res.status(400).send({ message: error });
             });
         }
       })
       .catch((error) => {
+        console.log(error);
         res.status(403).send({ message: error });
       });
   }
@@ -62,7 +91,14 @@ router.get("/", requireToken, function (req, res) {
   helper
     .checkPermission(req.user.role_id, "indicator_detail_get_all")
     .then((rolePerm) => {
-      IndicatorDetails.findAll()
+      IndicatorDetails.findAll({
+        include: [
+          {
+            model: Indicator,
+            as: "indicator",
+          },
+        ],
+      })
         .then((indicatorDetails) => res.status(200).send(indicatorDetails))
         .catch((error) => {
           res.status(400).send(error);
@@ -83,7 +119,14 @@ router.get(
     helper
       .checkPermission(req.user.role_id, "indicator_detail_get")
       .then((rolePerm) => {
-        IndicatorDetails.findByPk(req.params.id)
+        IndicatorDetails.findByPk(req.params.id, {
+          include: [
+            {
+              model: IndicatorDetailsMeta,
+              as: "IndicatorDetailsMeta",
+            },
+          ],
+        })
           .then((indicatorDetail) => res.status(200).send(indicatorDetail))
           .catch((error) => {
             res.status(400).send(error);
@@ -101,6 +144,7 @@ router.put(
   requireToken,
   multer({ storage: storage }).single("sampleExcelPath"),
   function (req, res) {
+    console.log(req.body);
     helper
       .checkPermission(req.user.role_id, "indicator_detail_update")
       .then((rolePerm) => {
@@ -110,7 +154,6 @@ router.put(
           !req.body.measure ||
           !req.body.dimensions ||
           !req.body.feasibleCharts ||
-          !req.body.data ||
           !req.body.indicator_id
         ) {
           res.status(400).send({
@@ -130,11 +173,10 @@ router.put(
                       req.body.dimensions || indicatorDetail.dimensions,
                     feasibleCharts:
                       req.body.feasibleCharts || indicatorDetail.feasibleCharts,
-                    data: req.body.data || indicatorDetail.data,
                     indicator_id:
                       req.body.indicator_id || indicatorDetail.indicator_id,
                     sampleExcelPath:
-                      UPLOAD_URL + req.file.filename ||
+                      (req.file ? UPLOAD_URL + req.file.filename : "") ||
                       indicatorDetail.sampleExcelPath,
                   },
                   {

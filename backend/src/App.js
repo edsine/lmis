@@ -23,6 +23,7 @@ import EventBus from "./common/EventBus";
 import Index from "./components/include";
 import Users from "./components/users";
 import Indicators from "./components/indicators";
+import IndicatorDetails from "./components/indicator-details";
 import Population from "./components/indicators-by-subjects/population";
 import Employment from "./components/indicators-by-subjects/employment";
 import Employees from "./components/indicators-by-subjects/employees"
@@ -113,6 +114,7 @@ const App = () => {
       <Route path="/widget" element={<Widget />} />
       <Route path="/users" element={<Users />} />
       <Route path="/indicators" element={<Indicators />} />
+      <Route path="/indicator-details" element={<IndicatorDetails />} />
       <Route path="/population" element={<Population />} />
       <Route path="/employment" element={<Employment />} />
       <Route path="/employees" element={<Employees />} />
