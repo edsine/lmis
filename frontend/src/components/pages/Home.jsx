@@ -31,6 +31,7 @@ import ApexPie from '../apexcharts/ApexPie';
 import Homedata from './inc/apis/hdata_call';
 import Introdata from './inc/apis/fetch_intro';
 import Eventdata from './inc/apis/fetch_events';
+import Labourdata from './inc/apis/fetch_labour';
 // import "../../styles/aos.css";
 
 function Home() {
@@ -378,106 +379,7 @@ function Home() {
            <a href="#">View Details</a>
      </div>
    </div> */}
-
-
-          <div className="row mb-2">
-            <div className="col-md-4">
-              <div className="card flex-md-row mb-6 box-shadow h-md-250">
-                <div className="card-body d-flex flex-column ">
-                  <center><BiBuildings size={40} className="" color="#488134" /></center>
-
-                  <center>  <h2 className="mb-0">
-                    <a className="text-dark" href="#">Research</a>
-                  </h2></center>
-
-                  <center> <Link to="/trends">
-                    <small className="d-inline-block mb-2" style={{ color: 'skyblue' }}>View Details</small>
-                  </Link></center>
-                </div>
-
-
-
-              </div>
-
-            </div>
-            <div className="col-md-4">
-              <div className="card flex-md-row mb-4 box-shadow h-md-250">
-                <div className="card-body d-flex flex-column ">
-                  <center><BiBuildings size={40} className="" color="#488134" /></center>
-
-                  <center>  <h2 className="mb-0">
-                    <a className="text-dark" href="#">Hot Occupation</a>
-                  </h2></center>
-
-                  <center> <Link to="/trends">
-                    <small className="d-inline-block mb-2" style={{ color: 'skyblue' }}>View Details</small>
-                  </Link></center>
-                </div>
-
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card flex-md-row mb-4 box-shadow h-md-250">
-                <div className="card-body d-flex flex-column ">
-                  <center><BiBuildings size={40} className="" color="#488134" /></center>
-
-                  <center>  <h2 className="mb-0">
-                    <a className="text-dark" href="#">Enterpreneurship</a>
-                  </h2></center>
-
-                  <center> <Link to="/trends">
-                    <small className="d-inline-block mb-2" style={{ color: 'grey' }}>View Details</small>
-                  </Link></center>
-                </div>
-
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card flex-md-row mb-6 box-shadow h-md-250">
-                <div className="card-body d-flex flex-column ">
-                  <center><BiBuildings size={40} className="" color="#488134" /></center>
-
-                  <center>  <h2 className="mb-0">
-                    <a className="text-dark" href="#">Overseas Employment</a>
-                  </h2></center>
-
-                  <center> <Link to="/trends">
-                    <small className="d-inline-block mb-2" style={{ color: 'grey' }}>View Details</small>
-                  </Link></center>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card flex-md-row mb-4 box-shadow h-md-250">
-                <div className="card-body d-flex flex-column ">
-                  <center><BiBuildings size={40} className="" color="#488134" /></center>
-
-                  <center>  <h2 className="mb-0">
-                    <a className="text-dark" href="#">Employment Trends</a>
-                  </h2></center>
-
-                  <center> <Link to="/trends">
-                    <small className="d-inline-block mb-2" style={{ color: 'grey' }}>View Details</small>
-                  </Link></center>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card flex-md-row mb-4 box-shadow h-md-250">
-                <div className="card-body d-flex flex-column ">
-                  <center><BiBuildings size={40} className="" color="#488134" /></center>
-
-                  <center>  <h2 className="mb-0">
-                    <a className="text-dark" href="#">Statistics</a>
-                  </h2></center>
-
-                  <center> <Link to="/trends">
-                    <small className="d-inline-block mb-2" style={{ color: 'grey' }}>View Details</small>
-                  </Link></center>
-                </div>
-              </div>
-            </div>
-          </div>
+<Labourdata />
         </div>
 
 
