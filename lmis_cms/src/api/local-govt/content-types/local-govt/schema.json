@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "local_govts",
+  "info": {
+    "singularName": "local-govt",
+    "pluralName": "local-govts",
+    "displayName": "LocalGovt"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "indicator_detail_metas",
+  "info": {
+    "singularName": "indicator-detail-meta",
+    "pluralName": "indicator-detail-metas",
+    "displayName": "Indicator Detail Meta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "indicator_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::indicator-detail.indicator-detail"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "sex": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "economic_class": {
+      "type": "enumeration",
+      "enum": [
+        "test",
+        "test1"
+      ]
+    },
+    "time_period": {
+      "type": "date"
+    },
+    "frequency": {
+      "type": "float"
+    },
+    "marital_status": {
+      "type": "enumeration",
+      "enum": [
+        "Single",
+        "Married"
+      ]
+    },
+    "occupation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::occupation.occupation"
+    }
+  }
+}
