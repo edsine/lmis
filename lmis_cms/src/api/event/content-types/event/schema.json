@@ -4,7 +4,8 @@
   "info": {
     "singularName": "event",
     "pluralName": "events",
-    "displayName": "Event"
+    "displayName": "Event",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,10 +16,6 @@
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "richtext",
-      "required": true
-    },
     "event_date": {
       "type": "date"
     },
@@ -26,14 +23,21 @@
       "type": "time"
     },
     "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
