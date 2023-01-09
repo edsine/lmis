@@ -4,7 +4,8 @@
   "info": {
     "singularName": "key-fact",
     "pluralName": "key-facts",
-    "displayName": "Key Fact"
+    "displayName": "Key Fact",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,6 +35,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::sector.sector"
+    },
+    "occupation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::occupation.occupation"
     }
   }
 }
