@@ -2,10 +2,10 @@
 const Pool = require('pg').Pool
 
 const credentials = {
-  user: 'ghost',
+  user: 'posgress',
   host: 'localhost',
-  database: 'lmis',
-  password: "ghost",
+  database: 'lmis_db',
+  password: "password",
   port: 5432,
 };
 
