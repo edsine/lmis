@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_intros",
+  "info": {
+    "singularName": "home-intro",
+    "pluralName": "home-intros",
+    "displayName": "home_intro",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "detail": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 300,
+      "maxLength": 1200
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
