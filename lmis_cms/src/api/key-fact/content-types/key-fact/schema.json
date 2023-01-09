@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "key_facts",
+  "info": {
+    "singularName": "key-fact",
+    "pluralName": "key-facts",
+    "displayName": "Key Fact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "value": {
+      "type": "float"
+    },
+    "date": {
+      "type": "date"
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "sector": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sector.sector"
+    }
+  }
+}
