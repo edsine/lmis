@@ -30,6 +30,7 @@ import { FiUsers } from 'react-icons/fi';
 import ApexPie from '../apexcharts/ApexPie';
 import Homedata from './inc/apis/hdata_call';
 import Introdata from './inc/apis/fetch_intro';
+import Eventdata from './inc/apis/fetch_events';
 // import "../../styles/aos.css";
 
 function Home() {
@@ -488,52 +489,7 @@ function Home() {
             <div className="section-header">
               <h2>Upcoming Events</h2>
             </div>
-            <div className="row gy-4">
-              <div className="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={100}>
-                <div className="member">
-                  <img src={Nurhi} style={{ height: '280px', width: '350px', objectFit: 'cover' }} className="img-fluid" alt="" />
-                  <h4>Eco Voluntary Walks</h4>
-                  <span>Lagos State</span>
-                  <div className="social">
-                    view more
-                    <a href><i className="bi bi-eye" /></a>
-                  </div>
-                </div>
-              </div>{/* End Team Member */}
-              <div className="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={200}>
-                <div className="member">
-                  <img src={Ndd} className="img-fluid" style={{ height: '280px', width: '350px', objectFit: 'cover' }} alt="" />
-                  <h4>Creativity &amp; Knowledge Conference</h4>
-                  <span>Enugu State</span>
-                  <div className="social">
-                    view more
-                    <a href><i className="bi bi-eye" /></a>
-                  </div>
-                </div>
-              </div>{/* End Team Member */}
-              <div className="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={300}>
-                <div className="member">
-                  <img src={Nmis} style={{ height: '280px', width: '350px', objectFit: 'cover' }} className="img-fluid" alt="" />
-                  <h4>WOLEX Skills aquistion training</h4>
-                  <span>Kaduna</span>
-                  <div className="social">
-                    view more
-                    <a href><i className="bi bi-eye" /></a>
-                  </div>
-                </div>
-              </div>{/* End Team Member */}
-              <div className="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={400}>
-                <div className="member">
-                  <img src={Vacs} style={{ height: '280px', width: '350px', objectFit: 'cover' }} className="img-fluid" alt="" />
-                  <h4>Ministry of famers Agriculture Development</h4>
-                  <span>Benue State</span>
-                  <div className="social">
-                    view more
-                    <a href><i className="bi bi-eye" /></a>
-                  </div>
-                </div>
-              </div>{/* End Team Member */}
-            </div>
+           <Eventdata />
           </div>
         </section>{/* End Our Team Section */}
       </main>{/* End #main */}
