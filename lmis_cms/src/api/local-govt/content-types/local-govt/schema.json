@@ -4,7 +4,8 @@
   "info": {
     "singularName": "local-govt",
     "pluralName": "local-govts",
-    "displayName": "LocalGovt"
+    "displayName": "Local Govt",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
