@@ -24,7 +24,7 @@ return (
             <div className="member">
               <img src={`${BACKEND_URL_IMAGE}${post?.attributes?.featured_image?.data?.attributes?.url}`} className="img-fluid" style={{ height: '280px', width: '350px', objectFit: 'cover' }} alt="" />
               <h4>{post?.attributes?.title}</h4>
-              <span>{post?.attributes?.description}</span>
+              <span>{post?.attributes?.location}</span>
               <div className="social">
                 view more
                 <a href><i className="bi bi-eye" /></a>
