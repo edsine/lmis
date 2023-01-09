@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "indicator_details",
+  "info": {
+    "singularName": "indicator-detail",
+    "pluralName": "indicator-details",
+    "displayName": "Indicator Detail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "indicator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::indicator.indicator"
+    },
+    "dimensions": {
+      "type": "enumeration",
+      "enum": [
+        "age"
+      ]
+    },
+    "feasible_charts": {
+      "type": "enumeration",
+      "enum": [
+        "line"
+      ]
+    }
+  }
+}
