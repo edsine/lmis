@@ -4,7 +4,7 @@
   "info": {
     "singularName": "indicator",
     "pluralName": "indicators",
-    "displayName": "indicator",
+    "displayName": "Indicator",
     "description": ""
   },
   "options": {
@@ -46,6 +46,20 @@
           "localized": true
         }
       }
+    },
+    "details": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext",
+      "required": true
+    },
+    "indicator_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::indicator-detail.indicator-detail"
     }
   }
 }
