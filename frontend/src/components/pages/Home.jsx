@@ -28,7 +28,7 @@ import ApexCand from '../apexcharts/ApexCand'
 import { BiBuildings, BiBriefcase } from 'react-icons/bi';
 import { FiUsers } from 'react-icons/fi';
 import ApexPie from '../apexcharts/ApexPie';
-
+import Homedata from './hdata_call';
 // import "../../styles/aos.css";
 
 function Home() {
@@ -37,7 +37,7 @@ function Home() {
     AOS.init();
   }, []);
 
-
+ 
   return (
 
 
@@ -79,44 +79,11 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="icon-boxes position-relative">
-          <div className="container position-relative">
-            <div className="row gy-4 mt-5">
-              <div className="col-xl-3 col-md-6 card-white" data-aos="fade-up" data-aos-delay={100}>
-                <div className="icon-box zoom">
-                  <div className="" style={{ fontSize: '23px', color: 'lightgrey' }}>218,955,834</div>
-                  <hr />
-                  <h4 className="title"><a href className="stretched-link">National Population 2023</a></h4>
-                </div>
-              </div>
-              {/*End Icon Box */}
-              <div className="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay={200}>
-                <div className="icon-box zoom">
-                  <div className style={{ fontSize: '23px', color: 'lightgrey' }}>120M Approximately</div>
-                  <hr />
-                  <h4 className="title"><a href className="stretched-link">Employment Population</a></h4>
-                </div>
-              </div>
-              {/*End Icon Box */}
-              <div className="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay={300}>
-                <div className="icon-box zoom">
-                  <div className style={{ fontSize: '23px', color: 'lightgrey' }}>7.79%</div>
-                  <hr />
-                  <h4 className="title"><a href className="stretched-link">Employment Rate Macro trends</a></h4>
-                </div>
-              </div>
-              {/*End Icon Box */}
-              <div className="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay={500}>
-                <div className="icon-box zoom">
-                  <div className style={{ fontSize: '23px', color: 'lightgrey' }}>35,987</div>
-                  <hr />
-                  <h4 className="title"><a href className="stretched-link">Number of Registered Business</a></h4>
-                </div>
-              </div>
-              {/*End Icon Box */}
-            </div>
-          </div>
-        </div>
+        
+            
+            <Homedata />  
+              
+        
       </section>
       {/* End Hero Section */}
 

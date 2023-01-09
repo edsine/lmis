@@ -9,6 +9,16 @@ const sequelize = require("sequelize");
 const passport = require("passport");
 //const bodyParser = require("body-parser");
 
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var indicatorsRouter = require('./routes/indicators');
+var rolesRouter = require('./routes/roles');
+var permsRouter = require('./routes/permissions');
+var authRouter = require('./routes/auth');
+var productRouter = require('./routes/products');
+var sectorRouter = require('./routes/sector');
+var homestatRouter = require("./routes/homestat");
+var homestat = require('./routes/homestat_data.js');
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var indicatorsRouter = require("./routes/indicators");
@@ -51,7 +61,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // parse requests of content-type - application/x-www-form-urlencoded
 //app.use(bodyParser.urlencoded({ extended: true }));
 
-var cors = require("cors");
+var cors = require('cors');
 app.use(cors());
 
 app.use("/", indexRouter);
@@ -65,9 +75,14 @@ app.use("/api/v1/permissions", permsRouter);
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/sectors", sectorRouter);
 
-
-app.post("/api/v1/indicator-details-meta/:indicatorDetailsId", indicatorDetailsMetaRouter.bulkCreate);
-app.get("/api/v1/indicator-details-meta/:indicatorDetailsId", indicatorDetailsMetaRouter.findAll);
+app.use('/', indexRouter);
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/indicators', indicatorsRouter);
+app.use('/api/v1/roles', rolesRouter);
+app.use('/api/v1/permissions', permsRouter);
+app.use('/api/v1/products', productRouter);
+app.use('/api/v1/sectors', sectorRouter);
 
 //API data
 
@@ -79,6 +94,9 @@ app.get("/api/v2/working_poverty", working_poverty.showAll);
 app.get("/api/v2/unemployment", unemployment.showAll);
 app.get("/api/v2/child_labour", child_labour.showAll);
 app.get("/api/v2/indicators", api.showAll);
+app.get('/api/v1/homestat', homestat.showAll);
+
+
 
 //Population Indicators
 // POST call route to create records in bulk
@@ -183,6 +201,8 @@ app.put("/childlabour/:childlabourId", child_labour.update);
 app.delete("/childlabour/:childlabourId", child_labour.delete);
 // DELETE call to delete all the records
 app.delete("/childlabour", child_labour.deleteAll);
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

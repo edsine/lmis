@@ -50,8 +50,7 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "Indicator",
       paranoid: true,
       timestamps: true,
-      //underscored: true,
-      //freezeTableName: true
+     
     }
   );
 
