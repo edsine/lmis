@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { BACKEND_URL } from "../../../../constants";
-import {
-  BiBuoy,
-  BiCoinStack,
-  BiBriefcase,
-  BiLineChart,
-  BiNews,
-} from "react-icons/bi";
 
-const Sectors = () => {
+
+const Occupations = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/sectors`)
+    fetch(`${BACKEND_URL}/occupations`)
       .then((response) => response.json())
       .then((data) => {
         setPosts(data.data);
@@ -39,13 +33,5 @@ const Sectors = () => {
     </>
   );
 };
-//    return (
-//     posts.map((post, i) => {
-//          return (
 
-//
-//          );
-//       })
-//    );
-
-export default Sectors;
+export default Occupations;

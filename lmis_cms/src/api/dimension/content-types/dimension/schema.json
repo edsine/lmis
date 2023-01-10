@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "states",
+  "collectionName": "dimensions",
   "info": {
-    "singularName": "state",
-    "pluralName": "states",
-    "displayName": "State",
-    "description": ""
+    "singularName": "dimension",
+    "pluralName": "dimensions",
+    "displayName": "Dimension"
   },
   "options": {
     "draftAndPublish": true
@@ -15,8 +14,8 @@
     "name": {
       "type": "string"
     },
-    "description": {
-      "type": "richtext"
+    "value": {
+      "type": "string"
     }
   }
 }

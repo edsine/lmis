@@ -1,68 +1,91 @@
 import React, { useState, useEffect } from "react";
 import Content from "./Content";
-import { CDBCard, CDBCardBody, CDBDataTable, CDBRow, CDBCol, CDBContainer } from 'cdbreact';
-import Common from '../inc/Common';
-
-
+import {
+  CDBCard,
+  CDBCardBody,
+  CDBDataTable,
+  CDBRow,
+  CDBCol,
+  CDBContainer,
+} from "cdbreact";
+import Common from "../inc/Common";
+import { BACKEND_URL } from "../../constants";
 
 const IndicatorDetailsMeta = (props) => {
-    const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
 
-    const { location: { state } } = props;
+  const {
+    location: { state },
+  } = props;
 
-    console.log(state);
+  useEffect(() => {
+    fetch(`${BACKEND_URL}/indicator-detail-metas?populate=*`)
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data.data);
+        console.log(data.data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
 
-    useEffect(() => {
-        fetch(`http://localhost:3001/api/v1/indicator-details-meta/${state.id}`)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                setData(data);
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
-    }, [])
+  const tabledata = () => {
+    // const tableColumns = state.columns?.map(
+    //   ({ value: field, name: label, ...rest }) => ({
+    //     field,
+    //     label,
+    //     width: 150,
+    //     attributes: {
+    //       "aria-controls": "DataTable",
+    //     },
+    //     ...rest,
+    //   })
+    // );
 
+    const tableColumns = state.columns?.map((item, index) => {
+      item.label = item.attributes.name;
+      item.field = item.attributes.value;
+      item.width = 150;
+      return item;
+    });
 
-    function testClickEvent(param) {
-        alert('Row Click Event');
-    }
-
-
-    const tabledata = () => {
-
-
-        const tableColumns = JSON.parse(state.columns)?.map(
-            ({ value: field, ...rest }) => ({
-                field,
-                width: 150,
-                attributes: {
-                    'aria-controls': 'DataTable',
-                    'aria-label': 'Jobtitle',
-                },
-                ...rest
-            })
+    return {
+      columns: tableColumns,
+      rows: data
+        ?.filter(
+          (item) => item.attributes.indicator_detail.data.id === state.id
         )
-        return {
-            columns: tableColumns,
-            rows: data
-        };
+        .map((item, index) => {
+          tableColumns.forEach((element) => {
+            const field = element.field;
+            item[field] = item.attributes[field];
+          });
+          return item;
+        }),
     };
-    return (
-        <>
-              <Common />
-            <div className="my-5 py-5">
-                <div style={{ maxWidth: '990px', margin: 'auto' }}>
-                    <div className="card mb-3">
-                        <div className="card-body">
-                            <CDBDataTable striped bordered hover paging={false} data={tabledata()} height={295} />
-                        </div>
-                    </div>
-                </div>
+  };
+  return (
+    <>
+      <Common />
+      <div className="my-5 py-5">
+        <div style={{ maxWidth: "990px", margin: "auto" }}>
+          <div className="card mb-3">
+            <div className="card-body">
+              <CDBDataTable
+                striped
+                bordered
+                hover
+                paging={false}
+                data={tabledata()}
+                height={295}
+              />
             </div>
-        </>
-    )
-}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default IndicatorDetailsMeta;

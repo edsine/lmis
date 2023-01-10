@@ -4,7 +4,8 @@
   "info": {
     "singularName": "labour-intelligent",
     "pluralName": "labour-intelligents",
-    "displayName": "labour-intelligent"
+    "displayName": "Labour Intelligent",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,12 +19,12 @@
       "type": "string"
     },
     "icon": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "detail": {
       "type": "text",

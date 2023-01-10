@@ -1,135 +1,133 @@
 import React, { useState } from "react";
 //import Bar from './Bar';
-import { Link } from "react-router-dom";
-import {
-  BiBuoy,
-  BiCoinStack,
-  BiBriefcase,
-  BiLineChart,
-  BiNews,
-} from "react-icons/bi";
 
 import Common from "../inc/Common";
-import nigeriaHigh from "../images/ng.svg";
-import list from '../data/list';
-import Footer from "../inc/Footer";
 import Keyfact from "./inc/apis/fetch_keyfacts";
-import State from "./inc/apis/fetch_states";
 import Sectors from "./inc/apis/fetch_sectors";
-import Sectorsdesciption from "./inc/apis/fetch_sectors_description";
-
-
+import Description from "./inc/description";
 
 function Sector() {
   // const [sectorState, setSectorState] = useState()
 
-  const [filteredKeyFacts, setFilteredKeyFacts] = useState();
+  const [filteredKeyFacts, setFilteredKeyFacts] = useState(null);
 
   const [sectorDescription, setSectorDescription] = useState(null);
 
+  const [resetFilter, setResetFilter] = useState(false);
 
-
-  // const handleChange = (e) => {
-  //   const selected = e.target.value;
-  //   const selectedSectorState = list.filter((d) => d.id == selected)[0];
-  //   console.log(selectedSectorState);
-  //   setSectorState(selectedSectorState);
-
-
-  // }
-
-  const filterKeyFactsByState = (e) => {
-    const selected = e.target.value;
-    const keyFacts = filteredKeyFacts.filter(item => item.attributes.state.data.id === selected)
-    setFilteredKeyFacts(keyFacts)
-  }
+  // const filterKeyFactsByState = (e) => {
+  //   const selected = parseInt(e.target.value);
+  //   const keyFacts = filteredKeyFacts.filter(
+  //     (item) => item.attributes.state.data.id === selected
+  //   );
+  //   console.log(selected);
+  //   setFilteredKeyFacts(keyFacts);
+  // };
 
   const filterKeyFactsBySector = (e) => {
-    const selected = e.target.value;
-    const keyFacts = filteredKeyFacts.filter(item => item.attributes.sector.data.id === selected)
-    setFilteredKeyFacts(keyFacts)
-  }
+    const selected = parseInt(e.target.value);
+    if (selected === 0) {
+      setResetFilter(true);
+      return;
+    }
+    const keyFacts = filteredKeyFacts.filter(
+      (item) => item.attributes.sector.data.id === selected
+    );
+    setFilteredKeyFacts(keyFacts);
+  };
 
-  const changeSectorDescription = (e) => {
-    console.log(e.target.description);
-    setSectorDescription('dd')
-  }
+  const changeSectorDescription = ({
+    target: {
+      selectedOptions: [
+        {
+          dataset: { description },
+        },
+      ],
+    },
+  }) => {
+    setSectorDescription(description);
+  };
 
   return (
     <>
       <Common />
 
       <div className="container-fluid">
-        <div className="container mt-3 mb-3">
-          <h1>Filters</h1>
-        </div>
-
-        <div className="container">
+        <div className="container my-5">
           <div className="row">
-            <div className="col">
-              <h2>sectors</h2>
-
+            <div className="col-6">
               <div>
-                <div class="col text-center ">
-                  <select onChange={(e) => { filterKeyFactsBySector(e); changeSectorDescription(e) }}>
-                    <option selected>Select Sector</option>
+                <label>Sectors</label>
+                <div className="col text-center ">
+                  <select
+                    onChange={(e) => {
+                      filterKeyFactsBySector(e);
+                      changeSectorDescription(e);
+                    }}
+                  >
+                    <option value={0}>Select Sector</option>
                     <Sectors />
                   </select>
                 </div>
               </div>
             </div>
 
-            <div className="col">
+            {/* <div className="col">
               <h2>states</h2>
               <div>
-                <div class="col text-center ">
+                <div className="col text-center ">
                   <select
-                    class="form-select-lg mb-3"
+                    className="form-select-lg mb-3"
                     aria-label=".form-select-lg example"
-                    onChange={(e) => { filterKeyFactsByState(e) }}
+                    onChange={(e) => {
+                      filterKeyFactsByState(e);
+                    }}
                   >
-                    <option selected>Select State</option>
+                    <option>Select State</option>
                     <State />
                   </select>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
-        <div class="m-5">
+        <div className="m-5">
           <div className="container-fluid">
-            <div class="card card-margin">
+            <div className="card card-margin">
               <div
-                class="card-header"
+                className="card-header"
                 style={{ backgroundColor: "#0A6921", color: "#fff" }}
               >
                 {/* {sectorState?.restaurant} */}
               </div>
-              <div class="card-body" className="py-font py-5 px-5">
+              <div className="card-body py-font py-5 px-5">
                 {/* {sectorState?.bio} */}
-                <Sectorsdesciption sectorDescription={sectorDescription}/>
+                <Description description={sectorDescription} />
+                <h4 className="my-5">Key Facts</h4>
+                <Keyfact
+                  resetFilter={resetFilter}
+                  filteredKeyFacts={filteredKeyFacts}
+                  setFilteredKeyFacts={setFilteredKeyFacts}
+                />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="container row mb-10">
-          <h1>Key Facts</h1>
-        </div>
+        <div className="container row mb-10"></div>
 
         <div>
           <div className="card-group container-fluid">
-            <div class="row">
-              <div class="col-8">
-                <Keyfact filteredKeyFacts={filteredKeyFacts} setFilteredKeyFacts={setFilteredKeyFacts} />
+            <div className="row">
+              <div className="col-8">
                 <div className="text-center p-5">
                   {/* <img src={sectorState?.image} /> */}
                 </div>
               </div>
-              <div class="col-4">
+              {/* <div className="col-4">
                 <div className=" container card  mb-5" style={{}}>
-                  <div class="card-header">
+                  <div className="card-header">
                     <span className="card-title text-uppercase fs-2 fw-bolder">
                       Data insights
                     </span>
@@ -182,10 +180,9 @@ function Sector() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
-          {/*from here for 1*/}
         </div>
       </div>
     </>
