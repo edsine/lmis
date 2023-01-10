@@ -4,7 +4,8 @@
   "info": {
     "singularName": "statistic-summary",
     "pluralName": "statistic-summaries",
-    "displayName": "statistic-summary"
+    "displayName": "Statistic Summary",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

@@ -1,57 +1,43 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-
-
-
-import Script from 'react-load-script'
+import Script from "react-load-script";
 import "../../styles/bootstrap.min.css";
 import "../../styles/mine.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../../styles/bootstrap-icons/bootstrap-icons.css";
-import Ndd from '../images/rice.jpg'
-import Act from '../images/gr.jpg'
-import Neds from '../images/NEDS.jpg'
-import Nmis from '../images/NMIS.jpg'
-import Nurhi from '../images/NURHI.jpg'
-import Vacs from '../images/VACS.jpg'
-import Chea from '../images/unsplash_h5xEHzfepNk.png'
-import Nur from '../images/stats-img.svg'
-import Common from '../inc/Common';
-import ApexMixed from '../apexcharts/ApexMixed'
-import ApexCandle from '../apexcharts/ApexCandle'
-import ApexCand from '../apexcharts/ApexCand'
+import Ndd from "../images/rice.jpg";
+import Act from "../images/gr.jpg";
+import Neds from "../images/NEDS.jpg";
+import Nmis from "../images/NMIS.jpg";
+import Nurhi from "../images/NURHI.jpg";
+import Vacs from "../images/VACS.jpg";
+import Chea from "../images/unsplash_h5xEHzfepNk.png";
+import Nur from "../images/stats-img.svg";
+import Common from "../inc/Common";
+import ApexMixed from "../apexcharts/ApexMixed";
+import ApexCandle from "../apexcharts/ApexCandle";
+import ApexCand from "../apexcharts/ApexCand";
 // import ApexRadar from '../apexcharts/ApexRadar'
 // import ApexBob from '../apexcharts/ApexBob'
-import { BiBuildings, BiBriefcase } from 'react-icons/bi';
-import { FiUsers } from 'react-icons/fi';
-import ApexPie from '../apexcharts/ApexPie';
-import Homedata from './inc/apis/hdata_call';
-import Introdata from './inc/apis/fetch_intro';
-import Eventdata from './inc/apis/fetch_events';
-import Labourdata from './inc/apis/fetch_labour';
+import { BiBuildings, BiBriefcase } from "react-icons/bi";
+import { FiUsers } from "react-icons/fi";
+import ApexPie from "../apexcharts/ApexPie";
+import Homedata from "./inc/apis/hdata_call";
+import Introdata from "./inc/apis/fetch_intro";
+import Eventdata from "./inc/apis/fetch_events";
+import Labourdata from "./inc/apis/fetch_labour";
 // import "../../styles/aos.css";
 
 function Home() {
-
   useEffect(() => {
     AOS.init();
   }, []);
 
- 
   return (
-
-
-
-
     <div>
-
-
-
-
-
       <script src="http://localhost:3000/bootstrap.bundle.js"></script>
 
       <Script url="http://localhost:3000/aos/aos.js" />
@@ -60,33 +46,41 @@ function Home() {
       <Script url="http://localhost:3000/glightbox/js/glightbox.min.js" />
       <Script url="http://localhost:3000/isotope-layout/isotope.pkgd.min.js" />
 
-
       <Script url="http://localhost:3000/main.js" />
-
-
 
       <Common />
 
-
-      <section id="hero" className="hero" style={{ backgroundImage: `url(${Chea})`, backgroundColor: 'rgba(72, 129, 52, 0.85)', backgroundBlendMode: 'multiply', backgroundSize: 'cover', display: 'block' }}>
+      <section
+        id="hero"
+        className="hero"
+        style={{
+          backgroundImage: `url(${Chea})`,
+          backgroundColor: "rgba(72, 129, 52, 0.85)",
+          backgroundBlendMode: "multiply",
+          backgroundSize: "cover",
+          display: "block",
+        }}
+      >
         <div className="container position-relative">
           <div className="row gy-5" data-aos="fade-in">
             <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-              <h2>Welcome to <span>Nigeria Labour Market Information System</span></h2>
-              <p style={{ fontSize: '23PX' }}>We provide facts, studies and statistics</p>
+              <h2>
+                Welcome to <span>Nigeria Labour Market Information System</span>
+              </h2>
+              <p style={{ fontSize: "23PX" }}>
+                We provide facts, studies and statistics
+              </p>
               <div className="d-flex justify-content-center justify-content-lg-start">
-                <a href="#about" className="btn-get-started">Search our database</a>
+                <Link to="/indicators" className="btn-get-started">
+                  Search our database
+                </Link>
               </div>
             </div>
-            <div className="col-lg-6 order-1 order-lg-2">
-            </div>
+            <div className="col-lg-6 order-1 order-lg-2"></div>
           </div>
         </div>
-        
-            
-            <Homedata />  
-              
-        
+
+        <Homedata />
       </section>
       {/* End Hero Section */}
 
@@ -94,15 +88,15 @@ function Home() {
         <div className="container">
           <div className="row">
             <div className="my-1 col-md-6">
-              <div className='shadow'>
+              <div className="shadow">
                 <div className="card-body card-body1">
-                <h5>Nigeria Employed Age Distribution</h5>
+                  <h5>Nigeria Employed Age Distribution</h5>
                   <ApexCand />
                 </div>
               </div>
             </div>
             <div className="my-1 col-md-6">
-              <div className='shadow'>
+              <div className="shadow">
                 <div className="card-body card-body1">
                   <h5 className="activities">Nigeria Employment Rate</h5>
                   <ApexPie />
@@ -209,42 +203,69 @@ function Home() {
               </div>
               <div className="col-lg-6">
                 <div className="stats-item d-flex align-items-center">
-                  <span data-purecounter-start={0} data-purecounter-end={1} data-purecounter-duration={1} className="purecounter" />
-                  <p><strong>Nigeria Employment</strong> Statistics by sector 2021</p>
-                </div>{/* End Stats Item */}
+                  <span
+                    data-purecounter-start={0}
+                    data-purecounter-end={1}
+                    data-purecounter-duration={1}
+                    className="purecounter"
+                  />
+                  <p>
+                    <strong>Nigeria Employment</strong> Statistics by sector
+                    2021
+                  </p>
+                </div>
+                {/* End Stats Item */}
                 <div className="stats-item d-flex align-items-center">
-                  <span data-purecounter-start={0} data-purecounter-end={2} data-purecounter-duration={1} className="purecounter" />
-                  <p><strong>Unemployment rate</strong> in Nigeria 1991-2022</p>
-                </div>{/* End Stats Item */}
+                  <span
+                    data-purecounter-start={0}
+                    data-purecounter-end={2}
+                    data-purecounter-duration={1}
+                    className="purecounter"
+                  />
+                  <p>
+                    <strong>Unemployment rate</strong> in Nigeria 1991-2022
+                  </p>
+                </div>
+                {/* End Stats Item */}
                 <div className="stats-item d-flex align-items-center">
-                  <span data-purecounter-start={0} data-purecounter-end={3} data-purecounter-duration={1} className="purecounter" />
-                  <p><strong>43.9% Of working Population</strong> 18 &amp; older NBS, 2022</p>
-                </div>{/* End Stats Item */}
+                  <span
+                    data-purecounter-start={0}
+                    data-purecounter-end={3}
+                    data-purecounter-duration={1}
+                    className="purecounter"
+                  />
+                  <p>
+                    <strong>43.9% Of working Population</strong> 18 &amp; older
+                    NBS, 2022
+                  </p>
+                </div>
+                {/* End Stats Item */}
               </div>
             </div>
           </div>
-        </section>{/* End Stats Counter Section */}
-        {/* ======= Call To Action Section ======= */}
-        <section id="call-to-action" className="call-to-action" style={{ backgroundImage: `url(${Act})`, backgroundColor: 'rgba(72, 129, 52, 0.85)', backgroundBlendMode: 'multiply', backgroundSize: 'cover', marginLeft: '10%', marginRight: '10%', padding: '10px 40px', borderRadius: '15px', overflow: 'hidden' }}>
-  <Introdata />
-        
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
+        {/* End Stats Counter Section */}
+        {/* ======= Call To Action Section ======= */}
+        <section
+          id="call-to-action"
+          className="call-to-action"
+          style={{
+            backgroundImage: `url(${Act})`,
+            backgroundColor: "rgba(72, 129, 52, 0.85)",
+            backgroundBlendMode: "multiply",
+            backgroundSize: "cover",
+            marginLeft: "10%",
+            marginRight: "10%",
+            padding: "10px 40px",
+            borderRadius: "15px",
+            overflow: "hidden",
+          }}
+        >
+          <Introdata />
+        </section>
 
         {/* End Call To Action Section */}
         {/* ======= Our Services Section ======= */}
-
 
         {/* <section id="services" className="services sections-bg">
           <div className="container" data-aos="fade-up">
@@ -264,7 +285,6 @@ function Home() {
               </div> */}
 
         {/* End Service Item */}
-
 
         {/* <div className="col-lg-4 col-md-6">
                 <div className="service-item position-relative">
@@ -292,7 +312,6 @@ function Home() {
 
         {/* End Service Item */}
 
-
         {/* <div className="col-lg-4 col-md-6">
                 <div className="service-item position-relative">
                   <div className="icon">
@@ -303,7 +322,6 @@ function Home() {
                   <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                 </div>
               </div> */}
-
 
         {/* End Service Item */}
 
@@ -318,9 +336,7 @@ function Home() {
                 </div>
               </div> */}
 
-
         {/* End Service Item */}
-
 
         {/* <div className="col-lg-4 col-md-6">
                 <div className="service-item position-relative">
@@ -333,9 +349,7 @@ function Home() {
                 </div>
               </div> */}
 
-
         {/* End Service Item */}
-
 
         {/* </div>
           </div>
@@ -343,31 +357,22 @@ function Home() {
 
         {/* End Our Services Section */}
 
-
-
-
-
-
-
-
-
         <div className="container">
           <header className="blog-header pt-5 mt-5">
             <div className="row flex-nowrap justify-content-between align-items-center mb-5">
-              <div className="col-4 pt-1">
-
-              </div>
+              <div className="col-4 pt-1"></div>
               <div className="col-4 text-center">
-                <h4><a className="blog-header-logo text-dark" href="#"><b>Labour Market Intelligence</b></a></h4>
+                <h4>
+                  <a className="blog-header-logo text-dark" href="#">
+                    <b>Labour Market Intelligence</b>
+                  </a>
+                </h4>
                 <hr />
               </div>
 
-              <div className="col-4 d-flex justify-content-end align-items-center">
-
-              </div>
+              <div className="col-4 d-flex justify-content-end align-items-center"></div>
             </div>
           </header>
-
 
           {/* <div className="jumbotron p-2 p-md-5 text-white rounded bg-white">
      <div className="col-md-12  card box-shadow p-4">
@@ -379,11 +384,8 @@ function Home() {
            <a href="#">View Details</a>
      </div>
    </div> */}
-<Labourdata />
+          <Labourdata />
         </div>
-
-
-  
 
         {/* ======= Our Team Section ======= */}
         <section id="team" className="team">
@@ -391,14 +393,20 @@ function Home() {
             <div className="section-header">
               <h2>Upcoming Events</h2>
             </div>
-           <Eventdata />
+            <Eventdata />
           </div>
-        </section>{/* End Our Team Section */}
-      </main>{/* End #main */}
+        </section>
+        {/* End Our Team Section */}
+      </main>
+      {/* End #main */}
 
-      <a href="#" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short" /></a>
-
+      <a
+        href="#"
+        className="scroll-top d-flex align-items-center justify-content-center"
+      >
+        <i className="bi bi-arrow-up-short" />
+      </a>
     </div>
-  )
+  );
 }
 export default Home;
