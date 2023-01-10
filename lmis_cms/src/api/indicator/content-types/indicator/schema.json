@@ -55,11 +55,6 @@
       },
       "type": "richtext",
       "required": true
-    },
-    "indicator_details": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::indicator-detail.indicator-detail"
     }
   }
 }
