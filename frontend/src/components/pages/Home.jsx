@@ -233,7 +233,7 @@ function Home() {
                     data-purecounter-end={3}
                     data-purecounter-duration={1}
                     className="purecounter"
-                  />
+                  /> 
                   <p>
                     <strong>43.9% Of working Population</strong> 18 &amp; older
                     NBS, 2022

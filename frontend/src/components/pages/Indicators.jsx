@@ -1,96 +1,79 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from "react";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-
-
-import Script from 'react-load-script'
+import Script from "react-load-script";
 import "../../styles/bootstrap.min.css";
 import "../../styles/mine.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../../styles/bootstrap-icons/bootstrap-icons.css";
-import Ndd from '../images/rice.jpg'
-import Act from '../images/GettyImages-1194981768.webp'
-import Neds from '../images/NEDS.jpg'
-import Nmis from '../images/NMIS.jpg'
-import Nurhi from '../images/NURHI.jpg'
-import Nship from '../images/lmis_welcome.png'
-import Vacs from '../images/work.jpeg'
-import Chea from '../images/unsplash_h5xEHzfepNk.png'
-import Im from '../images/rice.jpg'
-import Nur from '../images/Logo-skills-intelligence.png'
-import Bac from '../images/back.jpg'
-import Pov from '../images/pov.jpeg'
-import Cta from '../images/cta-bg.jpg'
-import Common from '../inc/Common';
-import Indicator from './fetchindicator';
+import Ndd from "../images/rice.jpg";
+import Act from "../images/GettyImages-1194981768.webp";
+import Neds from "../images/NEDS.jpg";
+import Nmis from "../images/NMIS.jpg";
+import Nurhi from "../images/NURHI.jpg";
+import Nship from "../images/lmis_welcome.png";
+import Vacs from "../images/work.jpeg";
+import Chea from "../images/unsplash_h5xEHzfepNk.png";
+import Im from "../images/rice.jpg";
+import Nur from "../images/Logo-skills-intelligence.png";
+import Bac from "../images/back.jpg";
+import Pov from "../images/pov.jpeg";
+import Cta from "../images/cta-bg.jpg";
+import Common from "../inc/Common";
+import Indicator from "./fetchindicator";
 
 function Indicators() {
-
-
-
-    
   useEffect(() => {
     AOS.init();
   }, []);
 
+  return (
+    <div>
+      <script src="http://localhost:3000/bootstrap.bundle.js"></script>
 
+      <Script url="http://localhost:3000/aos/aos.js" />
+      <Script url="http://localhost:3000/swiper/swiper-bundle.min.js" />
+      <Script url="http://localhost:3000/purecounter/purecounter_vanilla.js" />
+      <Script url="http://localhost:3000/glightbox/js/glightbox.min.js" />
+      <Script url="http://localhost:3000/isotope-layout/isotope.pkgd.min.js" />
 
-    return (
+      <Script url="http://localhost:3000/main.js" />
 
+      <Common />
 
+      <section id="team" className="team">
+        <div className="container" data-aos="fade-up">
+          <p>
+            Home || <b style={{ color: "green" }}>Indicators Category</b>
+          </p>
+          <div className="row gy-4">
+            <Indicator />
+          </div>
+        </div>
+      </section>
+      {/* End Our Team Section */}
 
-        
-<div>
-
-    
-
-
-
-<script src="http://localhost:3000/bootstrap.bundle.js"></script>
-
-<Script  url="http://localhost:3000/aos/aos.js" />
-<Script  url="http://localhost:3000/swiper/swiper-bundle.min.js" />
-<Script  url="http://localhost:3000/purecounter/purecounter_vanilla.js" />
-<Script  url="http://localhost:3000/glightbox/js/glightbox.min.js" />
-<Script  url="http://localhost:3000/isotope-layout/isotope.pkgd.min.js" />
-
-
-<Script  url="http://localhost:3000/main.js" />
-
-
-
-<Common />
-
-  <section id="team" className="team">
-    
-    <div className="container" data-aos="fade-up">
-        <p>Home || <b  style={{color: 'green'}}>Indicators</b></p>
-      <div className="row gy-4">
-        
-       <Indicator />
-        
-      </div>
+      <a
+        href="#"
+        className="scroll-top d-flex align-items-center justify-content-center"
+      >
+        <i className="bi bi-arrow-up-short" />
+      </a>
     </div>
-  </section>{/* End Our Team Section */}
-
-<a href="#" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short" /></a>
-
-</div>
-
 
     //     <>
     //     <Common />
-        
+
     //     <div className='bg' style={{ backgroundImage: `url(${unsplash})`,backgroundPosition: 'center',
     //     backgroundSize: 'cover',
-    //     backgroundRepeat: 'no-repeat',/* 
+    //     backgroundRepeat: 'no-repeat',/*
     //     width: '100vw',
     //     height: '100vh' */ }}>
     //     <div className="container">
     //     <div className="row" style={{ display: 'flex',  justifyContent:'center', alignItems:'center', }}>
-        
+
     //  <div style={{ width: "50%",marginBottom: 30,marginTop: 30,backgroundColor: 'white' }}>
     //             <div className="row" style={{ margin: 30 }}>
     //             <div className='col-md-3' style={{ marginTop: 20 }}>
@@ -177,14 +160,14 @@ function Indicators() {
     //     <div className='col-md-3' style={{ marginTop: 20 }}>
     //     <Link className="text-black" to={'/search/6'}>Consumer prices</Link>
     //     </div>
-                   
+
     //             </div>
-                
-    //         </div>    
+
+    //         </div>
     //     </div>
 
-    //     </div> </div>  
-    //     </> 
-    )
+    //     </div> </div>
+    //     </>
+  );
 }
 export default Indicators;

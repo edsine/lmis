@@ -1,26 +1,26 @@
 // import React, { useState } from "react";
 
 // import { useEffect } from "react";
-// //import Bar from './Bar';
+//import Bar from './Bar';
 // import { Link } from "react-router-dom";
-// import {
-//   BiBuoy,
-//   BiCoinStack,
-//   BiBriefcase,
-//   BiLineChart,
-//   BiNews,
-// } from "react-icons/bi";
-// import { Polar } from "react-chartjs-2";
+import {
+  BiBuoy,
+  BiCoinStack,
+  BiBriefcase,
+  BiLineChart,
+  BiNews,
+} from "react-icons/bi";
+import { Polar } from "react-chartjs-2";
 
-// import Script from "react-load-script";
-// import "../../styles/bootstrap.min.css";
-// import "../../styles/mine.css";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-// import "../../styles/bootstrap-icons/bootstrap-icons.css";
+import Script from "react-load-script";
+import "../../styles/bootstrap.min.css";
+import "../../styles/mine.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "../../styles/bootstrap-icons/bootstrap-icons.css";
 
 // import Common from "../inc/Common";
-// import Apexradarr from "../apexcharts/apexradarr";
+import Apexradarr from "../apexcharts/apexradarr";
 
 // function Occupation() {
 //   useEffect(() => {
@@ -646,7 +646,6 @@ function Occupation() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -656,8 +655,7 @@ function Occupation() {
               <div
                 className="card-header"
                 style={{ backgroundColor: "#0A6921", color: "#fff" }}
-              >
-              </div>
+              ></div>
               <div className="card-body py-font py-5 px-5">
                 <Description description={occupationDescription} />
                 <h4 className="my-5">Key Facts</h4>
@@ -674,14 +672,80 @@ function Occupation() {
         <div className="container row mb-10"></div>
 
         <div>
-          <div className="card-group container-fluid">
+          {/* <div className="card-group container-fluid">
             <div className="row">
-              <div className="col-8">
+              <div className="col-12">
                 <div className="text-center p-5">
+                  <div class="col-12">
+                    <div className=" container card  mb-5" style={{}}>
+                      <div class="card-header">
+                        <span
+                          className="fw-bolder"
+                          style={{ fontSize: "23px" }}
+                        >
+                          Data insights
+                        </span>
+                        <BiNews
+                          size={40}
+                          color="#0A6921"
+                          className="float-end"
+                        />
+                      </div>
+
+                      <span className="" style={{ fontSize: "12px" }}>
+                        <center>
+                          LIST ALL 116 Occupations Associate professionals
+                        </center>
+                      </span>
+
+                      <ul className="list-group list-group-flush">
+                        <li className="list-group-item">
+                          <b style={{ color: "#0A6921" }}>
+                            {" "}
+                            Legal, social and cultural professionals and
+                            associate professionals: (2019 update)
+                          </b>
+                          <br />
+                          <small>
+                            Manufacturing and construction sustain massive jobs
+                            losses, but employment is growing in health care,
+                            social work and education
+                          </small>
+                        </li>
+                        <li className="list-group-item">
+                          <b style={{ color: "#0A6921" }}>
+                            {" "}
+                            kills developments and trends in the tourism sector
+                          </b>
+                          <br></br>
+                          <p>
+                            Tourism is a very complex industry made up of a
+                            number of different businesses and economic
+                            activities. It can be defined with reference to the
+                            goods and services tourists consume, where a tourist
+                            might be defined as a person who is travelling or
+                            visiting a place for a variety of purposes. This…
+                          </p>
+                        </li>
+                        <b style={{ color: "#0A6921" }}>
+                          {" "}
+                          Office associate professionals: skills opportunities
+                          and challenges (2019 update)
+                        </b>
+                        <br></br>
+                        <p>
+                          The office, or business administration associate
+                          professionals perform mostly technical tasks connected
+                          with the practical application of knowledge relating
+                          to financial accounting and transaction matters,
+                        </p>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

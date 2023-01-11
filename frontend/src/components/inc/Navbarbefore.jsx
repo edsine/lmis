@@ -36,7 +36,7 @@ function Navbarbefore() {
             </div>
             <div style={{ height: '55px', backgroundColor: '#fff' }} class="col-md-6">
                 <div class="d-flex align-items-center">
-                    <a href='https://www.nelexnigeria.com' target={'_blank'}  style={{height: '55px', backgroundColor: '#0A6921', color: '#fff', textDecoration: 'none', borderRadius: '0px'}} type="button" class="btn btn-link px-5 me-2">
+                    <a href='http://live.nelexnigeria.com' target={'_blank'}  style={{height: '55px', backgroundColor: '#0A6921', color: '#fff', textDecoration: 'none', borderRadius: '0px'}} type="button" class="btn btn-link px-5 me-2">
                         Find Jobs
                     </a>
                     <Link to={'job-statistics'}  style={{height: '55px', backgroundColor: '#0A6921', color: '#fff', textDecoration: 'none', borderRadius: '0px'}} type="button" class="btn btn-link px-5 me-2">
