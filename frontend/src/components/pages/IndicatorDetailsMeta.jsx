@@ -54,7 +54,7 @@ const IndicatorDetailsMeta = (props) => {
       columns: tableColumns,
       rows: data
         ?.filter(
-          (item) => item.attributes.indicator_detail.data.id === state.id
+          (item) => item.attributes?.indicator_detail?.data?.id === state.id
         )
         .map((item, index) => {
           tableColumns.forEach((element) => {

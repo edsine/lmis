@@ -40,7 +40,7 @@ return (
                         <div className="icon-box zoom">
                           <div className style={{ fontSize: '23px', color: 'lightgrey' }}>{post?.attributes?.stat_name}</div>
                           <hr />
-                          <h4 className="title"><a href className="stretched-link">{post?.attributes?.stat_value}</a></h4>
+                          <h4 className="title"><a href className="stretched-link">{post?.attributes?.stat_value} %</a></h4>
                         </div>
                       </div>
           );

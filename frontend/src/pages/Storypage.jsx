@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDBAccordion, MDBAccordionItem, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn, MDBRipple } from 'mdb-react-ui-kit';
-import PieChart from "./PieCharts";
-import Common from "../../inc/Common"
+import PieChart from "../components/pages/inc/PieCharts";
+import Common from "../components/inc/Common"
 
 let data = [
     ["Task", "Porcentaje"],

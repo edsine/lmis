@@ -23,7 +23,7 @@ function Navbarbefore() {
         <li><Link  to="/Data">Data Insights</Link></li>
         <li className="dropdown"><Link href="#"><span>More Tools</span> <i className="bi bi-chevron-down dropdown-indicator" /></Link>
           <ul>
-            <li><a href="https://www.nelexnigeria.com">Find Jobs</a></li>
+            <li><a href="http://live.nelexnigeria.com">Find Jobs</a></li>
             <li className="dropdown"><Link to="/tools"><span>Online Tools</span> <i className="bi bi-chevron-down dropdown-indicator" /></Link>
               <ul>
                 <li><Link to='/viewtools'>Overview</Link></li>

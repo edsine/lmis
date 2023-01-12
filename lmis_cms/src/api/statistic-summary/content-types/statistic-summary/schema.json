@@ -20,7 +20,7 @@
       "type": "text"
     },
     "stat_value": {
-      "type": "biginteger",
+      "type": "float",
       "required": true
     },
     "stat_source": {
@@ -30,9 +30,9 @@
     "stat_prefix": {
       "type": "enumeration",
       "enum": [
-        "percent",
+        "Percent",
         "NGN",
-        "total"
+        "Total"
       ]
     }
   }

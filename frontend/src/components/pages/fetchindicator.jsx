@@ -15,42 +15,41 @@ const Indicator = () => {
       });
   }, []);
 
-  return (
-    <div>
-      {posts && posts.map((post, index) => {
-        return (
-          <div
-            className="col-xl-3 col-md-6 d-flex"
-            data-aos="fade-up"
-            data-aos-delay={300}
-            key={index}
-          >
-            <div className="member">
-              <img
-                src={`${BACKEND_URL_IMAGE}${post?.attributes?.image?.data?.attributes?.url}`}
-                style={{ height: "280px", width: "350px", objectFit: "cover" }}
-                className="img-fluid"
-                alt=""
-              />
-              <h4>{post?.attributes.name}</h4>
-              <p>{post?.attributes.description}</p>
+  if (posts) {
+    return posts.map((post, index) => {
+      return (
+        <div
+          className="col-xl-3 col-md-6 d-flex"
+          data-aos="fade-up"
+          data-aos-delay={300}
+          key={index}
+        >
+          <div className="member">
+            <img
+              src={`${BACKEND_URL_IMAGE}${post?.attributes?.image?.data?.attributes?.url}`}
+              style={{ height: "280px", width: "350px", objectFit: "cover" }}
+              className="img-fluid"
+              alt=""
+            />
+            <h4>{post?.attributes.name}</h4>
+            <p>{post?.attributes.description}</p>
 
-              <Link
-                to={{
-                  pathname: "/indicator-details",
-                  state: post?.id,
-                }}
-              >
-                <div className="social">
-                  <small style={{ color: "red" }}>Read more</small>
-                </div>
-              </Link>
-            </div>
+            <Link
+              to={{
+                pathname: "/indicator-details",
+                state: post?.id,
+              }}
+            >
+              <div className="social">
+                <small style={{ color: "red" }}>Read more</small>
+              </div>
+            </Link>
           </div>
-        );
-      })}
-    </div>
-  );
+        </div>
+      );
+    });
+  }
+  return <div></div>;
 };
 
 export default Indicator;
