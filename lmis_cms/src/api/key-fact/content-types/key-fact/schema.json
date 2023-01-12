@@ -40,6 +40,16 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::occupation.occupation"
+    },
+    "images_icons": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
