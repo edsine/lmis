@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "states",
+  "collectionName": "feasible_charts",
   "info": {
-    "singularName": "state",
-    "pluralName": "states",
-    "displayName": "State",
-    "description": ""
+    "singularName": "feasible-chart",
+    "pluralName": "feasible-charts",
+    "displayName": "Feasible Chart"
   },
   "options": {
     "draftAndPublish": true
@@ -15,8 +14,8 @@
     "name": {
       "type": "string"
     },
-    "description": {
-      "type": "richtext"
+    "value": {
+      "type": "string"
     }
   }
 }

@@ -18,22 +18,20 @@
     "description": {
       "type": "richtext"
     },
+    "dimensions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dimension.dimension"
+    },
+    "feasible_charts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feasible-chart.feasible-chart"
+    },
     "indicator": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::indicator.indicator"
-    },
-    "dimensions": {
-      "type": "enumeration",
-      "enum": [
-        "age"
-      ]
-    },
-    "feasible_charts": {
-      "type": "enumeration",
-      "enum": [
-        "line"
-      ]
     }
   }
 }
