@@ -1374,10 +1374,10 @@
 // export default Occupation;
 
 import React, { useState } from "react";
-import Common from "../inc/Common";
-import Keyfact from "./inc/apis/fetch_keyfacts";
-import State from "./inc/apis/fetch_states";
-import Description from "./inc/description";
+import Common from "../components/inc/Common";
+import Keyfact from "../components/pages/inc/apis/fetch_keyfacts";
+import State from "../components/pages/inc/apis/fetch_states";
+import Description from "../components/pages/inc/description";
 
 function Country() {
   const [filteredKeyFacts, setFilteredKeyFacts] = useState(null);
