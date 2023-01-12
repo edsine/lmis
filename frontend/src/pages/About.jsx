@@ -1,24 +1,12 @@
 import React, { useState } from 'react';
-// import VMC from './inc/Vmc';
-// import { Link } from 'react-router-dom'
 import { Line } from 'react-chartjs-2';
-import { Bar } from 'react-chartjs-2';
-import { Pie } from 'react-chartjs-2';
-import { Radar } from 'react-chartjs-2';
-import { Polar } from 'react-chartjs-2';
-import Common from '../inc/Common';
-import ApexCandle from '../apexcharts/ApexCandle'
-import ApexCand from '../apexcharts/ApexCand'
-import ApexRadar from '../apexcharts/ApexRadar'
-import ApexBob from '../apexcharts/ApexBob'
-import Im from '../images/rice.jpg'
-import Nship from '../images/lmis_welcome.png'
-
-// import { CDBContainer } from 'cdbreact';
-// import Service4 from '../images/services4.jpg';
-// import Service2 from '../images/services2.jpg';
-// import Service5 from '../images/services5.jpg';
-// import { BarChartLine } from 'react-bootstrap-icons';
+import Common from '../components/inc/Common';
+import ApexCandle from '../components/apexcharts/ApexCandle'
+import ApexCand from '../components/apexcharts/ApexCand'
+import ApexRadar from '../components/apexcharts/ApexRadar'
+import ApexBob from '../components/apexcharts/ApexBob'
+import Im from '../components/images/rice.jpg'
+import Nship from '../components/images/lmis_welcome.png'
 
 
 function Aboutus() {
@@ -29,7 +17,6 @@ function Aboutus() {
                 label: 'Series 1',
                 backgroundColor: 'rgba(194, 116, 161, 0.5)',
                 borderColor: 'rgb(194, 116, 161)',
-                backgroundColor: 'orange',
                 fill: false,
                 data: [50, 40, 50, 60, 50, 60, 70, 60, 50, 40, 30, 20],
             },
@@ -37,7 +24,6 @@ function Aboutus() {
                 label: 'Series 2',
                 backgroundColor: 'rgba(71, 225, 167, 0.5)',
                 borderColor: 'green',
-                backgroundColor: 'black',
                 fill: false,
                 data: [60, 55, 40, 45, 56, 46, 56, 70, 40, 47, 77, 99],
             },
@@ -45,7 +31,6 @@ function Aboutus() {
                 label: 'Series 3',
                 backgroundColor: 'rgba(71, 225, 167, 0.5)',
                 borderColor: 'blue',
-                backgroundColor: 'yellow',
                 fill: false,
                 data: [0, 15, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120],
             },
@@ -53,7 +38,6 @@ function Aboutus() {
                 label: 'Series 4',
                 backgroundColor: 'rgba(71, 225, 167, 0.5)',
                 borderColor: ' rgb(71, 225, 167)',
-                backgroundColor: 'yellow',
                 fill: false,
                 data: [80, 85, 100, 100, 90, 105, 100, 90, 80, 30, 20, 0],
             }

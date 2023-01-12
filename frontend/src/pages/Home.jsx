@@ -3,32 +3,20 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Script from "react-load-script";
-import "../../styles/bootstrap.min.css";
-import "../../styles/mine.css";
+import "../styles/bootstrap.min.css";
+import "../styles/mine.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../../styles/bootstrap-icons/bootstrap-icons.css";
-import Ndd from "../images/rice.jpg";
-import Act from "../images/gr.jpg";
-import Neds from "../images/NEDS.jpg";
-import Nmis from "../images/NMIS.jpg";
-import Nurhi from "../images/NURHI.jpg";
-import Vacs from "../images/VACS.jpg";
-import Chea from "../images/unsplash_h5xEHzfepNk.png";
-import Nur from "../images/stats-img.svg";
-import Common from "../inc/Common";
-import ApexMixed from "../apexcharts/ApexMixed";
-import ApexCandle from "../apexcharts/ApexCandle";
-import ApexCand from "../apexcharts/ApexCand";
-// import ApexRadar from '../apexcharts/ApexRadar'
-// import ApexBob from '../apexcharts/ApexBob'
-import { BiBuildings, BiBriefcase } from "react-icons/bi";
-import { FiUsers } from "react-icons/fi";
-import ApexPie from "../apexcharts/ApexPie";
-import Homedata from "./inc/apis/hdata_call";
-import Introdata from "./inc/apis/fetch_intro";
-import Eventdata from "./inc/apis/fetch_events";
-import Labourdata from "./inc/apis/fetch_labour";
+import "../styles/bootstrap-icons/bootstrap-icons.css";
+import Act from "../components/images/gr.jpg";
+import Chea from "../components/images/unsplash_h5xEHzfepNk.png";
+import Nur from "../components/images/stats-img.svg";
+import Common from "../components/inc/Common";
+import ApexPie from "../components/apexcharts/ApexPie";
+import Homedata from "../components/pages/inc/apis/hdata_call";
+import Introdata from "../components/pages/inc/apis/fetch_intro";
+import Eventdata from "../components/pages/inc/apis/fetch_events";
+import Labourdata from "../components/pages/inc/apis/fetch_labour";
 // import "../../styles/aos.css";
 
 function Home() {
@@ -91,7 +79,6 @@ function Home() {
               <div className="shadow">
                 <div className="card-body card-body1">
                   <h5>Nigeria Employed Age Distribution</h5>
-                  <ApexCand />
                 </div>
               </div>
             </div>

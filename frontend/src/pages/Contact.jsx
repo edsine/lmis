@@ -1,6 +1,6 @@
 import React from 'react';
-import BallotBox from '../images/Ballot_Box.jpg'
-import Common from '../inc/Common';
+import BallotBox from '../components/images/Ballot_Box.jpg'
+import Common from '../components/inc/Common';
 
 function Contactus() {
     return (

@@ -1,28 +1,12 @@
 import React, { useEffect } from "react";
-
-import { Link } from "react-router-dom";
-
 import Script from "react-load-script";
-import "../../styles/bootstrap.min.css";
-import "../../styles/mine.css";
+import "../styles/bootstrap.min.css";
+import "../styles/mine.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../../styles/bootstrap-icons/bootstrap-icons.css";
-import Ndd from "../images/rice.jpg";
-import Act from "../images/GettyImages-1194981768.webp";
-import Neds from "../images/NEDS.jpg";
-import Nmis from "../images/NMIS.jpg";
-import Nurhi from "../images/NURHI.jpg";
-import Nship from "../images/lmis_welcome.png";
-import Vacs from "../images/work.jpeg";
-import Chea from "../images/unsplash_h5xEHzfepNk.png";
-import Im from "../images/rice.jpg";
-import Nur from "../images/Logo-skills-intelligence.png";
-import Bac from "../images/back.jpg";
-import Pov from "../images/pov.jpeg";
-import Cta from "../images/cta-bg.jpg";
-import Common from "../inc/Common";
-import Indicator from "./fetchindicator";
+import "../styles/bootstrap-icons/bootstrap-icons.css";
+import Common from "../components/inc/Common";
+import Indicator from "../components/pages/fetchindicator";
 
 function Indicators() {
   useEffect(() => {
