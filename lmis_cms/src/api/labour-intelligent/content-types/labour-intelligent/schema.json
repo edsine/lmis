@@ -29,6 +29,9 @@
     "detail": {
       "type": "text",
       "required": true
+    },
+    "status": {
+      "type": "boolean"
     }
   }
 }
