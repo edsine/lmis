@@ -28,6 +28,9 @@
         "videos",
         "audios"
       ]
+    },
+    "status": {
+      "type": "boolean"
     }
   }
 }

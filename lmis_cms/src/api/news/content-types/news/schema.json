@@ -4,7 +4,8 @@
   "info": {
     "singularName": "news",
     "pluralName": "news-collection",
-    "displayName": "News"
+    "displayName": "News",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,14 +19,15 @@
       "type": "richtext"
     },
     "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "news_categories": {
       "type": "relation",
@@ -34,6 +36,9 @@
     },
     "date": {
       "type": "datetime"
+    },
+    "status": {
+      "type": "boolean"
     }
   }
 }
