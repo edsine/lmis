@@ -4,6 +4,7 @@ import Content from "./Content";
 import { CDBCard, CDBCardBody, CDBDataTable, CDBRow, CDBCol, CDBContainer } from 'cdbreact';
 import Common from '../inc/Common';
 import Button from 'react-bootstrap/Button';
+import { BACKEND_URL } from "../../constants";
 
 const IndicatorDetails = (props) => {
     const [data, setData] = useState(null);
@@ -11,33 +12,28 @@ const IndicatorDetails = (props) => {
     const { location: { state } } = props;
 
     useEffect(() => {
-        fetch(`http://localhost:3001/api/v2/indicator-details/${state}`)
+        fetch(`${BACKEND_URL}/indicator-details?populate=*`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
-                setData(data);
+                console.log(data.data);
+                setData(data.data);
             })
             .catch((err) => {
                 console.log(err.message);
             });
-    }, [])
-
-
-    function testClickEvent(param) {
-        alert('Row Click Event');
-    }
+    }, [state])
 
 
     const tabledata = () => {
         return {
             columns: [
                 {
-                    label: 'Title',
-                    field: 'title',
+                    label: 'Name',
+                    field: 'name',
                     width: 150,
                     attributes: {
                         'aria-controls': 'DataTable',
-                        'aria-label': 'Jobtitle',
+                        'aria-label': 'Name',
                     },
                 },
                 {
@@ -46,23 +42,20 @@ const IndicatorDetails = (props) => {
                     width: 270,
                 },
                 {
-                    label: 'Measure',
-                    field: 'measure',
-                    width: 200,
-                },
-                {
                     label: 'Action',
                     field: 'action',
                     width: 200,
                 }
             ],
-            rows: data?.map((item, index) => {
+            rows: data?.filter(item => item.attributes.indicator.data.id === state).map((item, index) => {
+                item.name = item.attributes.name;
+                item.description = item.attributes.description;
                 item.action = (
                     <Button variant="success"><Link key={index} to={{
                         pathname: '/indicator-details-meta',
                         state: {
-                            id: item.id,
-                            columns: item.dimensions
+                            id: item?.id,
+                            columns: item?.attributes?.dimensions?.data
                         }
                     }}><div className="social">
                             <small style={{ color: '#ffffff' }}>View data</small>

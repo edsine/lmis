@@ -15,10 +15,8 @@
     "name": {
       "type": "string"
     },
-    "local_govts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::local-govt.local-govt"
+    "description": {
+      "type": "richtext"
     }
   }
 }

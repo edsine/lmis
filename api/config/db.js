@@ -5,7 +5,7 @@ const credentials = {
   user: 'posgress',
   host: 'localhost',
   database: 'lmis_db',
-  password: "password",
+  password: "root1234",
   port: 5432,
 };
 
