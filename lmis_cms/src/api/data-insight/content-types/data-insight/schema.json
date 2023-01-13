@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "key_facts",
+  "collectionName": "data_insights",
   "info": {
-    "singularName": "key-fact",
-    "pluralName": "key-facts",
-    "displayName": "Key Fact",
+    "singularName": "data-insight",
+    "pluralName": "data-insights",
+    "displayName": "Data Insight",
     "description": ""
   },
   "options": {
@@ -17,39 +17,38 @@
       "required": true
     },
     "description": {
-      "type": "richtext",
-      "required": true
+      "type": "richtext"
     },
-    "value": {
-      "type": "float"
-    },
-    "date": {
-      "type": "date"
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "state": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::state.state"
     },
-    "sector": {
+    "indicator": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::sector.sector"
+      "target": "api::indicator.indicator"
     },
     "occupation": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::occupation.occupation"
     },
-    "images_icons": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+    "sector": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sector.sector"
     }
   }
 }
