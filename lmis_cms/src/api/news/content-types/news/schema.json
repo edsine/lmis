@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "indicators",
+  "collectionName": "news_collection",
   "info": {
-    "singularName": "indicator",
-    "pluralName": "indicators",
-    "displayName": "Indicator",
+    "singularName": "news",
+    "pluralName": "news-collection",
+    "displayName": "News",
     "description": ""
   },
   "options": {
@@ -18,7 +18,7 @@
     "description": {
       "type": "richtext"
     },
-    "image": {
+    "featured_image": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -28,6 +28,14 @@
         "videos",
         "audios"
       ]
+    },
+    "news_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::news-category.news-category"
+    },
+    "date": {
+      "type": "datetime"
     },
     "status": {
       "type": "boolean"

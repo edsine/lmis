@@ -173,6 +173,9 @@
     },
     "country_of_destination": {
       "type": "string"
+    },
+    "status": {
+      "type": "boolean"
     }
   }
 }
