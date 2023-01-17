@@ -1,37 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import { Bar } from 'react-chartjs-2';
-import axios from 'axios';
+import { Line } from 'react-chartjs-2';
 
-const CalledChart = () => {
+function ChartContainer() {
   const [chartData, setChartData] = useState({});
 
   useEffect(() => {
-    axios
-      .get('http://localhost:1337/api/indicator-detail-metas')
-      .then(res => {
-        setChartData(res.data);
+    fetch('http://localhost:1337/api/indicator-detail-metas')
+      .then(response => response.json())
+      .then(data => {
+        setChartData({
+          labels: data.labels,
+          datasets: [
+            {
+              label: 'Chart Data',
+              data: data.data,
+              backgroundColor: 'rgba(75,192,192,0.4)',
+              borderColor: 'rgba(75,192,192,1)'
+            }
+          ]
+        });
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(error => console.log(error));
   }, []);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-8 mx-auto">
-          <h2 className="text-center">Bar Chart</h2>
-          <Bar
-            data={chartData}
-            options={{
-              responsive: true,
-              maintainAspectRatio: false
-            }}
-          />
-        </div>
-      </div>
+    <div>
+      {chartData.datasets ? (
+        <Line
+          data={chartData}
+          options={{
+            responsive: true,
+            maintainAspectRatio: false
+          }}
+        />
+      ) : null}
     </div>
   );
-};
+}
 
-export default CalledChart;
+export default ChartContainer;

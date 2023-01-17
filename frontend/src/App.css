@@ -656,3 +656,7 @@ body {
 
  
 }
+
+.dropdown .lang-dropdown-item a, .dropdown button {
+  color: #ffffff !important;
+}
