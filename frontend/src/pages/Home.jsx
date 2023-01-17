@@ -17,6 +17,7 @@ import Homedata from "../components/pages/inc/apis/hdata_call";
 import Introdata from "../components/pages/inc/apis/fetch_intro";
 import Eventdata from "../components/pages/inc/apis/fetch_events";
 import Labourdata from "../components/pages/inc/apis/fetch_labour";
+import ApexCand from "../components/apexcharts/ApexCand";
 // import "../../styles/aos.css";
 
 function Home() {
@@ -79,7 +80,7 @@ function Home() {
               <div className="shadow">
                 <div className="card-body card-body1">
                   <h5>Nigeria Employed Age Distribution</h5>
-                  
+                  <ApexCand></ApexCand>
                 </div>
               </div>
             </div>

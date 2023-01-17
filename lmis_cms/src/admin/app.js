@@ -25,22 +25,34 @@ export default {
       // overwrite light theme properties
       light: {
         colors: {
-          primary100: '#478A2D',
-          primary200: '#478A2D',
-          primary500: '#478A2D',
-          primary600: '#478A2D',
-          primary700: '#478A2D',
+          // primary100: '#478A2D',
+          // primary200: '#478A2D',
+          // primary500: '#478A2D',
+          // primary600: '#478A2D',
+          // primary700: '#478A2D',
+          // danger700: '#b72b1a'
+          primary100: '#f6ecfc',
+          primary200: '#e0c1f4',
+          primary500: '#ac73e6',
+          primary600: '#9736e8',
+          primary700: '#8312d1',
           danger700: '#b72b1a'
         },
       },
 
       // overwrite dark theme properties
       dark: {
-        primary100: '#478A2D',
-        primary200: '#478A2D',
-        primary500: '#478A2D',
-        primary600: '#478A2D',
-        primary700: '#478A2D',
+        // primary100: '#478A2D',
+        // primary200: '#478A2D',
+        // primary500: '#478A2D',
+        // primary600: '#478A2D',
+        // primary700: '#478A2D',
+        // danger700: '#b72b1a'
+        primary100: '#f6ecfc',
+        primary200: '#e0c1f4',
+        primary500: '#ac73e6',
+        primary600: '#9736e8',
+        primary700: '#8312d1',
         danger700: '#b72b1a'
       }
     },
