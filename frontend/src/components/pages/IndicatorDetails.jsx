@@ -4,6 +4,7 @@ import Content from "./Content";
 import { CDBCard, CDBCardBody, CDBDataTable, CDBRow, CDBCol, CDBContainer } from 'cdbreact';
 import Common from '../inc/Common';
 import Button from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown';
 import { BACKEND_URL } from "../../constants";
 
 const IndicatorDetails = (props) => {
@@ -51,17 +52,62 @@ const IndicatorDetails = (props) => {
                 item.name = item.attributes.name;
                 item.description = item.attributes.description;
                 item.action = (
-                    <Button variant="success"><Link key={index} to={{
-                        pathname: '/indicator-details-meta',
-                        state: {
-                            id: item?.id,
-                            columns: item?.attributes?.dimensions?.data
-                        }
-                    }}><div className="social">
-                            <small style={{ color: '#ffffff' }}>View data</small>
-                        </div></Link>
-                        </Button>
-                    
+                    // <Button variant="success">
+                    //     <Link key={index} to={{
+                    //         pathname: '/indicator-details-meta',
+                    //         state: {
+                    //             id: item?.id,
+                    //             columns: item?.attributes?.dimensions?.data
+                    //         }
+                    //     }}>
+                    //         <div className="social">
+                    //             <small style={{ color: '#ffffff' }}>View data</small>
+                    //         </div>
+                    //     </Link>
+                    // </Button>
+
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success">
+                            <div className="social"  >
+                                <small style={{ color: '#ffffff' }} id="dropdown-basic">Select Action</small>
+                            </div>
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item>
+
+                                <Link key={index} to={{
+                                    pathname: '/indicator-details-meta',
+                                    state: {
+                                        id: item?.id,
+                                        columns: item?.attributes?.dimensions?.data
+                                    }
+                                }}>
+
+                                    View data
+
+                                </Link>
+
+                            </Dropdown.Item>
+
+                            <Dropdown.Item >
+                                <Link key={index} to={{
+                                    pathname: '/indicator-details-meta-chart',
+                                    state: {
+                                        id: item?.id,
+                                        columns: item?.attributes?.dimensions?.data
+                                    }
+                                }}>
+                                    View Chart
+
+                                </Link>
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+
+
+
+
                 )
                 return item;
             })

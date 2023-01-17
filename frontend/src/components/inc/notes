@@ -908,3 +908,79 @@ my-0 /* margin-top+bottom */
         "Tsafe", ]
         "Zurmi"
     ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { Bar } from 'react-chartjs-2';
+
+const IndicatorDetailsMeta = (props) => {
+  const [data, setData] = useState(null);
+  const [chartData, setChartData] = useState({});
+
+  useEffect(() => {
+    fetch(`${BACKEND_URL}/indicator-detail-metas?populate=*`)
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data.data);
+        // map over data to create chartData
+        const labels = [];
+        const values = [];
+        data.data
+          .filter((item) => item.attributes?.indicator_detail?.data?.id === state.id)
+          .map((item) => {
+            labels.push(item.attributes.name);
+            values.push(item.attributes.value);
+          });
+        setChartData({
+          labels: labels,
+          datasets: [
+            {
+              label: 'Values',
+              data: values,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+            }
+          ]
+        });
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
+
+  return (
+    <>
+      <Common />
+      <div className="my-5 py-5">
+        <div style={{ maxWidth: "990px", margin: "auto" }}>
+          <Bar
+            data={chartData}
+            width={100}
+            height={50}
+            options={{ maintainAspectRatio: false }}
+          />
+        </div>
+      </div>
+    </>
+  );
+};
+export default IndicatorDetailsMeta;
+
+

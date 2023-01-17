@@ -99,7 +99,7 @@ const IndicatorDetailsMeta = (props) => {
             {
               <Table
                 tableData={tableData}
-                tableColumns={JSON.parse(indicatorDetails.dimensions)}
+                tableColumns={indicatorDetails.dimensions}
               />
             }
           </div>

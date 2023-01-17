@@ -28,6 +28,7 @@ import EmpStats from "./components/pages/empstats";
 import SkillBank from "./components/pages/SkillBank";
 import IndicatorDetails from './components/pages/IndicatorDetails';
 import IndicatorDetailsMeta from './components/pages/IndicatorDetailsMeta';
+import IndicatorDetailsMetaChart from './components/pages/IndicatorDetailsMetaCharts';
 
 
 
@@ -46,6 +47,7 @@ function App() {
           <Route exact path="/Indicators" component={Indicators} />
           <Route exact path="/indicator-details" component={IndicatorDetails} />
           <Route exact path="/indicator-details-meta" component={IndicatorDetailsMeta} />
+          <Route exact path="/indicator-details-meta-chart" component={IndicatorDetailsMetaChart} />
           <Route exact path="/job-statistics" component={Nelex} />
           <Route exact path="/search/:id" component={props => (<SearchIndicators {...props} key={window.location.pathname} />)} />
           <Route exact path="/single-search/:id" component={props => (<SingleSearch {...props} key={window.location.pathname} />)} />
