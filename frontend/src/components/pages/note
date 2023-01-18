@@ -1,0 +1,316 @@
+
+
+
+
+
+
+// import Common from "../inc/Common";
+// import { BACKEND_URL } from "../../constants";
+// import { Bar } from 'react-chartjs-2';
+
+// const IndicatorDetailsMetaChart = (props) => {
+//     const [data, setData] = useState(null);
+//     const [chartData, setChartData] = useState({});
+//     const [selectedOption, setSelectedOption] = useState("Option 1");
+
+//     useEffect(() => {
+//         fetch(`${BACKEND_URL}/indicator-detail-metas?populate=*`)
+//             .then((response) => response.json())
+//             .then((data) => {
+//                 setData(data.data);
+//                 updateChartData(selectedOption);
+//             })
+//             .catch((err) => {
+//                 console.log(err.message);
+//             });
+//     }, []);
+
+//     const updateChartData = (selectedOption) => {
+//         const {
+//             location: { state },
+//         } = props;
+//         const labels = [];
+//         const values = [];
+
+//         data
+//             .filter((item) => item.attributes?.indicator_detail?.data?.id === state.id)
+//             .map((item) => {
+//                 if (selectedOption === "Option 1") {
+//                     labels.push(item.attributes.sex);
+//                     values.push(item.attributes.age);
+//                 } else if (selectedOption === "Option 2") {
+//                     labels.push(item.attributes.marital_status);
+//                     values.push(item.attributes.frequency);
+//                 } else if (selectedOption === "Option 3") {
+//                     labels.push(item.attributes.year);
+//                     values.push(item.attributes.gdp);
+//                 }
+//             });
+//         setChartData({
+//             labels: labels,
+//             datasets: [
+//                 {
+//                     label: selectedOption,
+//                     data: values,
+//                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
+//                     borderColor: 'rgba(255, 99, 132, 1)',
+//                     borderWidth: 1
+//                 }
+
+//             ]
+//         });
+//     }
+
+//     return (
+//         <>
+//             <Common />
+//             <div className="container">
+//                 <div className="row">
+//                     <div className="my-5 col-md-12">
+//                         <div className='card shadow'>
+//                             <div className="card-body card-body1">
+//                                 <div className="dropdown">
+//                                     <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+//                                         {selectedOption}
+//                                     </button>
+//                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+//                                         <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 1")}>Option 1</a>
+//                                         <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 2")}>Option 2</a>
+//                                         <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 3")}>Option 3</a>
+//                                     </div>
+//                                 </div>
+//                                 <Bar data={chartData} width={100}
+//                                     height={40} options={{ responsive: true }} />
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </>
+//     );
+// };
+// export default IndicatorDetailsMetaChart;
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import Content from "./Content";
+// import {
+//   CDBCard,
+//   CDBCardBody,
+//   CDBDataTable,
+//   CDBRow,
+//   CDBCol,
+//   CDBContainer,
+// } from "cdbreact";
+// import Common from "../inc/Common";
+// import { BACKEND_URL } from "../../constants";
+// import { Bar } from 'react-chartjs-2';
+// import Dropdown from 'react-bootstrap/Dropdown';
+
+// const IndicatorDetailsMetaChart = (props) => {
+//   const [data, setData] = useState(null);
+//   const [chartData, setChartData] = useState({});
+//   const [selectedOption, setSelectedOption] = useState("Option 1");
+
+//   useEffect(() => {
+//     fetch(`${BACKEND_URL}/indicator-detail-metas?populate=*`)
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setData(data.data);
+//         updateChartData(selectedOption);
+//       })
+//       .catch((err) => {
+//         console.log(err.message);
+//       });
+//   }, []);
+
+//   const updateChartData = (selectedOption) => {
+//     const {
+//       location: { state },
+//     } = props;
+//     const labels = [];
+//     const values = [];
+
+//     data
+//       .filter((item) => item.attributes?.indicator_detail?.data?.id === state.id)
+//       .map((item) => {
+//         if (selectedOption === "Option 1") {
+//           labels.push(item.attributes.sex);
+//           values.push(item.attributes.age);
+//         } else if (selectedOption === "Option 2") {
+//           labels.push(item.attributes.marital_status);
+//           values.push(item.attributes.frequency);
+//         } else if (selectedOption === "Option 3") {
+//           labels.push(item.attributes.year);
+//           values.push(item.attributes.gdp);
+//         }
+//       });
+//     setChartData({
+//       labels: labels,
+//       datasets: [
+//         {
+//           label: selectedOption,
+//           data: values,
+//           backgroundColor: 'rgba(255, 99, 132, 0.2)',
+//           borderColor: 'rgba(255, 99, 132, 1)',
+//           borderWidth: 1
+//         }
+
+//       ]
+//     });
+//   }
+
+//   return (
+//     <>
+//       <Common />
+//       <div className="container">
+//         <div className="row">
+//           <div className="my-5 col-md-12">
+//             <div className='card shadow'>
+//               <div className="card-body card-body1">
+//                 {/* <div className="dropdown">
+//                   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+//                     {selectedOption}
+//                   </button>
+//                   <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+//                     <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 1")}>Option 1</a>
+//                     <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 2")}>Option 2</a>
+//                     <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 3")}>Option 3</a>
+//                   </div>
+//                 </div> */}
+
+
+
+//                 <Dropdown>
+//                   <Dropdown.Toggle variant="success" id="dropdown-basic">
+//                     Dropdown Button
+//                   </Dropdown.Toggle>
+
+//                   <Dropdown.Menu>
+//                     <Dropdown.Item >
+//                       <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 1")}>Option 1</a>
+//                     </Dropdown.Item>
+//                     <Dropdown.Item >
+//                       <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 2")}>Option 2</a>
+//                     </Dropdown.Item>
+//                     <Dropdown.Item >
+//                       <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 3")}>Option 3</a>
+//                     </Dropdown.Item>
+//                   </Dropdown.Menu>
+//                 </Dropdown>
+
+//                 <Bar data={chartData} width={100} height={40} options={{ responsive: true }} />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+// export default IndicatorDetailsMetaChart;
+
+
+
+
+
+
+
+
+
+
+import Common from "../inc/Common";
+import { BACKEND_URL } from "../../constants";
+import { Bar } from 'react-chartjs-2';
+import { Dropdown } from 'react-bootstrap';
+
+const IndicatorDetailsMetaChart = (props) => {
+    const [data, setData] = useState(null);
+    const [chartData, setChartData] = useState({});
+    const [selectedOption, setSelectedOption] = useState("Option 1");
+    useEffect(() => {
+        fetch(`${BACKEND_URL}/indicator-detail-metas?populate=*`)
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data.data);
+                updateChartData(selectedOption);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    }, []);
+
+    const updateChartData = (selectedOption) => {
+        const {
+            location: { state },
+        } = props;
+        const labels = [];
+        const values = [];
+
+        data
+            .filter((item) => item.attributes?.indicator_detail?.data?.id === state.id)
+            .map((item) => {
+                if (selectedOption === "Option 1") {
+                    labels.push(item.attributes.sex);
+                    values.push(item.attributes.age);
+                } else if (selectedOption === "Option 2") {
+                    labels.push(item.attributes.marital_status);
+                    values.push(item.attributes.frequency);
+                } else if (selectedOption === "Option 3") {
+                    labels.push(item.attributes.year);
+                    values.push(item.attributes.gdp);
+                }
+            });
+        setChartData({
+            labels: labels,
+            datasets: [
+                {
+                    label: selectedOption,
+                    data: values,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }
+
+            ]
+        });
+    }
+
+    return (
+        <>
+            <Common />
+            <div className="container">
+                <div className="row">
+                    <div className="my-5 col-md-12">
+                        <div className='card shadow'>
+                            <div className="card-body card-body1">
+                                <Dropdown>
+                                    <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                                        {selectedOption}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item href="#" onClick={() => setSelectedOption("Option 1")}>Option 1</Dropdown.Item>
+                                        <Dropdown.Item href="#" onClick={() => setSelectedOption("Option 2")}>Option 2</Dropdown.Item>
+                                        <Dropdown.Item href="#" onClick={() => setSelectedOption("Option 3")}>Option 3</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                                <Bar data={chartData} width={100}
+                                    height={40} options={{ responsive: true }} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+export default IndicatorDetailsMetaChart;
