@@ -7,12 +7,14 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "build:win": "cross-env NODE_ENV=production npm run build"
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.5.5",
     "@strapi/plugin-users-permissions": "4.5.5",
     "@strapi/strapi": "4.5.5",
+    "cross-env": "^7.0.3",
     "pg": "8.6.0",
     "strapi": "^3.6.11",
     "strapi-plugin-ezforms": "^0.1.3",
