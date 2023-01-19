@@ -1,7 +1,7 @@
 import React, {Stylesheet} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaChartArea, FaHome, FaInfo, FaMap, FaPoll, FaVoteYea } from 'react-icons/fa';
-
+import Logo from '../images/logo.png'
 
 function Navbarbefore() {
     const location = useLocation();
@@ -11,7 +11,8 @@ function Navbarbefore() {
     <Link href="index.html" className="logo d-flex align-items-center">
       {/* Uncomment the line below if you also wish to use an image logo */}
       {/* <img src="assets/img/logo.png" alt=""> */}
-      <h1>LMIS<span>.</span></h1>
+      {/* <h1>LMIS<span>.</span></h1> */}
+      <img src={Logo} alt="Logo" height={100} width={100}></img>
     </Link>
     <nav id="navbar" className="navbar">
       <ul className='px-5'>
@@ -23,7 +24,7 @@ function Navbarbefore() {
         <li><Link  to="/Data">Data Insights</Link></li>
         <li className="dropdown"><Link href="#"><span>More Tools</span> <i className="bi bi-chevron-down dropdown-indicator" /></Link>
           <ul>
-            <li><a href="http://live.nelexnigeria.com">Find Jobs</a></li>
+            <li><a href="https://nelexnigeria.com">Find Jobs</a></li>
             <li className="dropdown"><Link to="/tools"><span>Online Tools</span> <i className="bi bi-chevron-down dropdown-indicator" /></Link>
               <ul>
                 <li><Link to='/viewtools'>Overview</Link></li>
