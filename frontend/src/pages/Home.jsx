@@ -18,6 +18,7 @@ import Introdata from "../components/pages/inc/apis/fetch_intro";
 import Eventdata from "../components/pages/inc/apis/fetch_events";
 import Labourdata from "../components/pages/inc/apis/fetch_labour";
 import ApexCand from "../components/apexcharts/ApexCand";
+import CookieConsent from "react-cookie-consent";
 // import "../../styles/aos.css";
 
 function Home() {
@@ -38,6 +39,8 @@ function Home() {
       <Script url="http://localhost:3000/main.js" />
 
       <Common />
+
+      <CookieConsent location="bottom">This website uses cookies to enhance the user experience.</CookieConsent>
 
       <section
         id="hero"

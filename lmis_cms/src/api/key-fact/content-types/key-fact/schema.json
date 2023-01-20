@@ -21,10 +21,12 @@
       "required": true
     },
     "value": {
-      "type": "float"
+      "type": "decimal",
+      "required": true
     },
     "date": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "state": {
       "type": "relation",

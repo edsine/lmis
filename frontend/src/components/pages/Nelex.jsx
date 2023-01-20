@@ -5,6 +5,7 @@ import Common from '../inc/Common';
 import './statistics.css'
 import img from '../images/bg2.png';
 import axios from 'axios'
+import { NELEX_URL } from '../../constants';
 
 const Nelex = (props) => {
 
@@ -14,7 +15,7 @@ const Nelex = (props) => {
 
 
   useEffect(() => {
-    fetch('http://live.nelexnigeria.com/api/nelex-lmis-data')
+    fetch(`${NELEX_URL}/api/nelex-lmis-data`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

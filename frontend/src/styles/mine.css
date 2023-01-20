@@ -306,7 +306,7 @@ section {
 }
 
 .header .logo img {
-  max-height: 40px;
+  /* max-height: 40px; */
   margin-right: 6px;
 }
 
@@ -2155,7 +2155,7 @@ section {
 }
 
 .footer .footer-info .logo img {
-  max-height: 40px;
+  /* max-height: 40px; */
   margin-right: 6px;
 }
 

@@ -13,10 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "dimensions": {
       "type": "relation",
@@ -35,6 +37,11 @@
     },
     "status": {
       "type": "boolean"
+    },
+    "feasible_dimension_combinations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feasible-dimension-combination.feasible-dimension-combination"
     }
   }
 }
