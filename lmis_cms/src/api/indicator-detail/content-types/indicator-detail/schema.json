@@ -37,6 +37,11 @@
     },
     "status": {
       "type": "boolean"
+    },
+    "feasible_dimension_combinations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feasible-dimension-combination.feasible-dimension-combination"
     }
   }
 }
