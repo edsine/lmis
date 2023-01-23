@@ -18,9 +18,10 @@ function Navbarbefore() {
       <ul className='px-5'>
         <li><Link  to="/">Home</Link></li>
         <li> <Link  to="/Indicators">Indicators</Link></li>
-        <li><Link to="/sector">Sectors</Link></li>
+        {/* <li><Link to="/sector">Sectors</Link></li>
         <li><Link  to="/Occupation">Occupation</Link></li>
-        <li><Link to="/country">States</Link></li>
+        <li><Link to="/country">States</Link></li> */}
+        <li><Link  to="/key-facts">Key Facts</Link></li>
         <li><Link  to="/Data">Data Insights</Link></li>
         <li className="dropdown"><Link href="#"><span>More Tools</span> <i className="bi bi-chevron-down dropdown-indicator" /></Link>
           <ul>
