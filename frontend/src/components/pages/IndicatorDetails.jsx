@@ -23,11 +23,10 @@ const IndicatorDetails = (props) => {
 
   useEffect(() => {
     fetch(
-      `${BACKEND_URL}/indicator-details?populate[1]=indicator,dimensions,feasible_charts,feasible_dimension_combinations.dimensions&filters[indicator][id][$eq]=${state}`
+      `${BACKEND_URL}/indicator-details?populate[1]=indicator,dimensions,feasible_charts,feasible_dimension_combinations.dimensions&filters[indicator][id][$eq]=${state.id}`
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.data);
         setData(data.data);
       })
       .catch((err) => {
@@ -94,6 +93,7 @@ const IndicatorDetails = (props) => {
                     state: {
                       id: item?.id,
                       columns: item?.attributes?.dimensions?.data,
+                      indicatorDetails: item?.attributes?.name,
                     },
                   }}
                 >
@@ -111,7 +111,8 @@ const IndicatorDetails = (props) => {
                       columns: item?.attributes?.dimensions?.data,
                       feasibleCharts: item?.attributes?.feasible_charts?.data,
                       feasibleDimensionCombinations:
-                        item?.attributes?.feasible_dimension_combinations?.data
+                        item?.attributes?.feasible_dimension_combinations?.data,
+                      indicatorDetails: item?.attributes?.name,
                     },
                   }}
                 >
@@ -132,6 +133,7 @@ const IndicatorDetails = (props) => {
         <div style={{ maxWidth: "990px", margin: "auto" }}>
           <div className="card mb-3">
             <div className="card-body">
+              <h3>{state.indicator}</h3>
               <CDBDataTable
                 striped
                 bordered

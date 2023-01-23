@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BACKEND_URL } from "../../../../constants";
-import {
-  BiBuoy,
-  BiCoinStack,
-  BiBriefcase,
-  BiLineChart,
-  BiNews,
-} from "react-icons/bi";
+import { BiBuoy } from "react-icons/bi";
 
 const Keyfact = (props) => {
   const [keyFacts, setKeyFacts] = useState([]);
@@ -17,13 +10,9 @@ const Keyfact = (props) => {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data.data);
-          console.log(url);
           setKeyFacts(data.data);
         })
-        .catch((err) => {
-          console.log(err.message);
-        });
+        .catch((err) => {});
     }
   }, [url]);
 
@@ -51,11 +40,7 @@ const Keyfact = (props) => {
                   {keyFact?.attributes?.value} in{" "}
                   <strong>{keyFact?.attributes?.date}</strong>
                 </p>
-                <p className="card-text py-font">
-                  {/* <small className="text-muted">
-                              Last updated 3 mins ago
-                           </small> */}
-                </p>
+                <p className="card-text py-font"></p>
               </div>
             </div>
           );
@@ -63,13 +48,5 @@ const Keyfact = (props) => {
     </div>
   );
 };
-//    return (
-//     posts.map((post, i) => {
-//          return (
-
-//
-//          );
-//       })
-//    );
 
 export default Keyfact;

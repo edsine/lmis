@@ -69,6 +69,7 @@ const IndicatorDetailsMeta = (props) => {
         <div style={{ maxWidth: "990px", margin: "auto" }}>
           <div className="card mb-3">
             <div className="card-body">
+            <h4>{state.indicatorDetails}</h4>
               <CDBDataTable
                 striped
                 bordered
