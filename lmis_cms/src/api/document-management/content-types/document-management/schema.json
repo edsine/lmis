@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "document_managements",
+  "info": {
+    "singularName": "document-management",
+    "pluralName": "document-managements",
+    "displayName": "document management"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "document_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "doc_code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "doc_type": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "document": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "createdby": {
+      "type": "string"
+    },
+    "date_added": {
+      "type": "date",
+      "unique": false
+    }
+  }
+}
