@@ -20,9 +20,9 @@
       "type": "richtext",
       "required": true
     },
-    "images": {
+    "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images",
