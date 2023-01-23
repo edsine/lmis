@@ -16,8 +16,6 @@ function KeyFacts() {
 
   const [selectedOccupation, setSelectedOccupation] = useState(null);
 
-  const [filteredKeyFacts, setFilteredKeyFacts] = useState(null);
-
   const [sectorDescription, setSectorDescription] = useState(null);
 
   const [occupationDescription, setOccupationDescription] = useState(null);
@@ -31,9 +29,6 @@ function KeyFacts() {
     state = null,
     occupation = null
   ) => {
-    console.log(sector);
-    console.log(state);
-    console.log(occupation);
     let url = `${BACKEND_URL}/key-facts?populate=sector,state,occupation`;
 
     //Single
@@ -85,55 +80,55 @@ function KeyFacts() {
   const filterKeyFactsByState = (e) => {
     const selected = parseInt(e.target.value);
     setSelectedState(selected);
-    changeKeyFactsAPIURL(null, selected);
+    changeKeyFactsAPIURL(selectedSector, selected, selectedOccupation);
   };
 
   const filterKeyFactsByOccupation = (e) => {
     const selected = parseInt(e.target.value);
     setSelectedOccupation(selected);
-    changeKeyFactsAPIURL(null, null, selected);
+    changeKeyFactsAPIURL(selectedSector, selectedState, selected);
   };
 
   const filterKeyFactsBySector = (e) => {
     const selected = parseInt(e.target.value);
     setSelectedSector(selected);
-    changeKeyFactsAPIURL(selected);
+    changeKeyFactsAPIURL(selected, selectedState, selectedOccupation);
   };
 
   const changeSectorDescription = ({
     target: {
       selectedOptions: [
         {
-          dataset: { description },
+          dataset: { name, description },
         },
       ],
     },
   }) => {
-    setSectorDescription(description);
+    setSectorDescription({ name, description });
   };
 
   const changeStateDescription = ({
     target: {
       selectedOptions: [
         {
-          dataset: { description },
+          dataset: { name, description },
         },
       ],
     },
   }) => {
-    setStateDescription(description);
+    setStateDescription({ name, description });
   };
 
   const changeOccupationDescription = ({
     target: {
       selectedOptions: [
         {
-          dataset: { description },
+          dataset: { name, description },
         },
       ],
     },
   }) => {
-    setOccupationDescription(description);
+    setOccupationDescription({ name, description });
   };
 
   return (
@@ -216,24 +211,30 @@ function KeyFacts() {
                   <div className="col-4">
                     <div className="card">
                       <div className="card-body">
-                        <p>Sector</p>
-                        <Description description={sectorDescription} />
+                        <p>{sectorDescription?.name}</p>
+                        <Description
+                          description={sectorDescription?.description}
+                        />
                       </div>
                     </div>
                   </div>
                   <div className="col-4">
                     <div className="card">
                       <div className="card-body">
-                        <p>State</p>
-                        <Description description={stateDescription} />
+                        <p>{stateDescription?.name}</p>
+                        <Description
+                          description={stateDescription?.description}
+                        />
                       </div>
                     </div>
                   </div>
                   <div className="col-4">
                     <div className="card">
                       <div className="card-body">
-                        <p>Occupation</p>
-                        <Description description={occupationDescription} />
+                        <p>{occupationDescription?.name}</p>
+                        <Description
+                          description={occupationDescription?.description}
+                        />
                       </div>
                     </div>
                   </div>

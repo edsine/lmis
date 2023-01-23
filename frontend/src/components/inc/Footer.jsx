@@ -1,7 +1,7 @@
 import React from "react";
 import * as Icon from 'react-bootstrap-icons';
 import { Link } from "react-router-dom";
-import Logo from "../images/Logo2.png";
+import Logo from "../images/logo2.png";
 // import { Link } from "react-router-dom";
 
 function Footer() {
@@ -14,7 +14,7 @@ function Footer() {
                     <div className="col-lg-5 col-md-12 footer-info">
                         <a href="index.html" className="logo d-flex align-items-center">
                             {/* <span style={{ color: 'rgb(46, 93, 29)' }}>LMIS</span> */}
-                            <img src={Logo} alt="Logo" height={50} width={100}></img>
+                            <img src={Logo} alt="Logo" height={40} width={100}></img>
                         </a>
                         <p>The Nigerian Labour Market Information System (LMIS) a programme by the Federal Ministry of Labour is a comprehensive online platform that provides up-to-date information on the labor market in Nigeria. It serves as a resource for job seekers, employers, policy makers, and researchers, offering a range of data and tools to help users make informed decisions about their careers and businesses.</p>
                         <div className="social-links d-flex mt-4">
@@ -28,7 +28,7 @@ function Footer() {
                         <h4>Useful Links</h4>
                         <ul style={{ color: 'rgba(72, 129, 52, 1)' }}>
                             <li><a href="#" style={{ color: 'rgba(72, 129, 52, 1)' }}>Home</a></li>
-                            <li><Link href="/indicators" style={{ color: 'rgba(72, 129, 52, 1)' }}>Indicators</Link></li>
+                            <li><Link to="/indicators" style={{ color: 'rgba(72, 129, 52, 1)' }}>Indicators</Link></li>
                             {/* <li><a href="#" style={{ color: 'rgba(72, 129, 52, 1)' }}>Database</a></li> */}
                             {/* <li><a href="#" style={{ color: 'rgba(72, 129, 52, 1)' }}>Terms of service</a></li>
                             <li><a href="#" style={{ color: 'rgba(72, 129, 52, 1)' }}>Privacy policy</a></li> */}
