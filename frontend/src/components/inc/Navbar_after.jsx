@@ -40,6 +40,8 @@ function Navbarbefore() {
           </ul>
         </li>
         <li><Link to="/about">About LMIS</Link></li>
+        <li><Link  to="/PrivacyPolicy">Privacy Policy</Link></li>
+
       </ul>
     </nav>{/* .navbar */}
     <i className="mobile-nav-toggle mobile-nav-show bi bi-list" />
