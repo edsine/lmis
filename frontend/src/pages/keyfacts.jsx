@@ -211,7 +211,7 @@ function KeyFacts() {
                   <div className="col-4">
                     <div className="card">
                       <div className="card-body">
-                        <p>{sectorDescription?.name}</p>
+                        <p>{sectorDescription?.name || "Select Sector"}</p>
                         <Description
                           description={sectorDescription?.description}
                         />
@@ -221,7 +221,7 @@ function KeyFacts() {
                   <div className="col-4">
                     <div className="card">
                       <div className="card-body">
-                        <p>{stateDescription?.name}</p>
+                        <p>{stateDescription?.name|| "Select State"}</p>
                         <Description
                           description={stateDescription?.description}
                         />
@@ -231,7 +231,7 @@ function KeyFacts() {
                   <div className="col-4">
                     <div className="card">
                       <div className="card-body">
-                        <p>{occupationDescription?.name}</p>
+                        <p>{occupationDescription?.name|| "Select Occupation"}</p>
                         <Description
                           description={occupationDescription?.description}
                         />
