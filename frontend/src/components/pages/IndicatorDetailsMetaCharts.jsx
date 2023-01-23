@@ -43,19 +43,19 @@ const IndicatorDetailsMetaChart = (props) => {
 		const labels = [];
 		const values = [];
 
-		data.map((item) => {
-			// if (selectedOption === "Genger By Age") {
-			// labels.push(item.attributes.sex);
-			// values.push(item.attributes.age);
-			// } else if (selectedOption === "Marital Status by Frequency") {
-			// labels.push(item.attributes.marital_status);
-			// values.push(item.attributes.frequency);
-			// } else if (selectedOption === "Option 3") {
-			// labels.push(item.attributes.year);
-			// values.push(item.attributes.gdp);
-			// }
-			labels.push(item.attributes?.[`${dimensions[1].attributes?.value}`]);
-			values.push(item.attributes?.[`${dimensions[0].attributes?.value}`]);
+    data.map((item) => {
+      //   if (selectedOption === "Genger By Age") {
+      //     labels.push(item.attributes.sex);
+      //     values.push(item.attributes.age);
+      //   } else if (selectedOption === "Marital Status by Frequency") {
+      //     labels.push(item.attributes.marital_status);
+      //     values.push(item.attributes.frequency);
+      //   } else if (selectedOption === "Option 3") {
+      //     labels.push(item.attributes.year);
+      //     values.push(item.attributes.gdp);
+      //   }
+      labels.push(item.attributes?.[`${dimensions[1].attributes?.value}`]);
+      values.push(item.attributes?.[`${dimensions[0].attributes?.value}`]);
 
 		});
 		setChartData({
