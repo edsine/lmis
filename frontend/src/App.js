@@ -23,7 +23,7 @@ import Viewtools from "./components/pages/viewtools";
 import Country from './pages/country';
 import Summary from './components/pages/summary';
 import Trends from './components/pages/trends';
-
+import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import EmpStats from "./components/pages/empstats";
 import SkillBank from "./components/pages/SkillBank";
 import IndicatorDetails from './components/pages/IndicatorDetails';
@@ -63,6 +63,7 @@ function App() {
           <Route exact path="/Employment-Stats" component={EmpStats} />
           <Route exact path="/SkillBank" component={SkillBank} />
           <Route exact path="/trends" component={Trends} />
+          <Route exact path="/PrivacyPolicy"  component={PrivacyPolicy} />
           <Route exact path="/key-facts" component={KeyFacts} />
         </Switch>
         <Footer/>
