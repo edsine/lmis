@@ -37,7 +37,10 @@ const Indicator = () => {
             <Link
               to={{
                 pathname: "/indicator-details",
-                state: post?.id,
+                state: {
+                  id: post?.id,
+                  indicator: post?.attributes.name,
+                },
               }}
             >
               <div className="social">
