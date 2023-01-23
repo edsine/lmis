@@ -54,8 +54,8 @@ const IndicatorDetailsMetaChart = (props) => {
       //     labels.push(item.attributes.year);
       //     values.push(item.attributes.gdp);
       //   }
-      labels.push(item.attributes?.[`${dimensions[0].attributes?.value}`]);
-      values.push(item.attributes?.[`${dimensions[1].attributes?.value}`]);
+      labels.push(item.attributes?.[`${dimensions[1].attributes?.value}`]);
+      values.push(item.attributes?.[`${dimensions[0].attributes?.value}`]);
 
     });
     setChartData({
