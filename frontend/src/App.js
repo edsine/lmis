@@ -29,6 +29,7 @@ import SkillBank from "./components/pages/SkillBank";
 import IndicatorDetails from './components/pages/IndicatorDetails';
 import IndicatorDetailsMeta from './components/pages/IndicatorDetailsMeta';
 import IndicatorDetailsMetaChart from './components/pages/IndicatorDetailsMetaCharts';
+import KeyFacts from './pages/keyfacts';
 
 
 
@@ -63,6 +64,7 @@ function App() {
           <Route exact path="/SkillBank" component={SkillBank} />
           <Route exact path="/trends" component={Trends} />
           <Route exact path="/PrivacyPolicy"  component={PrivacyPolicy} />
+          <Route exact path="/key-facts" component={KeyFacts} />
         </Switch>
         <Footer/>
       </>
