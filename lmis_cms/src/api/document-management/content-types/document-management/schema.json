@@ -32,8 +32,8 @@
     },
     "document": {
       "type": "media",
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "files"
       ]
