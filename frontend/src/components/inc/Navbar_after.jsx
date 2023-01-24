@@ -66,7 +66,7 @@ function Navbarbefore() {
                   </ul>
                 </li> */}
                 <li>
-                  <Link to="/job-statistics">Jobs Statistics</Link>
+                  <Link to="/job-statistics">NELEX Jobs Statistics</Link>
                 </li>
                 <li>{/* <Link to="/infographs">Infographs</Link> */}</li>
                 <li>{/* <Link to="/">Contact LMIS</Link> */}</li>

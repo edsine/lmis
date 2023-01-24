@@ -44,7 +44,7 @@ const Nelex = (props) => {
       <div className="sidebar-style-8">
         <div className="section section-padding">
           <div className="container">
-            <h3 style={{ textAlign: 'center' }}>Jobs Statistics</h3>
+            <h3 style={{ textAlign: 'center' }}>NELEX Jobs Statistics</h3>
 
             <div>
               <div className="row">
