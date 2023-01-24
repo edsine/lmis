@@ -1,56 +1,57 @@
 {
-  "kind": "collectionType",
-  "collectionName": "document_managements",
-  "info": {
-    "singularName": "document-management",
-    "pluralName": "document-managements",
-    "displayName": "document Management",
-    "description": ""
-  },
-  "options": {
-    "draftAndPublish": true,
-    "populateCreatorFields": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "document_name": {
-      "type": "string",
-      "required": true,
-      "unique": true
+    "kind": "collectionType",
+    "collectionName": "document_managements",
+    "info": {
+      "singularName": "document-management",
+      "pluralName": "document-managements",
+      "displayName": "document Management",
+      "description": ""
     },
-    "description": {
-      "type": "text",
-      "required": true
+    "options": {
+      "draftAndPublish": true,
+      "populateCreatorFields": true
     },
-    "doc_code": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
-    "doc_type": {
-      "type": "string"
-    },
-    "source": {
-      "type": "string"
-    },
-    "document": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "files"
-      ]
-    },
-    "date_added": {
-      "type": "date",
-      "unique": false
-    },
-    "accessLevel": {
-      "type": "enumeration",
-      "enum": [
-        "read-only",
-        "edit"
-      ]
+    "pluginOptions": {},
+    "attributes": {
+      "document_name": {
+        "type": "string",
+        "required": true,
+        "unique": true
+      },
+      "description": {
+        "type": "text",
+        "required": true
+      },
+      "doc_code": {
+        "type": "string",
+        "required": true,
+        "unique": true
+      },
+      "doc_type": {
+        "type": "string"
+      },
+      "source": {
+        "type": "string"
+      },
+      "document": {
+        "type": "media",
+        "multiple": true,
+        "required": true,
+        "allowedTypes": [
+          "files"
+        ]
+      },
+      "date_added": {
+        "type": "date",
+        "unique": false
+      },
+      "accessLevel": {
+        "type": "enumeration",
+        "enum": [
+          "read-only",
+          "edit"
+        ]
+      }
     }
   }
-}
+  
