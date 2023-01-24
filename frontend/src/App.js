@@ -3,6 +3,7 @@
 import React from 'react';
 import './App.css';
 import './Header.css';
+import './index.css';
 import Home from "./pages/Home";
 import Indicators from './pages/Indicators';
 import Contactus from "./pages/Contact";
