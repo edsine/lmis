@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "audit_trails",
+  "info": {
+    "singularName": "audit-trail",
+    "pluralName": "audit-trails",
+    "displayName": "Audit Trail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contentType": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "content": {
+      "type": "json"
+    },
+    "author": {
+      "type": "json"
+    },
+    "request": {
+      "type": "json"
+    },
+    "method": {
+      "type": "string"
+    },
+    "route": {
+      "type": "string"
+    },
+    "params": {
+      "type": "json"
+    },
+    "statusCode": {
+      "type": "biginteger"
+    }
+  }
+}
