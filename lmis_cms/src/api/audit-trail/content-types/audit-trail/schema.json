@@ -4,10 +4,11 @@
   "info": {
     "singularName": "audit-trail",
     "pluralName": "audit-trails",
-    "displayName": "Audit Trail"
+    "displayName": "Audit Trail",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true,
+    "draftAndPublish": false,
     "populateCreatorFields": true
   },
   "pluginOptions": {},
@@ -38,6 +39,9 @@
     },
     "statusCode": {
       "type": "biginteger"
+    },
+    "authorEmail": {
+      "type": "string"
     }
   }
 }
