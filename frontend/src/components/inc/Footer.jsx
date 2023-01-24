@@ -17,12 +17,12 @@ function Footer() {
                             <img src={Logo} alt="Logo" height={40} width={100}></img>
                         </a>
                         <p>The Nigerian Labour Market Information System (LMIS) a programme by the Federal Ministry of Labour is a comprehensive online platform that provides up-to-date information on the labor market in Nigeria. It serves as a resource for job seekers, employers, policy makers, and researchers, offering a range of data and tools to help users make informed decisions about their careers and businesses.</p>
-                        <div className="social-links d-flex mt-4">
+                        {/* <div className="social-links d-flex mt-4">
                             <a href="#" className="twitter" style={{ color: 'rgba(72, 129, 52, 1)' }}><i className="bi bi-twitter" /></a>
                             <a href="#" className="facebook" style={{ color: 'rgba(72, 129, 52, 1)' }}><i className="bi bi-facebook" /></a>
                             <a href="#" className="instagram" style={{ color: 'rgba(72, 129, 52, 1)' }}><i className="bi bi-instagram" /></a>
                             <a href="#" className="linkedin" style={{ color: 'rgba(72, 129, 52, 1)' }}><i className="bi bi-linkedin" /></a>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="col-lg-2 col-6 footer-links">
                         <h4>Useful Links</h4>

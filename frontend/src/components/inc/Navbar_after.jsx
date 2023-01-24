@@ -30,12 +30,15 @@ function Navbarbefore() {
               {" "}
               <Link to="/Indicators">Indicators</Link>
             </li>
-            {/* <li><Link to="/sector">Sectors</Link></li>
-        <li><Link  to="/Occupation">Occupation</Link></li>
-        <li><Link to="/country">States</Link></li> */}
             <li>
-              <Link to="/key-facts">Key Facts</Link>
+              <Link to="/sector">Sectors</Link>
             </li>
+            <li>
+              <Link to="/Occupation">Occupation</Link>
+            </li>
+            {/* <li>
+              <Link to="/key-facts">Key Facts</Link>
+            </li> */}
             <li>
               <Link to="/Data">Data Insights</Link>
             </li>
@@ -66,17 +69,20 @@ function Navbarbefore() {
                   </ul>
                 </li> */}
                 <li>
-                  <Link to="/job-statistics">Jobs Statistics</Link>
+                  <Link to="/job-statistics">NELEX Jobs Statistics</Link>
                 </li>
                 <li>{/* <Link to="/infographs">Infographs</Link> */}</li>
                 <li>{/* <Link to="/">Contact LMIS</Link> */}</li>
               </ul>
             </li>
-            <li>
+            {/* <li>
               <Link to="/about">About LMIS</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/PrivacyPolicy">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link to="/trending-jobs">Trending Jobs</Link>
             </li>
           </ul>
         </nav>
