@@ -15,11 +15,11 @@ function Navbarbefore() {
   return (
     <header id="header" className="header d-flex align-items-center">
       <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
-        <Link href="index.html" className="logo d-flex align-items-center">
+        <Link href="/" className="logo d-flex align-items-center">
           {/* Uncomment the line below if you also wish to use an image logo */}
           {/* <img src="assets/img/logo.png" alt=""> */}
           {/* <h1>LMIS<span>.</span></h1> */}
-          <img src={Logo} alt="Logo" height={100} width={100}></img>
+          <img src={Logo} alt="Logo" ></img>
         </Link>
         <nav id="navbar" className="navbar">
           <ul className="px-5">
