@@ -306,9 +306,10 @@ section {
 }
 
 .header .logo img {
-  /* max-height: 40px; */
+  max-height: 150px;
   margin-right: 6px;
 }
+
 
 .header .logo h1 {
   font-size: 30px;
@@ -1911,6 +1912,8 @@ section {
   position: relative;
   background: var(--color-primary);
   padding: 60px 0 0 0;
+  /* border-end-end-radius: 70%;
+  border-end-start-radius: 70%; */
 }
 
 @media (min-width: 1365px) {
