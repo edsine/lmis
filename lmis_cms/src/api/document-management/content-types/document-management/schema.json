@@ -4,7 +4,8 @@
   "info": {
     "singularName": "document-management",
     "pluralName": "document-managements",
-    "displayName": "document management"
+    "displayName": "document management",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -30,11 +31,12 @@
       "type": "string"
     },
     "document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "createdby": {
       "type": "string"
@@ -42,6 +44,13 @@
     "date_added": {
       "type": "date",
       "unique": false
+    },
+    "accessLevel": {
+      "type": "enumeration",
+      "enum": [
+        "read-only",
+        "edit"
+      ]
     }
   }
 }
