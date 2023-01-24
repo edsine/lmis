@@ -78,6 +78,9 @@ function Navbarbefore() {
             <li>
               <Link to="/PrivacyPolicy">Privacy Policy</Link>
             </li>
+            <li>
+              <Link to="/trending-jobs">Trending Jobs</Link>
+            </li>
           </ul>
         </nav>
         {/* .navbar */}
