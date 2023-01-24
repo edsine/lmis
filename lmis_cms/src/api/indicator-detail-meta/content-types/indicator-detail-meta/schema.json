@@ -18,7 +18,8 @@
       "target": "api::indicator-detail.indicator-detail"
     },
     "age": {
-      "type": "integer"
+      "type": "integer",
+      "max": 65
     },
     "state": {
       "type": "relation",

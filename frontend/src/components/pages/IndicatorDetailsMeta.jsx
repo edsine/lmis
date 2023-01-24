@@ -19,7 +19,7 @@ const IndicatorDetailsMeta = (props) => {
   } = props;
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/indicator-detail-metas?populate=*`)
+    fetch(`${BACKEND_URL}/indicator-detail-metas?filters[indicator_detail][id][$eq]=${state.id}`)
       .then((response) => response.json())
       .then((data) => {
         setData(data.data);
@@ -53,10 +53,7 @@ const IndicatorDetailsMeta = (props) => {
     return {
       columns: tableColumns,
       rows: data
-        ?.filter(
-          (item) => item.attributes?.indicator_detail?.data?.id === state.id
-        )
-        .map((item, index) => {
+        ?.map((item, index) => {
           tableColumns.forEach((element) => {
             const field = element.field;
             item[field] = item.attributes[field];
@@ -72,6 +69,7 @@ const IndicatorDetailsMeta = (props) => {
         <div style={{ maxWidth: "990px", margin: "auto" }}>
           <div className="card mb-3">
             <div className="card-body">
+            <h4>{state.indicatorDetails}</h4>
               <CDBDataTable
                 striped
                 bordered

@@ -1,38 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { BACKEND_URL } from "../../../../constants";
-import {
-  BiBuoy,
-  BiCoinStack,
-  BiBriefcase,
-  BiLineChart,
-  BiNews,
-} from "react-icons/bi";
+import { BiBuoy } from "react-icons/bi";
 
 const Keyfact = (props) => {
-  const [posts, setPosts] = useState([]);
-  const { filteredKeyFacts, setFilteredKeyFacts, resetFilter } = props;
+  const [keyFacts, setKeyFacts] = useState([]);
+  const { url } = props;
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/key-facts?populate=sector,state,occupation`)
-      .then((response) => response.json())
-      .then((data) => {
-         console.log(data.data);
-        setPosts(data.data);
-        setFilteredKeyFacts(data.data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [setFilteredKeyFacts]);
-
-  if (resetFilter) {
-    setFilteredKeyFacts(posts);
-  }
+    if (url) {
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          setKeyFacts(data.data);
+        })
+        .catch((err) => {});
+    }
+  }, [url]);
 
   return (
     <div className="row ml-2">
-      {filteredKeyFacts &&
-        filteredKeyFacts.map((post, index) => {
+      {keyFacts &&
+        keyFacts.map((keyFact, index) => {
           return (
             <div
               key={index}
@@ -46,16 +33,14 @@ const Keyfact = (props) => {
                     <BiBuoy size={70} color="#488134" />
                   </div>
                 </div>
-                <h5 className="card-title py-font">{post?.attributes?.name}</h5>
+                <h5 className="card-title py-font">
+                  {keyFact?.attributes?.name}
+                </h5>
                 <p className="card-text py-font">
-                  {post?.attributes?.value} in{" "}
-                  <strong>{post?.attributes?.date}</strong>
+                  {keyFact?.attributes?.value} in{" "}
+                  <strong>{keyFact?.attributes?.date}</strong>
                 </p>
-                <p className="card-text py-font">
-                  {/* <small className="text-muted">
-                              Last updated 3 mins ago
-                           </small> */}
-                </p>
+                <p className="card-text py-font"></p>
               </div>
             </div>
           );
@@ -63,13 +48,5 @@ const Keyfact = (props) => {
     </div>
   );
 };
-//    return (
-//     posts.map((post, i) => {
-//          return (
-
-//
-//          );
-//       })
-//    );
 
 export default Keyfact;

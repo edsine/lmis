@@ -31,6 +31,7 @@ const Sectors = () => {
               key={index}
               value={post?.id}
               data-description={post?.attributes?.description}
+              data-name={post?.attributes?.name}
             >
               {post?.attributes?.name}
             </option>

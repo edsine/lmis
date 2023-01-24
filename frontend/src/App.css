@@ -99,7 +99,7 @@
   content: "\e993";
 } */
 .card-body1:after {
-  font-family: 'font-icons';
+  font-family: 'Poppins' !important;
   font-size: 3.125rem;
   position: absolute;
   top: 30px;
@@ -306,7 +306,7 @@ screen and (min-width: 40em) {
 }
 
 .tool-home-content-text {
-  font-family: "Open Sans", Roboto, Arial, sans-serif;
+  font-family: "Poppins" !important;
   margin-bottom: 2.5rem;
   overflow: hidden;
   /* padding: 1.25rem; */
@@ -329,7 +329,7 @@ screen and (min-width: 40em) {
 
 @media screen {
   .tool-home-content-text {
-    font-family: "Open Sans", Roboto, Arial, sans-serif;
+    font-family: "Poppins" !important;
     margin-bottom: 2.5rem;
     overflow: hidden;
     padding: 1.25rem;
@@ -396,7 +396,7 @@ screen and (min-width: 40em) {
   line-height: 144.7%;
   color: #000000;
   letter-spacing: 0.02em;
-  font-family: 'DM Sans' !important;
+  font-family: 'Poppins' !important;
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
@@ -427,7 +427,7 @@ screen and (min-width: 40em) {
   /* position: absolute; */
   width: 109.82px;
   height: 28.14px;
-  font-family: 'DM Sans' !important;
+  font-family: 'Poppins' !important;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -436,7 +436,7 @@ screen and (min-width: 40em) {
 }
 
 .voters-chart-text {
-  font-family: 'DM Sans' !important;
+  font-family: 'Poppins' !important;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
