@@ -30,12 +30,15 @@ function Navbarbefore() {
               {" "}
               <Link to="/Indicators">Indicators</Link>
             </li>
-            {/* <li><Link to="/sector">Sectors</Link></li>
-        <li><Link  to="/Occupation">Occupation</Link></li>
-        <li><Link to="/country">States</Link></li> */}
             <li>
-              <Link to="/key-facts">Key Facts</Link>
+              <Link to="/sector">Sectors</Link>
             </li>
+            <li>
+              <Link to="/Occupation">Occupation</Link>
+            </li>
+            {/* <li>
+              <Link to="/key-facts">Key Facts</Link>
+            </li> */}
             <li>
               <Link to="/Data">Data Insights</Link>
             </li>

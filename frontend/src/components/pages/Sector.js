@@ -1,51 +1,87 @@
 import React, { useState } from "react";
-//import Bar from './Bar';
-
+import { BACKEND_URL } from "../../constants";
 import Common from "../inc/Common";
 import Keyfact from "./inc/apis/fetch_keyfacts";
 import Sectors from "./inc/apis/fetch_sectors";
+import State from "./inc/apis/fetch_states";
 import Description from "./inc/description";
+//import Bar from './Bar';
 
 function Sector() {
-  // const [sectorState, setSectorState] = useState()
+  const [selectedState, setSelectedState] = useState(null);
 
-  const [filteredKeyFacts, setFilteredKeyFacts] = useState(null);
+  const [selectedSector, setSelectedSector] = useState(null);
 
   const [sectorDescription, setSectorDescription] = useState(null);
 
-  const [resetFilter, setResetFilter] = useState(false);
+  const [stateDescription, setStateDescription] = useState(null);
 
-  // const filterKeyFactsByState = (e) => {
-  //   const selected = parseInt(e.target.value);
-  //   const keyFacts = filteredKeyFacts.filter(
-  //     (item) => item.attributes.state.data.id === selected
-  //   );
-  //   console.log(selected);
-  //   setFilteredKeyFacts(keyFacts);
-  // };
+  const [keyFactsURL, setKeyFactsURL] = useState(null);
+
+  const changeKeyFactsAPIURL = (
+    sector = null,
+    state = null,
+  ) => {
+    let url = `${BACKEND_URL}/key-facts?populate=sector,state,occupation`;
+
+    //Single
+    if (sector && !state) {
+      url = `${url}&filters[sector][id][$eq]=${sector}`;
+      setKeyFactsURL(url);
+      return;
+    }
+    if (!sector && state) {
+      url = `${url}&filters[state][id][$eq]=${state}`;
+      setKeyFactsURL(url);
+      return;
+    }
+
+    //Triple
+    if (sector && state) {
+      url = `${url}&filters[sector][id][$eq]=${sector}&filters[state][id][$eq]=${state}`;
+      setKeyFactsURL(url);
+      return;
+    }
+    if (!sector && !state) {
+      setKeyFactsURL(null);
+      return;
+    }
+  };
+
+  const filterKeyFactsByState = (e) => {
+    const selected = parseInt(e.target.value);
+    setSelectedState(selected);
+    changeKeyFactsAPIURL(selectedSector, selected);
+  };
 
   const filterKeyFactsBySector = (e) => {
     const selected = parseInt(e.target.value);
-    if (selected === 0) {
-      setResetFilter(true);
-      return;
-    }
-    const keyFacts = filteredKeyFacts.filter(
-      (item) => item.attributes.sector.data.id === selected
-    );
-    setFilteredKeyFacts(keyFacts);
+    setSelectedSector(selected);
+    changeKeyFactsAPIURL(selected, selectedState);
   };
 
   const changeSectorDescription = ({
     target: {
       selectedOptions: [
         {
-          dataset: { description },
+          dataset: { name, description },
         },
       ],
     },
   }) => {
-    setSectorDescription(description);
+    setSectorDescription({ name, description });
+  };
+
+  const changeStateDescription = ({
+    target: {
+      selectedOptions: [
+        {
+          dataset: { name, description },
+        },
+      ],
+    },
+  }) => {
+    setStateDescription({ name, description });
   };
 
   return (
@@ -56,39 +92,40 @@ function Sector() {
         <div className="container my-5">
           <div className="row">
             <div className="col-6">
-              <div>
-                <label>Sectors</label>
-                <div className="col text-center ">
-                  <select
-                    onChange={(e) => {
-                      filterKeyFactsBySector(e);
-                      changeSectorDescription(e);
-                    }}
-                  >
-                    <option value={0}>Select Sector</option>
-                    <Sectors />
-                  </select>
-                </div>
+              <label>Sectors</label>
+              <div className="col text-center ">
+                <select
+                  value={selectedSector}
+                  onChange={(e) => {
+                    filterKeyFactsBySector(e);
+                    changeSectorDescription(e);
+                  }}
+                >
+                  <option value={null}>Select Sector</option>
+                  <Sectors />
+                </select>
               </div>
             </div>
 
-            {/* <div className="col">
-              <h2>states</h2>
+            <div className="col-6">
+              <label>States</label>
               <div>
                 <div className="col text-center ">
                   <select
                     className="form-select-lg mb-3"
                     aria-label=".form-select-lg example"
+                    value={selectedState}
                     onChange={(e) => {
                       filterKeyFactsByState(e);
+                      changeStateDescription(e);
                     }}
                   >
-                    <option>Select State</option>
+                    <option value={null}>Select State</option>
                     <State />
                   </select>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
 
@@ -103,13 +140,30 @@ function Sector() {
               </div>
               <div className="card-body py-font py-5 px-5">
                 {/* {sectorState?.bio} */}
-                <Description description={sectorDescription} />
+                <div className="row">
+                  <div className="col-6">
+                    <div className="card">
+                      <div className="card-body">
+                        <p>{sectorDescription?.name || "Select Sector"}</p>
+                        <Description
+                          description={sectorDescription?.description}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="card">
+                      <div className="card-body">
+                        <p>{stateDescription?.name || "Select State"}</p>
+                        <Description
+                          description={stateDescription?.description}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <h4 className="my-5">Key Facts</h4>
-                <Keyfact
-                  resetFilter={resetFilter}
-                  filteredKeyFacts={filteredKeyFacts}
-                  setFilteredKeyFacts={setFilteredKeyFacts}
-                />
+                <Keyfact url={keyFactsURL} />
               </div>
             </div>
           </div>

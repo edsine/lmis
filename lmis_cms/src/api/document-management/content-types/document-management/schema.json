@@ -4,16 +4,19 @@
   "info": {
     "singularName": "document-management",
     "pluralName": "document-managements",
-    "displayName": "document management",
+    "displayName": "document Management",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": true,
+    "populateCreatorFields": true
   },
   "pluginOptions": {},
   "attributes": {
     "document_name": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "description": {
       "type": "text",
@@ -33,13 +36,10 @@
     "document": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "files"
       ]
-    },
-    "createdby": {
-      "type": "string"
     },
     "date_added": {
       "type": "date",
