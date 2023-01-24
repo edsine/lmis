@@ -6,6 +6,13 @@
     "node": "16.15.0"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^4.3.2",
+    "@babel/compat-data": "7.19.4",
+    "@babel/core": "7.19.6",
+    "@babel/generator": "7.19.6",
+    "@babel/helper-compilation-targets": "7.19.3",
+    "@babel/helper-create-class-features-plugin": "7.19.0",
+    "@babel/helper-module-transforms": "7.19.6",
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
@@ -17,6 +24,7 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "apexcharts": "^3.36.3",
+    "axios": "^1.2.2",
     "bootstrap": "^5.2.2",
     "cdbreact": "^1.5.3",
     "chart.js": "^2.9.3",
@@ -26,6 +34,7 @@
     "react-bootstrap": "^1.6.1",
     "react-bootstrap-icons": "^1.9.1",
     "react-chartjs-2": "^2.10.0",
+    "react-cookie-consent": "^8.0.1",
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.0",
     "react-icons": "^4.7.1",
@@ -35,7 +44,16 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
     "react-tabs": "^6.0.0",
+    "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
+  },
+  "overrides": {
+    "@babel/core": "7.19.6",
+    "@babel/generator": "7.19.6",
+    "@babel/compat-data": "7.19.4",
+    "@babel/helper-compilation-targets": "7.19.3",
+    "@babel/helper-create-class-features-plugin": "7.19.0",
+    "@babel/helper-module-transforms": "7.19.6"
   },
   "scripts": {
     "start": "react-scripts start",

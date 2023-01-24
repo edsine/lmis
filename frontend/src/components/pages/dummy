@@ -1,0 +1,255 @@
+  <option selected>Select State</option>
+                    <option value="1">-Abia</option>
+                    <option value="2">-Adamawa</option>
+                    <option value="3">-Akwa Ibom</option>
+                    <option value="4">-Anambra</option>
+                    <option value="5">-Bauchi</option>
+                    <option value="6">-Bayelsa</option>
+                    <option value="7">-Benue</option>
+                    <option value="8">-Borno</option>
+                    <option value="9">-Cross River</option>
+
+                    <option value="10">-Delta</option>
+                    <option value="11">Ebonyi</option>
+                    <option value="12">-Edo</option>
+                    <option value="13">-Ekiti</option>
+                    <option value="14">-Enugu</option>
+                    <option value="15">-Gombe</option>
+                    <option value="16">-Imo</option>
+                    <option value="17">-Jigawa</option>
+                    <option value="18">-Kaduna</option>
+
+                    <option value="19">-Kano</option>
+
+                    <option value="20">-Katsina</option>
+
+                    <option value="21">-Kebbi</option>
+
+                    <option value="22">-Kogi</option>
+
+                    <option value="23">-Kwara</option>
+
+                    <option value="24">-Lagos</option>
+
+                    <option value="25">-Nasarawa</option>
+
+                    <option value="26">-Niger</option>
+
+                    <option value="27">-Ogun</option>
+
+                    <option value="28">-Ondo</option>
+
+                    <option value="29">-Osun</option>
+
+                    <option value="30">-Oyo</option>
+
+                    <option value="30">-Plateau</option>
+
+                    <option value="31">-Rivers</option>
+
+                    <option value="32">-Sokoto</option>
+
+                    <option value="30">-Sokoto</option>
+
+                    <option value="31">-Taraba</option>
+
+                    <option value="32">-Yobe</option>
+
+                    <option value="33">-Sokoto</option>
+
+                    <option value="34">-Yobe</option>
+
+                    <option value="35">-Zamfara</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     {/*
+    <select onChange={(e)=>{
+              handleChange(e)
+            }}>
+              {
+                list && list.map((l)=>(
+                  <option key={.id} value={l.id} className="">
+                   <Sector/>
+                    
+                    </option>
+                ))
+              }
+                    
+                  </select>
+            */}
+
+
+                  {/*
+                  <select 
+                    class=" form-select-lg mb-3 pe-5"
+                    aria-label=".form-select-lg example"
+                  >
+                    <option selected>Select Sectors</option>
+                    <option value="1">-Business Services</option>
+                    <option value="2">--Administrative Services</option>
+                    <option value="3">--Arts and Recreation</option>
+                    <option value="4">--Proffessional Services</option>
+                    <option value="5">-Construction</option>
+                    <option value="6">--Construction</option>
+                    <option value="7">--Distribution & transport</option>
+                    <option value="8">--Accommodation and food</option>
+                    <option value="9">--Transport & storage</option>
+
+                    <option value="10">--Wholesale & retail trade</option>
+                    <option value="11">Administrative Services</option>
+                    <option value="12">-Manufacturing</option>
+                    <option value="13">--Manufacturing</option>
+                    <option value="14">-Non-marketed services</option>
+                    <option value="15">--Education</option>
+                    <option value="16">-- health and Social care</option>
+                    <option value="17">-- Public sector & defence</option>
+                    <option value="18">-Primary sector & utilities</option>
+
+                    <option value="19">
+                      --Agriculture,forestry and fishing
+                    </option>
+
+                    <option value="20">-- Energy supply services</option>
+
+                    <option value="21">-- Mining and quarry</option>
+
+                    <option value="21">-- Water and waste treatment</option>
+                  </select>
+                  */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  {/*
+         <div class="row container-fluid">
+            <h2>sectors</h2>
+        <div class="col text-center d-box">
+        
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>
+                    
+                    </option>
+                     <option value="1">
+                     -Business Services
+                     </option>
+                    <option value="2">
+                    --Administrative Services
+                    </option>
+                    <option value="3">
+                    --Arts and Recreation
+                    </option>
+                    <option value="4">
+                     --Proffessional Services
+                     </option>
+                    <option value="5">
+                    -Construction
+                    </option>
+                    <option value="6">
+                    --Construction
+                    </option>
+                    <option value="7">
+                     --Distribution & transport
+                     </option>
+                    <option value="8">
+                    --Accommodation and food
+                    </option>
+                    <option value="9">
+                    --Transport & storage
+                    </option>
+
+                    <option value="10">
+                     --Wholesale & retail trade
+                     </option>
+                    <option value="11">
+                    Administrative Services
+                    </option>
+                    <option value="12">
+                    -Manufacturing
+                    </option>
+                    <option value="13">
+                     --Manufacturing
+                     </option>
+                    <option value="14">
+                    -Non-marketed services
+                    </option>
+                    <option value="15">
+                    --Education
+                    </option>
+                    <option value="16">
+                    -- health and Social care
+                     </option>
+                    <option value="17">
+                    -- Public sector & defence
+                    </option>
+                    <option value="18">
+                    -Primary sector & utilities
+                    </option>
+
+                    <option value="19">
+                    --Agriculture,forestry and fishing
+                    </option>
+
+                    <option value="20">
+                    -- Energy supply services
+                    </option>
+
+                    <option value="21">
+                    -- Mining and quarry 
+                    </option>
+
+                    <option value="21">
+                    -- Water and waste treatment 
+                    </option>
+
+
+                    
+                    
+                </select>
+                    </div>
+
+    <h2>States</h2>
+     <div class="col text-center d-box">
+     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option selected></option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+     </div>
+  
+</div>
+ */}
+
+        

@@ -1,0 +1,549 @@
+
+
+
+
+
+
+// import Common from "../inc/Common";
+// import { BACKEND_URL } from "../../constants";
+// import { Bar } from 'react-chartjs-2';
+
+// const IndicatorDetailsMetaChart = (props) => {
+//     const [data, setData] = useState(null);
+//     const [chartData, setChartData] = useState({});
+//     const [selectedOption, setSelectedOption] = useState("Option 1");
+
+//     useEffect(() => {
+//         fetch(`${BACKEND_URL}/indicator-detail-metas?populate=*`)
+//             .then((response) => response.json())
+//             .then((data) => {
+//                 setData(data.data);
+//                 updateChartData(selectedOption);
+//             })
+//             .catch((err) => {
+//                 console.log(err.message);
+//             });
+//     }, []);
+
+//     const updateChartData = (selectedOption) => {
+//         const {
+//             location: { state },
+//         } = props;
+//         const labels = [];
+//         const values = [];
+
+//         data
+//             .filter((item) => item.attributes?.indicator_detail?.data?.id === state.id)
+//             .map((item) => {
+//                 if (selectedOption === "Option 1") {
+//                     labels.push(item.attributes.sex);
+//                     values.push(item.attributes.age);
+//                 } else if (selectedOption === "Option 2") {
+//                     labels.push(item.attributes.marital_status);
+//                     values.push(item.attributes.frequency);
+//                 } else if (selectedOption === "Option 3") {
+//                     labels.push(item.attributes.year);
+//                     values.push(item.attributes.gdp);
+//                 }
+//             });
+//         setChartData({
+//             labels: labels,
+//             datasets: [
+//                 {
+//                     label: selectedOption,
+//                     data: values,
+//                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
+//                     borderColor: 'rgba(255, 99, 132, 1)',
+//                     borderWidth: 1
+//                 }
+
+//             ]
+//         });
+//     }
+
+//     return (
+//         <>
+//             <Common />
+//             <div className="container">
+//                 <div className="row">
+//                     <div className="my-5 col-md-12">
+//                         <div className='card shadow'>
+//                             <div className="card-body card-body1">
+//                                 <div className="dropdown">
+//                                     <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+//                                         {selectedOption}
+//                                     </button>
+//                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+//                                         <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 1")}>Option 1</a>
+//                                         <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 2")}>Option 2</a>
+//                                         <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 3")}>Option 3</a>
+//                                     </div>
+//                                 </div>
+//                                 <Bar data={chartData} width={100}
+//                                     height={40} options={{ responsive: true }} />
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </>
+//     );
+// };
+// export default IndicatorDetailsMetaChart;
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import Content from "./Content";
+// import {
+//   CDBCard,
+//   CDBCardBody,
+//   CDBDataTable,
+//   CDBRow,
+//   CDBCol,
+//   CDBContainer,
+// } from "cdbreact";
+// import Common from "../inc/Common";
+// import { BACKEND_URL } from "../../constants";
+// import { Bar } from 'react-chartjs-2';
+// import Dropdown from 'react-bootstrap/Dropdown';
+
+// const IndicatorDetailsMetaChart = (props) => {
+//   const [data, setData] = useState(null);
+//   const [chartData, setChartData] = useState({});
+//   const [selectedOption, setSelectedOption] = useState("Option 1");
+
+//   useEffect(() => {
+//     fetch(`${BACKEND_URL}/indicator-detail-metas?populate=*`)
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setData(data.data);
+//         updateChartData(selectedOption);
+//       })
+//       .catch((err) => {
+//         console.log(err.message);
+//       });
+//   }, []);
+
+//   const updateChartData = (selectedOption) => {
+//     const {
+//       location: { state },
+//     } = props;
+//     const labels = [];
+//     const values = [];
+
+//     data
+//       .filter((item) => item.attributes?.indicator_detail?.data?.id === state.id)
+//       .map((item) => {
+//         if (selectedOption === "Option 1") {
+//           labels.push(item.attributes.sex);
+//           values.push(item.attributes.age);
+//         } else if (selectedOption === "Option 2") {
+//           labels.push(item.attributes.marital_status);
+//           values.push(item.attributes.frequency);
+//         } else if (selectedOption === "Option 3") {
+//           labels.push(item.attributes.year);
+//           values.push(item.attributes.gdp);
+//         }
+//       });
+//     setChartData({
+//       labels: labels,
+//       datasets: [
+//         {
+//           label: selectedOption,
+//           data: values,
+//           backgroundColor: 'rgba(255, 99, 132, 0.2)',
+//           borderColor: 'rgba(255, 99, 132, 1)',
+//           borderWidth: 1
+//         }
+
+//       ]
+//     });
+//   }
+
+//   return (
+//     <>
+//       <Common />
+//       <div className="container">
+//         <div className="row">
+//           <div className="my-5 col-md-12">
+//             <div className='card shadow'>
+//               <div className="card-body card-body1">
+//                 {/* <div className="dropdown">
+//                   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+//                     {selectedOption}
+//                   </button>
+//                   <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+//                     <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 1")}>Option 1</a>
+//                     <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 2")}>Option 2</a>
+//                     <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 3")}>Option 3</a>
+//                   </div>
+//                 </div> */}
+
+
+
+//                 <Dropdown>
+//                   <Dropdown.Toggle variant="success" id="dropdown-basic">
+//                     Dropdown Button
+//                   </Dropdown.Toggle>
+
+//                   <Dropdown.Menu>
+//                     <Dropdown.Item >
+//                       <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 1")}>Option 1</a>
+//                     </Dropdown.Item>
+//                     <Dropdown.Item >
+//                       <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 2")}>Option 2</a>
+//                     </Dropdown.Item>
+//                     <Dropdown.Item >
+//                       <a class="dropdown-item" href="#" onClick={() => setSelectedOption("Option 3")}>Option 3</a>
+//                     </Dropdown.Item>
+//                   </Dropdown.Menu>
+//                 </Dropdown>
+
+//                 <Bar data={chartData} width={100} height={40} options={{ responsive: true }} />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+// export default IndicatorDetailsMetaChart;
+
+
+
+
+
+
+
+
+
+
+import Common from "../inc/Common";
+import { BACKEND_URL } from "../../constants";
+import { Bar } from 'react-chartjs-2';
+import { Dropdown } from 'react-bootstrap';
+
+const IndicatorDetailsMetaChart = (props) => {
+    const [data, setData] = useState(null);
+    const [chartData, setChartData] = useState({});
+    const [selectedOption, setSelectedOption] = useState("Option 1");
+    useEffect(() => {
+        fetch(`${BACKEND_URL}/indicator-detail-metas?populate=*`)
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data.data);
+                updateChartData(selectedOption);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    }, []);
+
+    const updateChartData = (selectedOption) => {
+        const {
+            location: { state },
+        } = props;
+        const labels = [];
+        const values = [];
+
+        data
+            .filter((item) => item.attributes?.indicator_detail?.data?.id === state.id)
+            .map((item) => {
+                if (selectedOption === "Option 1") {
+                    labels.push(item.attributes.sex);
+                    values.push(item.attributes.age);
+                } else if (selectedOption === "Option 2") {
+                    labels.push(item.attributes.marital_status);
+                    values.push(item.attributes.frequency);
+                } else if (selectedOption === "Option 3") {
+                    labels.push(item.attributes.year);
+                    values.push(item.attributes.gdp);
+                }
+            });
+        setChartData({
+            labels: labels,
+            datasets: [
+                {
+                    label: selectedOption,
+                    data: values,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }
+
+            ]
+        });
+    }
+
+    return (
+        <>
+            <Common />
+            <div className="container">
+                <div className="row">
+                    <div className="my-5 col-md-12">
+                        <div className='card shadow'>
+                            <div className="card-body card-body1">
+                                <Dropdown>
+                                    <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                                        {selectedOption}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item href="#" onClick={() => setSelectedOption("Option 1")}>Option 1</Dropdown.Item>
+                                        <Dropdown.Item href="#" onClick={() => setSelectedOption("Option 2")}>Option 2</Dropdown.Item>
+                                        <Dropdown.Item href="#" onClick={() => setSelectedOption("Option 3")}>Option 3</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                                <Bar data={chartData} width={100}
+                                    height={40} options={{ responsive: true }} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+export default IndicatorDetailsMetaChart;
+
+
+
+
+
+// import React from 'react';
+// import { Container, Row, Col, Card } from 'react-bootstrap';
+
+// const PrivacyPolicy = () => {
+//   return (
+//     <Container>
+//       <Row>
+//         <Col>
+//           <Card>
+//             <Card.Header>Privacy Policy for LMIS</Card.Header>
+//             <Card.Body>
+//               <Card.Title>Introduction</Card.Title>
+//               <Card.Text>
+//                 This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is being used online. PII, as used in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.
+//               </Card.Text>
+//               <Card.Title>Information Collection and Use</Card.Title>
+//               <Card.Text>
+//                 We collect several different types of information for various purposes to provide and improve our Service to you.
+//               </Card.Text>
+//               <Card.Title>Cookies</Card.Title>
+//               <Card.Text>
+//                 We use cookies and similar tracking technologies to track the activity on our Service and hold certain information.
+//               </Card.Text>
+//               <Card.Title>Service Providers</Card.Title>
+//               <Card.Text>
+//                 We may employ third-party companies and individuals due to the following reasons:
+//               </Card.Text>
+//               <Card.Title>Security</Card.Title>
+//               <Card.Text>
+//                 We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
+//               </Card.Text>
+//               <Card.Title>Links to Other Sites</Card.Title>
+//               <Card.Text>
+//                 Our Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+//               </Card.Text>
+//               <Card.Title>Children's Privacy</Card.Title>
+//               <Card.Text>
+//                 Our Services do not address anyone under the age of 18. We do not knowingly collect personal identifiable information from children under 18. In the case we discover that a child under 18 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.
+//               </Card.Text>
+//               <Card.Title>Changes to This Privacy Policy</Card.Title>
+//               <Card.Text>
+//                 We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on
+//                 this page. These changes are effective immediately, after they are posted on this page.
+// </Card.Text>
+// <Card.Title>Contact Us</Card.Title>
+// <Card.Text>
+// If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.
+// </Card.Text>
+// </Card.Body>
+// </Card>
+// </Col>
+// </Row>
+// </Container>
+// );
+// }
+
+// export default PrivacyPolicy;
+
+
+
+// import React from "react";
+// import { Container, Row, Col, ListGroup, ListGroupItem } from "react-bootstrap";
+
+// const PrivacyPolicy = () => {
+//   return (
+//     <Container>
+//       <Row>
+//         <Col>
+//           <h1>Privacy Policy</h1>
+//           <p>
+//             This privacy policy applies to the Nigerian LMIS (Logistics Management
+//             Information System) and governs data collection and usage. By using
+//             the Nigerian LMIS, you consent to the data practices described in this
+//             policy.
+//           </p>
+//           <h2>Collection of your Personal Information</h2>
+//           <p>
+//             We do not collect any personal information about you unless you
+//             voluntarily provide it to us. However, you may be required to provide
+//             certain personal information to us when you elect to use certain
+//             products or services available on the Nigerian LMIS. These may include:
+//           </p>
+//           <ListGroup>
+//             <ListGroupItem>Contact information, such as name, email address, and telephone number</ListGroupItem>
+//             <ListGroupItem>Unique identifiers, such as user name, account number, and password</ListGroupItem>
+//             <ListGroupItem>Demographic information, such as age, gender, location, and preferences</ListGroupItem>
+//           </ListGroup>
+//           <h2>Use of your Personal Information</h2>
+//           <p>
+//             The Nigerian LMIS may use your personal information to:
+//           </p>
+//           <ListGroup as="ol">
+//             <ListGroupItem as="li">Provide personalized content and information</ListGroupItem>
+//             <ListGroupItem as="li">Provide and bill for services and products</ListGroupItem>
+//             <ListGroupItem as="li">Administer your account</ListGroupItem>
+//             <ListGroupItem as="li">Communicate with you about new products and services</ListGroupItem>
+//           </ListGroup>
+//           <h2>Sharing of your Personal Information</h2>
+//           <p>
+//             We do not share your personal information with third parties for their
+//             marketing purposes without your explicit consent. However, the Nigerian LMIS
+//             may disclose your personal information, without notice, if required to do
+//             so by law or in the good faith belief that such action is necessary to:
+//           </p>
+//           <ListGroup as="ol">
+//             <ListGroupItem as="li">Conform to legal requirements or comply with legal process</ListGroupItem>
+//             <ListGroupItem as="li">Protect and defend the rights or property of the Nigerian LMIS</ListGroupItem>
+//             <ListGroupItem as="li">Act under exigent circumstances to protect the personal safety of users of the Nigerian LMIS or the public</ListGroupItem>
+//           </ListGroup>
+//         </Col>
+//       </Row>
+//     </Container>
+//   );
+// };
+
+// export default PrivacyPolicy;
+
+
+
+// import React from "react";
+// import { Container, Row, Col, ListGroup, ListGroupItem, Card } from "react-bootstrap";
+// import { FaCheck } from "react-icons/fa";
+
+// const PrivacyPolicy = () => {
+//     return (
+//         <Container>
+//             <Row className="my-5">
+//                 <Col>
+//                     <h1 className="text-center">Privacy Policy</h1>
+//                     <p>
+//                         At Nigerian LMIS, we are committed to protecting the privacy of our users. This privacy policy applies to the Nigerian LMIS website and governs data collection and usage. By using the Nigerian LMIS website, you consent to the data practices described in this policy.
+//                     </p>
+//                     <h2>Collection of your Personal Information</h2>
+//                     <p>
+//                         We do not collect any personal information about you unless you voluntarily provide it to us. However, you may be required to provide certain personal information to us when you elect to use certain products or services available on the Nigerian LMIS website. These may include:
+//                     </p>
+//                     <ListGroup>
+//                         <ListGroupItem>
+//                             <FaCheck className="mr-2" /> Contact information, such as name, email address, and telephone number
+//                         </ListGroupItem>
+//                         <ListGroupItem>
+//                             <FaCheck className="mr-2" /> Unique identifiers, such as user name, account number, and password
+//                         </ListGroupItem>
+//                         <ListGroupItem>
+//                             <FaCheck className="mr-2" /> Demographic information, such as age, gender, location, and preferences
+//                         </ListGroupItem>
+//                         <ListGroupItem>
+//                             <FaCheck className="mr-2" /> Financial information, such as credit card number, bank account number and expiration date
+//                         </ListGroupItem>
+//                     </ListGroup>
+//                     <h2>Use of your Personal Information</h2>
+//                     <p>
+//                         The Nigerian LMIS website may use your personal information to:
+//                     </p>
+//                     <ListGroup as="ol">
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Provide personalized content and information
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Provide and bill for services and products
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Administer your account
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Communicate with you about new products and services
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Send you promotional materials
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Improve the Nigerian LMIS website and services
+//                         </ListGroupItem>
+//                     </ListGroup>
+//                     <h2>Sharing of your Personal Information</h2>
+//                     <p>
+//                         We do not share your personal information with third parties for their marketing purposes without your explicit consent. However, the Nigerian LMIS website may disclose your personal information, without notice, if required to do so by law or in the good faith belief that such action is necessary to:
+//                     </p>
+//                     <ListGroup as="ol">
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Conform to legal requirements or comply with legal process
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Protect and defend the rights or property of the Nigerian LMIS
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Act under exigent circumstances to protect the personal safety of users of the Nigerian LMIS website or the public
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Facilitate the sale or transfer of our business
+//                         </ListGroupItem>
+//                     </ListGroup>
+//                     <h2>Security of your Personal Information</h2>
+//                     <p>
+//                         Nigerian LMIS website secures your personal information from unauthorized access, use, or disclosure. Nigerian LMIS website uses the following methods for this purpose:
+//                     </p>
+//                     <ListGroup as="ol">
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Secure Sockets Layer (SSL)
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Secure Data Storage
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Access Control
+//                         </ListGroupItem>
+//                         <ListGroupItem as="li">
+//                             <FaCheck className="mr-2" /> Regularly Reviewing and Updating
+//                         </ListGroupItem>
+//                     </ListGroup>
+//                     <Card className="my-4">
+//                         <Card.Body>
+//                             <Card.Title>
+//                                 <h4>Note</h4>
+//                             </Card.Title>
+//                             <Card.Text>
+//                                 We will occasionally update this privacy policy. We will notify you about material changes by sending a notice to the primary email address specified in your account or by placing a prominent notice on our site.
+//                             </Card.Text>
+//                         </Card.Body>
+//                     </Card>
+//                 </Col>
+//             </Row>
+//         </Container>
+//     );
+// };
+
+// export default PrivacyPolicy;
+

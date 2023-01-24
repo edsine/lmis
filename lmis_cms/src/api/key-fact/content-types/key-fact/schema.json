@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "key_facts",
+  "info": {
+    "singularName": "key-fact",
+    "pluralName": "key-facts",
+    "displayName": "Key Fact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "value": {
+      "type": "decimal",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "sector": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sector.sector"
+    },
+    "occupation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::occupation.occupation"
+    },
+    "images_icons": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "status": {
+      "type": "boolean"
+    }
+  }
+}

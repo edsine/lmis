@@ -112,7 +112,7 @@ function Summary() {
       <th scope="col" style={{color: 'black'}}>NO</th>
       <th scope="col" tyle={{color: 'black'}}>MDA</th>
       <th scope="col" tyle={{color: 'black'}}>Personel</th>
-      <th scope="col" tyle={{color: 'black'}}>Oveerhead</th>
+      <th scope="col" tyle={{color: 'black'}}>Overhead</th>
       <th scope="col" tyle={{color: 'black'}}>Capital</th>
     </tr>
   </thead>

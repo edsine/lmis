@@ -12,6 +12,8 @@ import Profile from "./components/Profile";
 import BoardAdmin from "./components/BoardAdmin";
 import Dashboard from "./components/dashboard";
 import Widget from "./components/widget";
+import Homepage from "./components/pages/homepage";
+import HomepageStats from "./components/pages/homepage_stats";
 
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
@@ -21,6 +23,7 @@ import EventBus from "./common/EventBus";
 import Index from "./components/include";
 import Users from "./components/users";
 import Indicators from "./components/indicators";
+import IndicatorDetails from "./components/indicator-details";
 import Population from "./components/indicators-by-subjects/population";
 import Employment from "./components/indicators-by-subjects/employment";
 import Employees from "./components/indicators-by-subjects/employees"
@@ -111,6 +114,7 @@ const App = () => {
       <Route path="/widget" element={<Widget />} />
       <Route path="/users" element={<Users />} />
       <Route path="/indicators" element={<Indicators />} />
+      <Route path="/indicator-details" element={<IndicatorDetails />} />
       <Route path="/population" element={<Population />} />
       <Route path="/employment" element={<Employment />} />
       <Route path="/employees" element={<Employees />} />
@@ -119,6 +123,8 @@ const App = () => {
       <Route path="/child-labour" element={<ChildLabour />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/admin" element={<BoardAdmin />} />
+      <Route path="/pages/home" element={<Homepage/>}/>
+      <Route path="/pages/homestat" element={<HomepageStats/>}/>
       </Routes>
       </div>
       </div>
@@ -135,11 +141,6 @@ const App = () => {
           
         </Routes>
       </div>
-      {/* {currentUser && (
-      <Footer/>
-  )} */}
-      
-      {/* <AuthVerify logOut={logOut}/> */}
     </>
   );
 };

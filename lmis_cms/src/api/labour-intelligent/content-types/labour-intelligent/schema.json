@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "labour_intelligents",
+  "info": {
+    "singularName": "labour-intelligent",
+    "pluralName": "labour-intelligents",
+    "displayName": "Labour Intelligent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "detail": {
+      "type": "text",
+      "required": true
+    },
+    "status": {
+      "type": "boolean"
+    }
+  }
+}

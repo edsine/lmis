@@ -9,7 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {}
+    static associate(models) {
+      Indicator.hasMany(models.IndicatorDetails, {
+        foreignKey: 'indicator_id',
+        as: 'indicatorDetails'
+      });
+    }
   }
   Indicator.init(
     {
@@ -22,7 +27,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: true,
       },
-      dimensions: DataTypes.STRING,
       imagePath: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -46,8 +50,7 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "Indicator",
       paranoid: true,
       timestamps: true,
-      //underscored: true,
-      //freezeTableName: true
+     
     }
   );
 

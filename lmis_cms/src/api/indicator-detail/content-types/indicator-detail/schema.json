@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "indicator_details",
+  "info": {
+    "singularName": "indicator-detail",
+    "pluralName": "indicator-details",
+    "displayName": "Indicator Detail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "dimensions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dimension.dimension"
+    },
+    "feasible_charts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feasible-chart.feasible-chart"
+    },
+    "indicator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::indicator.indicator"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "feasible_dimension_combinations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feasible-dimension-combination.feasible-dimension-combination"
+    }
+  }
+}

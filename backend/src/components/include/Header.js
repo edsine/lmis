@@ -26,6 +26,7 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import avatar from "../../assets/images/avatar/1.jpg";
 import { Dropdown } from "react-bootstrap";
 
+
 const Header = ({ onNote }) => {
   const [showUserBoard, setShowUserBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);

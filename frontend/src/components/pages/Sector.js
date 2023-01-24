@@ -1,402 +1,133 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 //import Bar from './Bar';
-import { Link } from "react-router-dom";
-import {
-  BiBuoy,
-  BiCoinStack,
-  BiBriefcase,
-  BiLineChart,
-  BiNews,
-} from "react-icons/bi";
 
 import Common from "../inc/Common";
-import nigeriaHigh from "../images/ng.svg";
-import list from '../data/list';
-import Footer from "../inc/Footer";
- 
+import Keyfact from "./inc/apis/fetch_keyfacts";
+import Sectors from "./inc/apis/fetch_sectors";
+import Description from "./inc/description";
 
 function Sector() {
-  const [sectorState,setSectorState] = useState()
+  // const [sectorState, setSectorState] = useState()
 
-  const  handleChange = (e)=>{
-    const selected =  e.target.value;
-    const selectedSectorState = list.filter((d)=>d.id == selected)[0];
-    console.log(selectedSectorState);
-    setSectorState(selectedSectorState);
+  const [filteredKeyFacts, setFilteredKeyFacts] = useState(null);
 
+  const [sectorDescription, setSectorDescription] = useState(null);
 
-  }
-  
+  const [resetFilter, setResetFilter] = useState(false);
+
+  // const filterKeyFactsByState = (e) => {
+  //   const selected = parseInt(e.target.value);
+  //   const keyFacts = filteredKeyFacts.filter(
+  //     (item) => item.attributes.state.data.id === selected
+  //   );
+  //   console.log(selected);
+  //   setFilteredKeyFacts(keyFacts);
+  // };
+
+  const filterKeyFactsBySector = (e) => {
+    const selected = parseInt(e.target.value);
+    if (selected === 0) {
+      setResetFilter(true);
+      return;
+    }
+    const keyFacts = filteredKeyFacts.filter(
+      (item) => item.attributes.sector.data.id === selected
+    );
+    setFilteredKeyFacts(keyFacts);
+  };
+
+  const changeSectorDescription = ({
+    target: {
+      selectedOptions: [
+        {
+          dataset: { description },
+        },
+      ],
+    },
+  }) => {
+    setSectorDescription(description);
+  };
+
   return (
     <>
       <Common />
 
       <div className="container-fluid">
-        <div className="container mt-3 mb-3">
-          <h1>Filters</h1>
-        </div>
-
-        <div className="container">
+        <div className="container my-5">
           <div className="row">
-            <div className="col">
-              <h2>sectors</h2>
-
+            <div className="col-6">
               <div>
-                <div class="col text-center ">
-    <select onChange={(e)=>{
-              handleChange(e)
-            }}>
-              {
-                list && list.map((l)=>(
-                  <option key={l.id} value={l.id} className="">
-                    {l.restaurant}
-                    
-                    </option>
-                ))
-              }
-                    
-                  </select>
-                  
-                  
-                  
-                  {/*
-                  <select 
-                    class=" form-select-lg mb-3 pe-5"
-                    aria-label=".form-select-lg example"
+                <label>Sectors</label>
+                <div className="col text-center ">
+                  <select
+                    onChange={(e) => {
+                      filterKeyFactsBySector(e);
+                      changeSectorDescription(e);
+                    }}
                   >
-                    <option selected>Select Sectors</option>
-                    <option value="1">-Business Services</option>
-                    <option value="2">--Administrative Services</option>
-                    <option value="3">--Arts and Recreation</option>
-                    <option value="4">--Proffessional Services</option>
-                    <option value="5">-Construction</option>
-                    <option value="6">--Construction</option>
-                    <option value="7">--Distribution & transport</option>
-                    <option value="8">--Accommodation and food</option>
-                    <option value="9">--Transport & storage</option>
-
-                    <option value="10">--Wholesale & retail trade</option>
-                    <option value="11">Administrative Services</option>
-                    <option value="12">-Manufacturing</option>
-                    <option value="13">--Manufacturing</option>
-                    <option value="14">-Non-marketed services</option>
-                    <option value="15">--Education</option>
-                    <option value="16">-- health and Social care</option>
-                    <option value="17">-- Public sector & defence</option>
-                    <option value="18">-Primary sector & utilities</option>
-
-                    <option value="19">
-                      --Agriculture,forestry and fishing
-                    </option>
-
-                    <option value="20">-- Energy supply services</option>
-
-                    <option value="21">-- Mining and quarry</option>
-
-                    <option value="21">-- Water and waste treatment</option>
+                    <option value={0}>Select Sector</option>
+                    <Sectors />
                   </select>
-                  */}
                 </div>
               </div>
             </div>
 
-            <div className="col">
+            {/* <div className="col">
               <h2>states</h2>
               <div>
-                <div class="col text-center ">
+                <div className="col text-center ">
                   <select
-                    class="form-select-lg mb-3"
+                    className="form-select-lg mb-3"
                     aria-label=".form-select-lg example"
+                    onChange={(e) => {
+                      filterKeyFactsByState(e);
+                    }}
                   >
-                    <option selected>Select State</option>
-                    <option value="1">-Abia</option>
-                    <option value="2">-Adamawa</option>
-                    <option value="3">-Akwa Ibom</option>
-                    <option value="4">-Anambra</option>
-                    <option value="5">-Bauchi</option>
-                    <option value="6">-Bayelsa</option>
-                    <option value="7">-Benue</option>
-                    <option value="8">-Borno</option>
-                    <option value="9">-Cross River</option>
-
-                    <option value="10">-Delta</option>
-                    <option value="11">Ebonyi</option>
-                    <option value="12">-Edo</option>
-                    <option value="13">-Ekiti</option>
-                    <option value="14">-Enugu</option>
-                    <option value="15">-Gombe</option>
-                    <option value="16">-Imo</option>
-                    <option value="17">-Jigawa</option>
-                    <option value="18">-Kaduna</option>
-
-                    <option value="19">-Kano</option>
-
-                    <option value="20">-Katsina</option>
-
-                    <option value="21">-Kebbi</option>
-
-                    <option value="22">-Kogi</option>
-
-                    <option value="23">-Kwara</option>
-
-                    <option value="24">-Lagos</option>
-
-                    <option value="25">-Nasarawa</option>
-
-                    <option value="26">-Niger</option>
-
-                    <option value="27">-Ogun</option>
-
-                    <option value="28">-Ondo</option>
-
-                    <option value="29">-Osun</option>
-
-                    <option value="30">-Oyo</option>
-
-                    <option value="30">-Plateau</option>
-
-                    <option value="31">-Rivers</option>
-
-                    <option value="32">-Sokoto</option>
-
-                    <option value="30">-Sokoto</option>
-
-                    <option value="31">-Taraba</option>
-
-                    <option value="32">-Yobe</option>
-
-                    <option value="33">-Sokoto</option>
-
-                    <option value="34">-Yobe</option>
-
-                    <option value="35">-Zamfara</option>
+                    <option>Select State</option>
+                    <State />
                   </select>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
-        {/*
-         <div class="row container-fluid">
-            <h2>sectors</h2>
-        <div class="col text-center d-box">
-        
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected>
-                    
-                    </option>
-                     <option value="1">
-                     -Business Services
-                     </option>
-                    <option value="2">
-                    --Administrative Services
-                    </option>
-                    <option value="3">
-                    --Arts and Recreation
-                    </option>
-                    <option value="4">
-                     --Proffessional Services
-                     </option>
-                    <option value="5">
-                    -Construction
-                    </option>
-                    <option value="6">
-                    --Construction
-                    </option>
-                    <option value="7">
-                     --Distribution & transport
-                     </option>
-                    <option value="8">
-                    --Accommodation and food
-                    </option>
-                    <option value="9">
-                    --Transport & storage
-                    </option>
-
-                    <option value="10">
-                     --Wholesale & retail trade
-                     </option>
-                    <option value="11">
-                    Administrative Services
-                    </option>
-                    <option value="12">
-                    -Manufacturing
-                    </option>
-                    <option value="13">
-                     --Manufacturing
-                     </option>
-                    <option value="14">
-                    -Non-marketed services
-                    </option>
-                    <option value="15">
-                    --Education
-                    </option>
-                    <option value="16">
-                    -- health and Social care
-                     </option>
-                    <option value="17">
-                    -- Public sector & defence
-                    </option>
-                    <option value="18">
-                    -Primary sector & utilities
-                    </option>
-
-                    <option value="19">
-                    --Agriculture,forestry and fishing
-                    </option>
-
-                    <option value="20">
-                    -- Energy supply services
-                    </option>
-
-                    <option value="21">
-                    -- Mining and quarry 
-                    </option>
-
-                    <option value="21">
-                    -- Water and waste treatment 
-                    </option>
-
-
-                    
-                    
-                </select>
-                    </div>
-
-    <h2>States</h2>
-     <div class="col text-center d-box">
-     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-  <option selected></option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-     </div>
-  
-</div>
- */}
-
-        <div class="m-5">
+        <div className="m-5">
           <div className="container-fluid">
-            <div class="card card-margin">
+            <div className="card card-margin">
               <div
-                class="card-header"
+                className="card-header"
                 style={{ backgroundColor: "#0A6921", color: "#fff" }}
               >
-                {sectorState?.restaurant}
+                {/* {sectorState?.restaurant} */}
               </div>
-              <div class="card-body" className="py-font py-5 px-5">
-              {sectorState?.bio}
+              <div className="card-body py-font py-5 px-5">
+                {/* {sectorState?.bio} */}
+                <Description description={sectorDescription} />
+                <h4 className="my-5">Key Facts</h4>
+                <Keyfact
+                  resetFilter={resetFilter}
+                  filteredKeyFacts={filteredKeyFacts}
+                  setFilteredKeyFacts={setFilteredKeyFacts}
+                />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="container row mb-10">
-          <h1>Key Facts</h1>
-        </div>
+        <div className="container row mb-10"></div>
 
         <div>
           <div className="card-group container-fluid">
-            <div class="row">
-              <div class="col-8">
-                <div className="row ml-2">
-                  <div
-                    className="card col-3"
-                    style={{ backgroundColor: "rgba(116,166,39, 0.1)" }}
-                  >
-                    {/*<img src="" className="card-img-top" alt="Hollywood Sign on The Hill" />*/}
-                    <div className="card-body">
-                      <div className="text-center">
-                        <div className="py-5">
-                          <BiBuoy size={70} color="#488134" />
-                        </div>
-                      </div>
-                      <h5 className="card-title py-font">Total employment yes</h5>
-                      <p className="card-text py-font">
-                        618,900 in <strong>2020</strong> in NGN
-                      </p>
-                      <p className="card-text py-font">
-                        <small className="text-muted">
-                          Last updated 3 mins ago
-                        </small>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="card col-3">
-                    {/*<img src="" className="card-img-top" alt="Hollywood Sign on The Hill" />*/}
-                    <div className="card-body">
-                      <div className="text-center">
-                        <div className="py-5">
-                          <BiCoinStack size={70} color="#488134" />
-                        </div>
-                      </div>
-                      <h5 className="card-title">
-                        Employment share of high-tech occupations
-                      </h5>
-                      <p className="card-text">
-                        19.5% in <strong>2020</strong> in NGN27
-                      </p>
-                      <p className="card-text">
-                        <small className="text-muted">
-                          Last updated 3 mins ago
-                        </small>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div
-                    className="card col-3"
-                    style={{ backgroundColor: "rgba(116,166,39, 0.1)" }}
-                  >
-                    {/*<img src="" className="card-img-top" alt="Hollywood Sign on The Hill" />*/}
-                    <div className="card-body">
-                      <div className="text-center">
-                        <div className="py-5">
-                          <BiBriefcase size={70} color="#488134" />
-                        </div>
-                      </div>
-                      <h5 className="card-title">Future employment change</h5>
-                      <p className="card-text">-15.5 in 2020-2030 in NGN27</p>
-                      <p className="card-text">
-                        <small className="text-muted">
-                          Last updated 3 mins ago
-                        </small>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="card col-3">
-                    {/*<img src="" className="card-img-top" alt="Hollywood Sign on The Hill" />*/}
-                    <div className="card-body">
-                      <div className="text-center">
-                        <div className="py-5">
-                          <BiLineChart size={70} color="#488134" />
-                        </div>
-                      </div>
-                      <h5 className="card-title">
-                        Share of people with high education level
-                      </h5>
-                      <p className="card-text">
-                        19.5% in <strong>2020</strong> in NGN27
-                      </p>
-                      <p className="card-text">
-                        <small className="text-muted">
-                          Last updated 3 mins ago
-                        </small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+            <div className="row">
+              <div className="col-8">
                 <div className="text-center p-5">
-                  <img src={sectorState?.image} />
+                  {/* <img src={sectorState?.image} /> */}
                 </div>
               </div>
-              <div class="col-4">
+              {/* <div className="col-4">
                 <div className=" container card  mb-5" style={{}}>
-                  <div class="card-header">
+                  <div className="card-header">
                     <span className="card-title text-uppercase fs-2 fw-bolder">
                       Data insights
                     </span>
@@ -449,10 +180,9 @@ function Sector() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
-          {/*from here for 1*/}
         </div>
       </div>
     </>

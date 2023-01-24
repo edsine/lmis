@@ -105,7 +105,7 @@ const SideBar = () => {
   let scrollPosition = useScrollPosition();
   /// Path
   let path = window.location.pathname;
-  
+
   path = path.split("/");
   path = path[path.length - 1];
   /// Active menu
@@ -232,12 +232,22 @@ const SideBar = () => {
               <span className="nav-text">Indicators</span>
             </Link>
           </li>
+          <li className={`"indicator" ? "mm-active" : ""}`}>
+            <Link
+              className={`${path === "indicator-details" ? "mm-active" : ""}`}
+              to="/indicator-details"
+            >
+              <i className="fas fa-plus"></i>
+              <span className="nav-text">Indicator Details</span>
+            </Link>
+          </li>
 
-          <li className={`"import" ? "mm-active" : ""}`}>
+          {/* <li className={`"import" ? "mm-active" : ""}`}>
             <Link className="has-arrow ai-icon" to="#">
               <i className="fas fa-clone"></i>
               <span className="nav-text">Import CSV</span>
             </Link>
+            
             <ul>
               <li>
                 <Link className="has-arrow" to="#">
@@ -295,7 +305,31 @@ const SideBar = () => {
                 </ul>
               </li>
             </ul>
-          </li>
+          </li> */}
+          <li className={`"widget" ? "mm-active" : ""}`}>
+
+          <Link className="has-arrow ai-icon" to="pages/homestat/">
+              <i className="fas fa-clone"></i>
+              <span className="nav-text"> CMS</span>
+            </Link>
+            <ul>
+              <li>
+                <Link className="has-arrow" to="#">
+                 Home Page CMS
+                </Link>
+                <ul>
+                  <li>
+                    <Link
+                      className={`${path === "homestat" ? "mm-active" : ""}`}
+                      to="/homestat"
+                    >
+                      Statistical Info
+                    </Link>{" "}
+                  </li>
+                  </ul>
+                  </li>
+                  </ul>
+            </li>
           <li className={`"widget" ? "mm-active" : ""}`}>
             <Link to="widget" className="ai-icon">
               <i className="fas fa-user-check"></i>
@@ -514,7 +548,7 @@ const SideBar = () => {
             <strong>LMIS Admin Dashboard</strong> © 2022 All Rights Reserved
           </p>
           <p className="fs-12">
-            Made with <span className="heart"></span> by PGL Nigeria
+            Powered by <span className="heart"></span> Edsine
           </p>
         </div>
       </PerfectScrollbar>
