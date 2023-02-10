@@ -1,3 +1,3 @@
-export const BACKEND_URL="http://localhost:1337/api"
-export const BACKEND_URL_IMAGE="http://localhost:1337"
-export const NELEX_URL="https://test.nelexnigeria.com"
+export const BACKEND_URL=process.env.REACT_APP_BACKEND_URL
+export const BACKEND_URL_IMAGE=process.env.REACT_APP_BACKEND_URL_IMAGE
+export const NELEX_URL=process.env.REACT_APP_NELEX_URL
