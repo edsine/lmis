@@ -1,4 +1,3 @@
-
 :root {
   --font-default: "Poppins", "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: "Poppins", sans-serif;
@@ -1079,7 +1078,8 @@ section {
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: rgba(72, 129, 52, 1);;
+  color: rgba(72, 129, 52, 1);
+  ;
   font-size: 26px;
   line-height: 0;
 }
@@ -1366,7 +1366,8 @@ section {
 
 .portfolio-details .portfolio-description .testimonial-item .quote-icon-left,
 .portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
-  color: rgba(72, 129, 52, 1);;
+  color: rgba(72, 129, 52, 1);
+  ;
   font-size: 26px;
   line-height: 0;
 }
@@ -2005,7 +2006,8 @@ section {
   padding: 30px 30px;
   position: relative;
   overflow: hidden;
-  background: rgb(71, 138, 45);;
+  background: rgb(71, 138, 45);
+  ;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -2037,7 +2039,8 @@ section {
 }
 
 .hero .icon-box:hover {
-  background: rgba(72, 129, 52, 1);;
+  background: rgba(72, 129, 52, 1);
+  ;
 }
 
 .hero .icon-box:hover .title a,
@@ -2268,9 +2271,19 @@ section {
 }
 
 .zoom:hover {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.1); 
+  -ms-transform: scale(1.5);
+  /* IE 9 */
+  -webkit-transform: scale(1.5);
+  /* Safari 3-8 */
+  transform: scale(1.1);
 }
 
 
+
+
+.lottie-sphere {
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-gap: 40px;
+  align-items: center;
+}
