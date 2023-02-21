@@ -1,0 +1,183 @@
+{
+  "kind": "collectionType",
+  "collectionName": "indicator_detail_metas",
+  "info": {
+    "singularName": "indicator-detail-meta",
+    "pluralName": "indicator-detail-metas",
+    "displayName": "Indicator Detail Meta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true,
+    "populateCreatorFields": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "indicator_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::indicator-detail.indicator-detail"
+    },
+    "age": {
+      "type": "integer",
+      "max": 65
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "sex": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "economic_class": {
+      "type": "enumeration",
+      "enum": [
+        "Low Class",
+        "Middle Class",
+        "High Class"
+      ]
+    },
+    "time_period": {
+      "type": "date"
+    },
+    "frequency": {
+      "type": "float"
+    },
+    "marital_status": {
+      "type": "enumeration",
+      "enum": [
+        "Single",
+        "Married",
+        "Divorced"
+      ]
+    },
+    "occupation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::occupation.occupation"
+    },
+    "area_type": {
+      "type": "enumeration",
+      "enum": [
+        "National",
+        "Urban",
+        "Rural"
+      ]
+    },
+    "labour_market_status": {
+      "type": "enumeration",
+      "enum": [
+        "Employed",
+        "Unemployed"
+      ]
+    },
+    "economic_activity": {
+      "type": "enumeration",
+      "enum": [
+        "Agricultural",
+        "Mining",
+        "Quarrying",
+        "Manufacturing",
+        "Electricity",
+        "Gas and Water Supply",
+        "Construction",
+        "Trade",
+        "Transportation",
+        "Accommodation and Food",
+        "Business and Administrative Services",
+        "Public Administration",
+        "Community",
+        "Social and Other Services and Activities"
+      ]
+    },
+    "status_in_employment": {
+      "type": "enumeration",
+      "enum": [
+        "Employed",
+        "Unemployed"
+      ]
+    },
+    "government_level": {
+      "type": "enumeration",
+      "enum": [
+        "Local",
+        "State",
+        "Federal"
+      ]
+    },
+    "disability_status": {
+      "type": "enumeration",
+      "enum": [
+        "Disabled",
+        "Not Disabled"
+      ]
+    },
+    "household_type": {
+      "type": "enumeration",
+      "enum": [
+        "Low class",
+        "Middle class",
+        "High class"
+      ]
+    },
+    "multiple_job_holding": {
+      "type": "enumeration",
+      "enum": [
+        "Total",
+        "One job only",
+        "More than one job",
+        "Not elsewhere classified"
+      ]
+    },
+    "duration": {
+      "type": "enumeration",
+      "enum": [
+        "Less than 6 months",
+        "Six months to Twelve months",
+        "Less than 12 months",
+        "Six months or more"
+      ]
+    },
+    "type_of_volunteer_work": {
+      "type": "enumeration",
+      "enum": [
+        "Organization-based",
+        "Direct"
+      ]
+    },
+    "quantile": {
+      "type": "integer",
+      "max": 10,
+      "min": 1
+    },
+    "consumer_price_index": {
+      "type": "integer"
+    },
+    "migrant_status": {
+      "type": "enumeration",
+      "enum": [
+        "Test"
+      ]
+    },
+    "place_of_birth": {
+      "type": "string"
+    },
+    "country_of_residence": {
+      "type": "string"
+    },
+    "country_of_previous_residence": {
+      "type": "string"
+    },
+    "country_of_destination": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean"
+    }
+  }
+}

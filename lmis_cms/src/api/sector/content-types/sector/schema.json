@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sectors",
+  "info": {
+    "singularName": "sector",
+    "pluralName": "sectors",
+    "displayName": "Sector"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "populateCreatorFields": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

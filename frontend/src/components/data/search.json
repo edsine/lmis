@@ -1,0 +1,407 @@
+[
+    {
+        "id": 100,
+        "title": "Working-age population by sex and age",
+        "format": "standard",
+        "measure": "Working-age population",
+        "datatype": "Reference area . Frequency . Sex . Age",
+        "indicators_by_breakdown1": "Age",
+        "database1": "Short-Term Labour Force Statistics (STLFS) ",
+        "database2": "Labour Force Statistics (LFS) ",
+        "indicators_by_subject": "Population",
+        "indicators_by_breakdown2": "Sex",
+        "file_name": "Full CSV (ILO Bulk)",
+        "file_link": "POP_XWAP_SEX_AGE_NB_A.csv.gz",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The prime-age population refers to persons aged 25 to 54 years. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.        ",
+        "htmltext": "Reference area, Frequency, Household type, Time period"
+    },
+    {
+        "id": 101,
+        "title": "Working-age population by sex, age and education",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. Data disaggregated by level of education are provided on the highest level of education completed, classified according to the International Standard Classification of Education (ISCED). Data may have been regrouped from national classifications, which may not be strictly compatible with ISCED. For more information, refer to the Education and Mismatch Indicators (EMI) database description.",
+        "htmltext": "Reference area, Frequency, Sex, Age, Educational attainment, Time period"
+    },
+    {
+        "id": 102,
+        "title": "Working-age population by sex, age and rural / urban areas",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Rural and Urban Labour Market Statistics (RURBAN) database description.",
+        "htmltext": "Reference area, Frequency, Sex, Age, Area type, Time period"
+    },
+    {
+        "id": 103,
+        "title": "Working-age population by sex, age and marital status",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Frequency, Sex, Age, Marital status, Time period"
+    },
+    {
+        "id": 104,
+        "title": "Working-age population by sex, age and disability status",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Sex, Age, Disability status, Time period"
+    },
+    {
+        "id": 105,
+        "title": "Working-age population by sex and marital status",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Frequency, Sex, Marital status, Time period"
+    },
+    {
+        "id": 106,
+        "title": "Working-age population by sex and education",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Frequency, Sex, Educational attainment, Time period"
+    },
+    {
+        "id": 107,
+        "title": "Working-age population by sex, education and rural / urban areas",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Frequency, Sex, Educational attainment, Area type, Time period"
+    },
+    {
+        "id": 108,
+        "title": "Working-age population by sex, education and marital status",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Frequency, Sex, Educational attainment, Marital status, Time period"
+    },
+    {
+        "id": 109,
+        "title": "Working-age population by sex, education and disability status",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Sex, Educational attainment, Disability status, Time period"
+    },
+    {
+        "id": 110,
+        "title": "Working-age population by sex, rural / urban area and marital status",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Frequency, Sex, Area type, Marital status, Time period"
+    },
+    {
+        "id": 111,
+        "title": "Working-age population by sex and disability status",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Frequency, Sex, Disability status, Time period"
+    },
+    {
+        "id": 112,
+        "title": "Youth working-age population by sex, age and rural / urban areas",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Sex, Age, Area type, Time period"
+    },
+    {
+        "id": 113,
+        "title": "Youth working-age population by sex, age and education",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Sex, Age, Educational attainment, Time period"
+    },
+    {
+        "id": 114,
+        "title": "Youth working-age population by sex, age and school attendance status",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Sex, Age, Attendance in school or training, Time period"
+    },
+    {
+        "id": 115,
+        "title": "Youth working-age population by sex, age and labour market status",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Sex, Age, Labour market status, Time period"
+    },
+    {
+        "id": 116,
+        "title": "Youth working-age population by sex, age and stages of transition",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Sex, Age, Transition to work, Time period"
+    },
+    {
+        "id": 117,
+        "title": "Youth working-age population by sex, age and stages of transition",
+        "format": "standard",
+        "image": [
+            ""
+        ],
+        "category": [
+            1,
+            2
+        ],
+        "tags": [
+            1,
+            2
+        ],
+        "author": [
+            1
+        ],
+        "postdate": "25 July, 2022",
+        "shorttext": "With the aim of promoting international comparability, statistics presented on ILOSTAT are based on standard international definitions wherever feasible and may differ from official national figures. This series is based on the 13th ICLS definitions. For time series comparability, it includes countries that have implemented the 19th ICLS standards, for which data are also available in the Work Statistics -- 19th ICLS (WORK) database. The working-age population is commonly defined as persons aged 15 years and older, but this varies from country to country. For more information, refer to the Gender Equality and Non-Discrimination Indicators (GEND) database description.",
+        "htmltext": "Reference area, Sex, Age, Transition to work, Time period"
+    }
+]

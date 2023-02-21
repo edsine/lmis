@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dimensions",
+  "info": {
+    "singularName": "dimension",
+    "pluralName": "dimensions",
+    "displayName": "Dimension"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "populateCreatorFields": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

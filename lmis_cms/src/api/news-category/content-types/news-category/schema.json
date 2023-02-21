@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_categories",
+  "info": {
+    "singularName": "news-category",
+    "pluralName": "news-categories",
+    "displayName": "News Category"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "populateCreatorFields": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

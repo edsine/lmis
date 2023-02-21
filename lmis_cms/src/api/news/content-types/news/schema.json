@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_collection",
+  "info": {
+    "singularName": "news",
+    "pluralName": "news-collection",
+    "displayName": "News",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true,
+    "populateCreatorFields": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "news_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::news-category.news-category"
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "status": {
+      "type": "boolean"
+    }
+  }
+}

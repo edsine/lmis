@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "statistic_summaries",
+  "info": {
+    "singularName": "statistic-summary",
+    "pluralName": "statistic-summaries",
+    "displayName": "Statistic Summary",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true,
+    "populateCreatorFields": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stat_name": {
+      "type": "string",
+      "required": true
+    },
+    "stat_desc": {
+      "type": "text"
+    },
+    "stat_value": {
+      "type": "float",
+      "required": true
+    },
+    "stat_source": {
+      "type": "string",
+      "required": true
+    },
+    "stat_prefix": {
+      "type": "enumeration",
+      "enum": [
+        "Percent",
+        "NGN",
+        "Total"
+      ]
+    }
+  }
+}

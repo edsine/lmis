@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "data_insights",
+  "info": {
+    "singularName": "data-insight",
+    "pluralName": "data-insights",
+    "displayName": "Data Insight",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true,
+    "populateCreatorFields": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "indicator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::indicator.indicator"
+    },
+    "occupation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::occupation.occupation"
+    },
+    "sector": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sector.sector"
+    },
+    "status": {
+      "type": "boolean"
+    }
+  }
+}
