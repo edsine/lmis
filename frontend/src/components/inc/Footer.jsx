@@ -29,6 +29,7 @@ function Footer() {
                         <ul style={{ color: 'rgba(72, 129, 52, 1)' }}>
                             <li><a href="#" style={{ color: 'rgba(72, 129, 52, 1)' }}>Home</a></li>
                             <li><Link to="/indicators" style={{ color: 'rgba(72, 129, 52, 1)' }}>Indicators</Link></li>
+                            <li><Link to="/PrivacyPolicy" style={{ color: 'rgba(72, 129, 52, 1)' }}>Privacy Policy</Link></li>
                             {/* <li><a href="#" style={{ color: 'rgba(72, 129, 52, 1)' }}>Database</a></li> */}
                             {/* <li><a href="#" style={{ color: 'rgba(72, 129, 52, 1)' }}>Terms of service</a></li>
                             <li><a href="#" style={{ color: 'rgba(72, 129, 52, 1)' }}>Privacy policy</a></li> */}

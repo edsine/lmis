@@ -78,9 +78,9 @@ function Navbarbefore() {
             {/* <li>
               <Link to="/about">About LMIS</Link>
             </li> */}
-            <li>
+            {/* <li>
               <Link to="/PrivacyPolicy">Privacy Policy</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/trending-jobs">Trending Jobs</Link>
             </li>

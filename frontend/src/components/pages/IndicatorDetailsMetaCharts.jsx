@@ -13,6 +13,8 @@ import {
   Polar,
   Bubble,
 } from "react-chartjs-2";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 const IndicatorDetailsMetaChart = (props) => {
   const {
@@ -58,10 +60,19 @@ const IndicatorDetailsMetaChart = (props) => {
     });
   };
 
+  const downloadChart = () => {
+    html2canvas(document.querySelector("#chart")).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF("landscape");
+      pdf.addImage(imgData, 'PNG', 0, 0);
+      pdf.save("chart.pdf");
+    });
+  };
+
   return (
     <>
       <Common />
-      <div className="container">
+      <div id="chart" className="container">
         <div className="row">
           <div className="my-5 col-md-12">
             <div className="card shadow">
@@ -92,6 +103,9 @@ const IndicatorDetailsMetaChart = (props) => {
                     )}
                   </Dropdown.Menu>
                 </Dropdown>
+                <div className="float-end">
+                <Button onClick={downloadChart}>Download Chart</Button>
+                </div>
                 <div className="text-center">
                   <div>
                     {state.feasibleCharts?.map((value, index) => {
@@ -113,9 +127,7 @@ const IndicatorDetailsMetaChart = (props) => {
                     {chartType === "pie" && <Pie data={chartData} />}
                     {chartType === "doughnut" && <Doughnut data={chartData} />}
                     {chartType === "scatter" && <Scatter data={chartData} />}
-                    {chartType === "horizontalbar" && (
-                      <HorizontalBar data={chartData} />
-                    )}
+                    {chartType === "horizontalbar" && (<HorizontalBar data={chartData} />)}
                     {chartType === "radar" && <Radar data={chartData} />}
                     {chartType === "polar" && <Polar data={chartData} />}
                     {chartType === "bubble" && <Bubble data={chartData} />}
