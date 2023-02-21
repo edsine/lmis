@@ -19,6 +19,8 @@ import Eventdata from "../components/pages/inc/apis/fetch_events";
 import Labourdata from "../components/pages/inc/apis/fetch_labour";
 import ApexCand from "../components/apexcharts/ApexCand";
 import CookieConsent from "react-cookie-consent";
+import Lottie from "lottie-react";
+import TechnologySphere from "../components/images/technologysphere.json"
 // import "../../styles/aos.css";
 
 function Home() {
@@ -68,7 +70,9 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-6 order-1 order-lg-2"></div>
+            <div className="col-lg-6 order-1 order-lg-2 lottie-sphere">
+              <Lottie animationData={TechnologySphere} loop={true} />
+            </div>
           </div>
         </div>
 
@@ -225,7 +229,7 @@ function Home() {
                     data-purecounter-end={3}
                     data-purecounter-duration={1}
                     className="purecounter"
-                  /> 
+                  />
                   <p>
                     <strong>43.9% Of working Population</strong> 18 &amp; older
                     NBS, 2022
