@@ -1,7 +1,7 @@
 import React from "react";
 import * as Icon from 'react-bootstrap-icons';
 import { Link } from "react-router-dom";
-import Logo from "../images/Logo2.png";
+import Logo from "../images/logo2.png";
 // import { Link } from "react-router-dom";
 
 function Footer() {

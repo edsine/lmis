@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-
 import { Link } from "react-router-dom";
-
 import Script from "react-load-script";
 import "../styles/bootstrap.min.css";
 import "../styles/mine.css";
@@ -37,7 +35,6 @@ function Home() {
       <Script url="http://localhost:3000/purecounter/purecounter_vanilla.js" />
       <Script url="http://localhost:3000/glightbox/js/glightbox.min.js" />
       <Script url="http://localhost:3000/isotope-layout/isotope.pkgd.min.js" />
-
       <Script url="http://localhost:3000/main.js" />
 
       <Common />
