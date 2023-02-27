@@ -37,6 +37,6 @@ const FetchIndicators = props => {
               
           </div>
         );
-    }
+    } 
 }
 export default FetchIndicators;

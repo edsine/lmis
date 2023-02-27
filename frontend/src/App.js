@@ -32,6 +32,7 @@ import IndicatorDetailsMeta from './components/pages/IndicatorDetailsMeta';
 import IndicatorDetailsMetaChart from './components/pages/IndicatorDetailsMetaCharts';
 import KeyFacts from './pages/keyfacts';
 import ExternalJobs from './pages/ExternalJobs';
+import SingleEventdata from './components/pages/inc/apis/fetch_single_event';
 
 
 
@@ -68,6 +69,7 @@ function App() {
           <Route exact path="/PrivacyPolicy"  component={PrivacyPolicy} />
           <Route exact path="/key-facts" component={KeyFacts} />
           <Route exact path="/trending-jobs" component={ExternalJobs} />
+          <Route exact path="/single-event-data" component={SingleEventdata} />
         </Switch>
         <Footer/>
       </>

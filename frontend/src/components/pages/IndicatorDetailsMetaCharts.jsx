@@ -38,11 +38,46 @@ const IndicatorDetailsMetaChart = (props) => {
       });
   }, []);
 
+
   const updateChartData = (dimensions, title) => {
     const labels = [];
     const values = [];
+    const colors = [
+      "rgba(255, 0, 0, 0.6)", // red
+      "rgba(0, 255, 0, 0.6)", // green
+      "rgba(0, 0, 255, 0.6)", // blue
+      "rgba(255, 255, 0, 0.6)", // yellow
+      "rgba(255, 0, 255, 0.6)", // magenta
+      "rgba(0, 255, 255, 0.6)", // cyan
+      "rgba(128, 128, 128, 0.6)", // gray
+      "rgba(255, 255, 255, 0.6)", // white
+      "rgba(255, 165, 0, 0.6)", // orange
+      "rgba(218, 112, 214, 0.6)", // orchid
+      "rgba(138, 43, 226, 0.6)", // blueviolet
+      "rgba(0, 191, 255, 0.6)", // deepskyblue
+      "rgba(128, 0, 128, 0.6)", // purple
+      "rgba(255, 192, 203, 0.6)", // pink
+      "rgba(255, 0, 0, 0.6)", // crimson
+      "rgba(0, 255, 0, 0.6)", // lime
+      "rgba(0, 128, 0, 0.6)", // green-dark
+      "rgba(0, 0, 128, 0.6)", // navy
+      "rgba(139, 0, 139, 0.6)", // darkmagenta
+      "rgba(255, 20, 147, 0.6)", // deeppink
+      "rgba(218, 165, 32, 0.6)", // goldenrod
+      "rgba(218, 112, 214, 0.6)", // orchid
+      "rgba(75, 0, 130, 0.6)", // indigo
+      "rgba(255, 69, 0, 0.6)", // orange-red
+      "rgba(210, 105, 30, 0.6)", // chocolate
+      "rgba(210, 180, 140, 0.6)", // tan
+      "rgba(70, 130, 180, 0.6)", // steelblue
+      "rgba(0, 128, 128, 0.6)" // teal
+    ];
+    const randomColors = [];
+    data.map(() => {
+      randomColors.push(colors[Math.floor(Math.random() * colors.length)]);
+    });
 
-    data.map((item) => {
+    data.map((item, index) => {
       labels.push(item.attributes?.[`${dimensions[1].attributes?.value}`]);
       values.push(item.attributes?.[`${dimensions[0].attributes?.value}`]);
     });
@@ -52,7 +87,7 @@ const IndicatorDetailsMetaChart = (props) => {
         {
           label: title,
           data: values,
-          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          backgroundColor: randomColors,
           borderColor: "rgba(255, 99, 132, 1)",
           borderWidth: 1,
         },
@@ -104,7 +139,7 @@ const IndicatorDetailsMetaChart = (props) => {
                   </Dropdown.Menu>
                 </Dropdown>
                 <div className="float-end">
-                <Button onClick={downloadChart}>Download Chart</Button>
+                  <Button onClick={downloadChart}>Download Chart</Button>
                 </div>
                 <div className="text-center">
                   <div>
