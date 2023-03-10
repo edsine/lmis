@@ -47,18 +47,18 @@
     "status": {
       "type": "boolean"
     },
-    "event_comment": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::event-comment.event-comment",
-      "mappedBy": "event"
-    },
     "categories": {
       "type": "enumeration",
       "enum": [
         "trending",
         "popular"
       ]
+    },
+    "event_comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event-comment.event-comment",
+      "mappedBy": "event"
     }
   }
 }

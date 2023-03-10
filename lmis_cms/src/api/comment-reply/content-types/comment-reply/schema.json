@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comment_replies",
+  "info": {
+    "singularName": "comment-reply",
+    "pluralName": "comment-replies",
+    "displayName": "Comment Reply",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reply": {
+      "type": "richtext",
+      "required": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "event_comment": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event-comment.event-comment",
+      "inversedBy": "comment_replies"
+    }
+  }
+}

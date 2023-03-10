@@ -2,10 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { BACKEND_URL, BACKEND_URL_IMAGE } from '../../../../constants';
 import Common from '../../../inc/Common';
-import { Button } from 'react-bootstrap';
 import "./css/event.css";
 import "./css/eventvariables.css";
-import DemoAvatar from "../../../images/demo_user_avatar.jpg"
 
 
 const SingleEventdata = (props) => {
@@ -18,63 +16,36 @@ const SingleEventdata = (props) => {
 
 
 	const [commentData, setCommentData] = useState({
-		name: '',
-		email: '',
-		message: '',
-		event: post?.id,
+		name: "",
+		email: "",
+		message: "",
+		event: post?.id
 	});
 
-	const [comments, setComments] = useState([]);
-
-	useEffect(() => {
-		fetch(`${BACKEND_URL}/event-comments?event=${post?.id}`)
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error(`HTTP error ${response.status}`);
-				}
-				return response.json();
-			})
-			.then((data) => {
-				console.log(data);
-				setComments(data.data);
-			})
-			.catch((err) => {
-				console.log(err.message);
-			});
-	}, [post?.id]);
-
 	const addComment = () => {
-		if (commentData.name === '' || commentData.email === '' || commentData.message === '') {
-			alert('Please fill the form completely');
+		if (!commentData.name || !commentData.email || !commentData.message) {
+			alert("Please fill the form completely");
 			return;
 		}
 
 		fetch(`${BACKEND_URL}/event-comments`, {
-			method: 'POST',
+			method: "POST",
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json"
 			},
 			body: JSON.stringify({
-				data: {
-					...commentData,
-				},
+				data: commentData
 			}),
 		})
 			.then((response) => {
 				if (!response.ok) {
-					throw new Error(`HTTP error ${response.status}`);
+					throw new Error("Network response was not ok");
 				}
 				return response.json();
 			})
 			.then((data) => {
 				console.log(data);
-				setCommentData({
-					name: '',
-					email: '',
-					message: '',
-					event: post?.id,
-				});
-				setComments([...comments, data.data]);
+				// setPosts(data.data);
 			})
 			.catch((err) => {
 				console.log(err.message);
@@ -85,83 +56,6 @@ const SingleEventdata = (props) => {
 		const newData = { ...commentData };
 		newData[e.target.id] = e.target.value;
 		setCommentData(newData);
-	};
-
-	const formatter = new Intl.DateTimeFormat("en-GB", {
-		year: "numeric",
-		month: "long",
-		day: "2-digit",
-		hour: "2-digit",
-		minute: "2-digit"
-	});
-
-
-	const [replyData, setReplyData] = useState({
-		name: '',
-		reply: '',
-		event_comment: post?.id,
-	});
-
-	const [replies, setReplies] = useState([]);
-
-	useEffect(() => {
-		fetch(`${BACKEND_URL}/comment-replies?populate=*`)
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error(`HTTP error ${response.status}`);
-				}
-				return response.json();
-			})
-			.then((data) => {
-				console.log(data);
-				setReplies(data.data);
-			})
-			.catch((err) => {
-				console.log(err.message);
-			});
-	}, [post?.id]);
-
-	const addReply = () => {
-		if (replyData.name === '' || replyData.reply === '') {
-			alert('Please fill the form completely');
-			return;
-		}
-
-		fetch(`${BACKEND_URL}/comment-replies`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				data: {
-					...replyData,
-				},
-			}),
-		})
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error(`HTTP error ${response.status}`);
-				}
-				return response.json();
-			})
-			.then((data) => {
-				console.log(data);
-				setReplyData({
-					name: '',
-					reply: '',
-					event_comment: post?.id,
-				});
-				setReplies([...replies, data.data]);
-			})
-			.catch((err) => {
-				console.log(err.message);
-			});
-	};
-
-	const handleReplyChange = (e) => {
-		const newDatar = { ...replyData };
-		newDatar[e.target.id] = e.target.value;
-		setReplyData(newDatar);
 	};
 
 	// console.log(post);
@@ -188,89 +82,75 @@ const SingleEventdata = (props) => {
 								</div>{/* End Single Post Content */}
 								{/* ======= Comments ======= */}
 								<div className="comments">
-									<h5 className="comment-title py-4">{comments.length} Comments</h5>
-									{comments.map((comment) => (
-										<div className="comment d-flex" key={comment.id}>
-											<div className="flex-shrink-0">
-												<div className="avatar avatar-sm rounded-circle">
-													{/* <img className="avatar-img" src="assets/img/person-2.jpg" alt="" /> */}
-													<img class="avatar-img rounded-circle shadow-1-strong" src={DemoAvatar} alt="Demo User Avatar" width="65" height="65" />
-												</div>
-											</div>
-											<div className="flex-shrink-1 ms-2 ms-sm-3">
-												<div className="comment-meta d-flex">
-													<h6 className="me-2">{comment?.attributes?.name}</h6>
-													<span className="text-muted">{formatter.format(new Date(comment?.attributes?.createdAt))}</span>
-												</div>
-
-												<br />
-												<div className="comment-body">{comment?.attributes?.message}</div>
-												<br />
-												{replies.filter((reply) => {
-													console.log(reply);
-													return reply.attributes?.event_comment?.data?.id === comment.id;
-												}).map((reply) => (
-													<div key={reply.id}>
-														<div class="d-flex flex-start mt-4">
-															<div className="flex-shrink-0">
-																<div className="me-3 avatar avatar-sm rounded-circle">
-																	{/* <img className="avatar-img" src="assets/img/person-2.jpg" alt="" /> */}
-																	<img class="avatar-img rounded-circle shadow-1-strong" src={DemoAvatar} alt="Demo User Avatar" width="65" height="65" />
-																</div>
-															</div>
-															<div class="flex-grow-1 flex-shrink-1">
-																<div>
-																	<div class="d-flex justify-content-between align-items-center">
-																		<p class="mb-1">
-																			{reply?.attributes?.name} <span class="small">- {formatter.format(new Date(reply?.attributes?.createdAt))}</span>
-																		</p>
-																	</div>
-																	<p class="small mb-0">
-																		{reply?.attributes?.reply}
-																	</p>
-																</div>
-															</div>
-														</div>
-													</div>
-												))};
-												<br />
-												<div className="float-end">
-													<Button>
-														<a href="#!"><i class="fas fa-reply fa-xs text-light"></i><span class="small text-light"> reply</span></a>
-													</Button>
-												</div>
-												<br />
-												{/* ======= Replies Form ======= */}
-												<div className="row justify-content-center mt-5">
-													<div className="col-lg-12">
-														<div className="row">
-															<div className="col-lg-6 mb-3">
-																<label htmlFor="comment-name"><strong>Name</strong></label>
-																<input type="text" onChange={(e) => handleReplyChange(e)} className="form-control" id="name" placeholder="Enter your name" />
-															</div>
-															<div className="col-12 mb-3">
-																<label htmlFor="comment-message"><strong>Input Reply</strong></label>
-																<textarea onChange={(e) => handleReplyChange(e)} className="form-control" id="reply" placeholder="Enter your message" cols={30} rows={10} defaultValue={""} />
-															</div>
-															<br />
-															<div className="col-12">
-																<button type="submit" className="btn btn-primary" defaultValue="Post reply" onClick={() => {
-																	addReply();
-																}}><i class="fas fa-reply fa-xs text-light"></i><span class="small text-light"> reply</span></button>
-															</div>
-														</div>
-													</div>
-												</div>{/* End reply Form */}
-												<br />
-												<br />
-												<br />
+									<h5 className="comment-title py-4">2 Comments</h5>
+									<div className="comment d-flex mb-4">
+										<div className="flex-shrink-0">
+											<div className="avatar avatar-sm rounded-circle">
+												<img className="avatar-img" src="assets/img/person-5.jpg" alt="" />
 											</div>
 										</div>
-									))}
-								</div>
-
-
-								{/* End Comments */}
+										<div className="flex-grow-1 ms-2 ms-sm-3">
+											<div className="comment-meta d-flex align-items-baseline">
+												<h6 className="me-2">Jordan Singer</h6>
+												<span className="text-muted">2d</span>
+											</div>
+											<div className="comment-body">
+												Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non minima ipsum at amet doloremque qui magni, placeat deserunt pariatur itaque laudantium impedit aliquam eligendi repellendus excepturi quibusdam nobis esse accusantium.
+											</div>
+											<div className="comment-replies bg-light p-3 mt-3 rounded">
+												<h6 className="comment-replies-title mb-4 text-muted text-uppercase">2 replies</h6>
+												<div className="reply d-flex mb-4">
+													<div className="flex-shrink-0">
+														<div className="avatar avatar-sm rounded-circle">
+															<img className="avatar-img" src="assets/img/person-4.jpg" alt="" />
+														</div>
+													</div>
+													<div className="flex-grow-1 ms-2 ms-sm-3">
+														<div className="reply-meta d-flex align-items-baseline">
+															<h6 className="mb-0 me-2">Brandon Smith</h6>
+															<span className="text-muted">2d</span>
+														</div>
+														<div className="reply-body">
+															Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+														</div>
+													</div>
+												</div>
+												<div className="reply d-flex">
+													<div className="flex-shrink-0">
+														<div className="avatar avatar-sm rounded-circle">
+															<img className="avatar-img" src="assets/img/person-3.jpg" alt="" />
+														</div>
+													</div>
+													<div className="flex-grow-1 ms-2 ms-sm-3">
+														<div className="reply-meta d-flex align-items-baseline">
+															<h6 className="mb-0 me-2">James Parsons</h6>
+															<span className="text-muted">1d</span>
+														</div>
+														<div className="reply-body">
+															Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore sed eos sapiente, praesentium.
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="comment d-flex">
+										<div className="flex-shrink-0">
+											<div className="avatar avatar-sm rounded-circle">
+												<img className="avatar-img" src="assets/img/person-2.jpg" alt="" />
+											</div>
+										</div>
+										<div className="flex-shrink-1 ms-2 ms-sm-3">
+											<div className="comment-meta d-flex">
+												<h6 className="me-2">Santiago Roberts</h6>
+												<span className="text-muted">4d</span>
+											</div>
+											<div className="comment-body">
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto laborum in corrupti dolorum, quas delectus nobis porro accusantium molestias sequi.
+											</div>
+										</div>
+									</div>
+								</div>{/* End Comments */}
 								{/* ======= Comments Form ======= */}
 								<div className="row justify-content-center mt-5">
 									<div className="col-lg-12">
@@ -286,7 +166,7 @@ const SingleEventdata = (props) => {
 												<input type="text" onChange={(e) => handleChange(e)} className="form-control" id="email" placeholder="Enter your email" />
 											</div>
 											<div className="col-12 mb-3">
-												<label htmlFor="comment-message">{post?.attributes?.comment}</label>
+												<label htmlFor="comment-message">{post?.attributes?.message}</label>
 												<textarea onChange={(e) => handleChange(e)} className="form-control" id="message" placeholder="Enter your message" cols={30} rows={10} defaultValue={""} />
 											</div>
 											<div className="col-12">
@@ -456,5 +336,98 @@ const SingleEventdata = (props) => {
 			</main>{/* End #main */}
 		</>
 	);
+};
+export default SingleEventdata;
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState, useEffect } from 'react';
+import { BACKEND_URL, BACKEND_URL_IMAGE } from '../../../../constants';
+import Common from '../../../inc/Common';
+import { Button } from 'react-bootstrap';
+import "./css/event.css";
+import "./css/eventvariables.css";
+import DemoAvatar from "../../../images/demo_user_avatar.jpg"
+
+const SingleEventdata = (props) => {
+
+	const addReply = () => {
+		if (replyData.name === '' || replyData.reply === '') {
+			alert('Please fill the form completely');
+			return;
+		}
+
+		fetch(`${BACKEND_URL}/comment-replies`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				data: {
+					...replyData,
+				},
+			}),
+		})
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error(`HTTP error ${response.status}`);
+				}
+				return response.json();
+			})
+			.then((data) => {
+				console.log(data);
+				setReplyData({
+					name: '',
+					reply: '',
+					event_comment: post?.id,
+				});
+				setReplies([...replies, data.data]);
+			})
+			.catch((err) => {
+				console.log(err.message);
+			});
+	};
+
+	const handleReplyChange = (e) => {
+		const newDatar = { ...replyData };
+		newDatar[e.target.id] = e.target.value;
+		setReplyData(newDatar);
+	};
+
+
+
+	return (
+		{/* ======= Replies Form ======= */ }
+		< div className = "row justify-content-center mt-5" >
+			<div className="col-lg-12">
+				<div className="row">
+					<div className="col-lg-6 mb-3">
+						<label htmlFor="comment-name"><strong>Name</strong></label>
+						<input type="text" onChange={(e) => handleReplyChange(e)} className="form-control" id="name" placeholder="Enter your name" />
+					</div>
+					<div className="col-12 mb-3">
+						<label htmlFor="comment-message"><strong>Input Reply</strong></label>
+						<textarea onChange={(e) => handleReplyChange(e)} className="form-control" id="reply" placeholder="Enter your message" cols={30} rows={10} defaultValue={""} />
+					</div>
+					<br />
+					<div className="col-12">
+						<button type="submit" className="btn btn-primary" defaultValue="Post reply" onClick={() => {
+							addReply();
+						}}><i class="fas fa-reply fa-xs text-light"></i><span class="small text-light"> reply</span></button>
+					</div>
+				</div>
+			</div>
+</div > {/* End reply Form */ }
+
+);
 };
 export default SingleEventdata;

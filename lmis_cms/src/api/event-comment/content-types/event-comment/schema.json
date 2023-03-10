@@ -21,22 +21,26 @@
     "datetime": {
       "type": "datetime"
     },
-    "showcomment": {
-      "type": "boolean",
-      "default": false,
-      "private": true
-    },
-    "event": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::event.event",
-      "inversedBy": "event_comment"
-    },
-    "comment": {
-      "type": "richtext"
+    "active": {
+      "type": "boolean"
     },
     "subject": {
       "type": "string"
+    },
+    "message": {
+      "type": "richtext"
+    },
+    "comment_replies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment-reply.comment-reply",
+      "mappedBy": "event_comment"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "event_comments"
     }
   }
 }
