@@ -88,8 +88,8 @@ const IndicatorDetailsMetaChart = (props) => {
           label: title,
           data: values,
           backgroundColor: randomColors,
-          borderColor: "rgba(255, 99, 132, 1)",
-          borderWidth: 1,
+          // borderColor: "rgba(255, 99, 132, 1)",
+          borderWidth: 0,
         },
       ],
     });

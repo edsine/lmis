@@ -59,6 +59,12 @@
       "relation": "oneToMany",
       "target": "api::event-comment.event-comment",
       "mappedBy": "event"
+    },
+    "even_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::even-type.even-type",
+      "inversedBy": "events"
     }
   }
 }

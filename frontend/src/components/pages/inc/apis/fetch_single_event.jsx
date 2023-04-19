@@ -305,9 +305,6 @@ const SingleEventdata = (props) => {
 										<li className="nav-item" role="presentation">
 											<button className="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Popular</button>
 										</li>
-										<li className="nav-item" role="presentation">
-											<button className="nav-link" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="false">Trending</button>
-										</li>
 										{/* <li className="nav-item" role="presentation">
 											<button className="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest</button>
 										</li> */}
