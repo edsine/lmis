@@ -49,7 +49,7 @@ function Navbarbefore() {
               </Link>
               <ul>
                 <li>
-                  <a href="https://nelexnigeria.com">Find Jobs</a>
+                  <a target="_blank" href="https://nelexnigeria.com">Find Jobs</a>
                 </li>
                 {/* <li className="dropdown">
                   <Link to="/tools">
