@@ -292,7 +292,8 @@ section {
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
-  background-color: var(--color-primary);
+  background-color: #287e32;
+
 }
 
 .header.sticked {
