@@ -54,7 +54,7 @@ function Home() {
       >
         <div className="container position-relative">
           <div className="row gy-5" data-aos="fade-in">
-            <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+            <div className="col-lg-6 order-1 order-lg-1 d-flex pt-5 flex-column justify-content-center text-center text-lg-start">
               <h2>
                 Welcome to <span>Nigeria Labour Market Information System</span>
               </h2>
@@ -67,7 +67,7 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-6 order-1 order-lg-2 lottie-sphere">
+            <div className="col-lg-6 order-2 order-lg-2 lottie-sphere">
               <Lottie animationData={TechnologySphere} loop={true} />
             </div>
           </div>
