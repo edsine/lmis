@@ -27,7 +27,9 @@ const Eventdata = () => {
                      <h4>{post?.attributes?.title}</h4>
                      <span>{post?.attributes?.location}</span>
                      <div className="social">
-                        View More
+                        <Link to={{ pathname: "/single-event-data", state: { post } }}>
+                           View More
+                        </Link>
                         <Link to={{ pathname: "/single-event-data", state: { post } }}>
                            <i className="bi bi-eye" />
                         </Link>

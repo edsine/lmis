@@ -380,7 +380,17 @@ screen and (min-width: 40em) {
   font-size: 17px !important;
   font-weight: var(--bs-nav-link-font-weight);
   text-align: center !important;
-  padding-top: 39px !important;
+  /* padding-top: 39px !important; */
+}
+
+@media (max-width: 765px) {
+  .nav-link{
+    padding-top: 39px !important;
+    /* width: 100%; */
+  }
+  .navbar .navbar-nav {
+    width: 100vw;
+  }
 }
 
 .chart-header {
