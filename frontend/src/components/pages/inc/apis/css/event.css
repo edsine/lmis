@@ -229,6 +229,13 @@ section {
     transition: 0.3s;
   }
 
+
+  
+
+.navbar span, .navbar span:focus {
+    color: rgba(255, 255, 255, 0.6);
+}
+
   .navbar a i,
   .navbar a:focus i {
     font-size: 12px;
@@ -236,8 +243,14 @@ section {
     margin-left: 5px;
   }
 
+  .dropdown i {
+    color: rgba(255, 255, 255, 0.6);
+  }
 
 
+    .ac{
+      color: black;
+    }
   .navbar .getstarted,
   .navbar .getstarted:focus {
     padding: 8px 20px;
