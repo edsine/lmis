@@ -25,7 +25,7 @@ function Navbarbefore() {
                 <NavDropdown.Item href="/job-statistics">NELEX Jobs Statistics</NavDropdown.Item>
                 <NavDropdown.Item href="https://nelexnigeria.com"> Find Jobs</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href='/trending-jobs'>Trending Jobs</Nav.Link>
+              <Nav.Link href='/trending-jobs'>Trending Jobs </Nav.Link>
             </Nav>
           </Navbar.Collapse>
       </Container>
