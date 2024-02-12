@@ -1,7 +1,12 @@
 const fs = require('fs');
 
-// Path to the build folder
-const buildFolderPath = 'build';
+
+// Read the content of the .env file
+const envFileContent = fs.readFileSync('.env', 'utf-8');
+
+// Extract the BUILD_PATH variable from the .env content
+const buildPathMatch = envFileContent.match(/BUILD_PATH=(.+)/);
+const buildFolderPath = buildPathMatch ? buildPathMatch[1] : 'build';
 
 // Path for the new file within the build folder
 const newFilePath = `${buildFolderPath}/.htaccess`;
