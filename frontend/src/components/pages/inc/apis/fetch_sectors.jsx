@@ -12,7 +12,7 @@ const Sectors = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/sectors`)
+    fetch(`${BACKEND_URL}/sectors?pagination[limit]=100`)
       .then((response) => response.json())
       .then((data) => {
         setPosts(data.data);

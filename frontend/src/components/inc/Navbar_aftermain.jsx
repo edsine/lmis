@@ -24,10 +24,10 @@ function Navbarbefore() {
         <nav id="navbar" className="navbar">
           <ul className="px-5">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Homes</Link>
             </li>
             <li>
-              {" "}
+              
               <Link to="/Indicators">Indicators</Link>
             </li>
             <li>
@@ -89,6 +89,17 @@ function Navbarbefore() {
         {/* .navbar */}
         <i className="mobile-nav-toggle mobile-nav-show bi bi-list" />
         <i className="mobile-nav-toggle mobile-nav-hide d-none bi bi-x" />
+         {/* CSS Styles */}
+         <style>{`
+          /* Add CSS styles here */
+          .line {
+            /* Add styles for the line class */
+            /* For example: */
+            color: white;
+            background-color: green;
+            /* Add more styles as needed */
+          }
+        `}</style>
       </div>
     </header>
   );
