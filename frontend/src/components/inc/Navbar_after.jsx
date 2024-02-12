@@ -5,7 +5,6 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 
 
 function Navbarbefore() {
-  const location = useLocation();
   return (
     <Navbar id="header" className="header d-flex align-items-center" collapseOnSelect fixed='top' expand='sm' variant='dark'>
       <Container className="container-fluid container-xl d-flex float-end align-items-center justify-content-between">

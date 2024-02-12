@@ -18,7 +18,7 @@ import Labourdata from "../components/pages/inc/apis/fetch_labour";
 import ApexCand from "../components/apexcharts/ApexCand";
 import CookieConsent from "react-cookie-consent";
 import Lottie from "lottie-react";
-import TechnologySphere from "../components/images/technologysphere.json"
+import TechnologySphere from "../components/images/technologysphere.json";
 // import "../../styles/aos.css";
 
 function Home() {
@@ -39,7 +39,9 @@ function Home() {
 
       <Common />
 
-      <CookieConsent location="bottom">This website uses cookies to enhance the user experience.</CookieConsent>
+      <CookieConsent style={{ width: "100%" }} location="bottom">
+        This website uses cookies to enhance the user experience.
+      </CookieConsent>
 
       <section
         id="hero"
@@ -71,9 +73,9 @@ function Home() {
               <Lottie animationData={TechnologySphere} loop={true} />
             </div>
           </div>
-        </div>
 
-        <Homedata />
+          <Homedata />
+        </div>
       </section>
       {/* End Hero Section */}
 
@@ -101,90 +103,90 @@ function Home() {
       </section>
 
       {/* <div className="container">
-        <div className="row">
-          <div className="col-xl-3 col-lg-4 col-sm-6 mx-auto rt-mb-30">
-            <div className="card jobcardStyle1 counterbox tw-bg-white hover:tw-shadow-[0px_12px_48px_rgb(2,131,79,0.9)]">
-              <div className="card-body">
-                <div className="rt-single-icon-box">
-                  <div className="icon-thumb">
-                    <div className="icon-72">
-                      <BiBriefcase />
+          <div className="row">
+            <div className="col-xl-3 col-lg-4 col-sm-6 mx-auto rt-mb-30">
+              <div className="card jobcardStyle1 counterbox tw-bg-white hover:tw-shadow-[0px_12px_48px_rgb(2,131,79,0.9)]">
+                <div className="card-body">
+                  <div className="rt-single-icon-box">
+                    <div className="icon-thumb">
+                      <div className="icon-72">
+                        <BiBriefcase />
+                      </div>
+                    </div>
+                    <div className="iconbox-content">
+                      <div className="f-size-24 ft-wt-5"><span className="counter">44</span>
+                      </div>
+                      <div className="progress my-1" style={{ height: '20px', width: '100%' }}>
+                        <div className="progress-bar bg-warning" role="progressbar" style={{ width: '85%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
+                      </div>
                     </div>
                   </div>
-                  <div className="iconbox-content">
-                    <div className="f-size-24 ft-wt-5"><span className="counter">44</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6 mx-auto rt-mb-30">
+              <div className="card jobcardStyle1 counterbox tw-bg-white hover:tw-shadow-[0px_12px_48px_rgb(2,131,79,0.9)]">
+                <div className="card-body">
+                  <div className="rt-single-icon-box">
+                    <div className="icon-thumb">
+                      <div className="icon-72">
+                        <BiBuildings />
+                      </div>
                     </div>
-                    <div className="progress my-1" style={{ height: '20px', width: '100%' }}>
-                      <div className="progress-bar bg-warning" role="progressbar" style={{ width: '85%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
+                    <div className="iconbox-content">
+                      <div className="f-size-24 ft-wt-5">
+                        <span className="counter">16</span>
+                      </div>
+                      <div className="progress my-1" style={{ height: '20px', width: '100%' }}>
+                        <div className="progress-bar" role="progressbar" style={{ width: '15%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6 mx-auto rt-mb-30">
+              <div className="card jobcardStyle1 counterbox tw-bg-white hover:tw-shadow-[0px_12px_48px_rgb(2,131,79,0.9)]">
+                <div className="card-body">
+                  <div className="rt-single-icon-box">
+                    <div className="icon-thumb">
+                      <div className="icon-72">
+                        <FiUsers />
+                      </div>
+                    </div>
+                    <div className="iconbox-content">
+                      <div className="f-size-24 ft-wt-5"><span className="counter">36</span>
+                      </div>
+                      <div className="progress my-1" style={{ height: '20px', width: '100%' }}>
+                        <div className="progress-bar bg-success" role="progressbar" style={{ width: '75%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6 mx-auto rt-mb-30">
+              <div className="card jobcardStyle1 counterbox tw-bg-white hover:tw-shadow-[0px_12px_48px_rgb(2,131,79,0.9)]">
+                <div className="card-body">
+                  <div className="rt-single-icon-box">
+                    <div className="icon-thumb">
+                      <div className="icon-72">
+                        <BiBriefcase />
+                      </div>
+                    </div>
+                    <div className="iconbox-content">
+                      <div className="f-size-24 ft-wt-5"><span className="counter">22</span>
+                      </div>
+                      <div className="progress my-1" style={{ height: '20px', width: '100%' }}>
+                        <div className="progress-bar bg-info" role="progressbar" style={{ width: '45%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-4 col-sm-6 mx-auto rt-mb-30">
-            <div className="card jobcardStyle1 counterbox tw-bg-white hover:tw-shadow-[0px_12px_48px_rgb(2,131,79,0.9)]">
-              <div className="card-body">
-                <div className="rt-single-icon-box">
-                  <div className="icon-thumb">
-                    <div className="icon-72">
-                      <BiBuildings />
-                    </div>
-                  </div>
-                  <div className="iconbox-content">
-                    <div className="f-size-24 ft-wt-5">
-                      <span className="counter">16</span>
-                    </div>
-                    <div className="progress my-1" style={{ height: '20px', width: '100%' }}>
-                      <div className="progress-bar" role="progressbar" style={{ width: '15%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-4 col-sm-6 mx-auto rt-mb-30">
-            <div className="card jobcardStyle1 counterbox tw-bg-white hover:tw-shadow-[0px_12px_48px_rgb(2,131,79,0.9)]">
-              <div className="card-body">
-                <div className="rt-single-icon-box">
-                  <div className="icon-thumb">
-                    <div className="icon-72">
-                      <FiUsers />
-                    </div>
-                  </div>
-                  <div className="iconbox-content">
-                    <div className="f-size-24 ft-wt-5"><span className="counter">36</span>
-                    </div>
-                    <div className="progress my-1" style={{ height: '20px', width: '100%' }}>
-                      <div className="progress-bar bg-success" role="progressbar" style={{ width: '75%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-4 col-sm-6 mx-auto rt-mb-30">
-            <div className="card jobcardStyle1 counterbox tw-bg-white hover:tw-shadow-[0px_12px_48px_rgb(2,131,79,0.9)]">
-              <div className="card-body">
-                <div className="rt-single-icon-box">
-                  <div className="icon-thumb">
-                    <div className="icon-72">
-                      <BiBriefcase />
-                    </div>
-                  </div>
-                  <div className="iconbox-content">
-                    <div className="f-size-24 ft-wt-5"><span className="counter">22</span>
-                    </div>
-                    <div className="progress my-1" style={{ height: '20px', width: '100%' }}>
-                      <div className="progress-bar bg-info" role="progressbar" style={{ width: '45%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
+        </div> */}
 
       <main id="main">
         {/* ======= Stats Counter Section ======= */}
@@ -261,92 +263,92 @@ function Home() {
         {/* ======= Our Services Section ======= */}
 
         {/* <section id="services" className="services sections-bg">
-          <div className="container" data-aos="fade-up">
-            <div className="section-header">
-              <h2>Our Services</h2>
-            </div>
-            <div className="row gy-4" data-aos="fade-up" data-aos-delay={100}>
-              <div className="col-lg-4 col-md-6">
-                <div className="service-item  position-relative">
-                  <div className="icon" >
-                    <i className="bi bi-activity" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+            <div className="container" data-aos="fade-up">
+              <div className="section-header">
+                <h2>Our Services</h2>
+              </div>
+              <div className="row gy-4" data-aos="fade-up" data-aos-delay={100}>
+                <div className="col-lg-4 col-md-6">
+                  <div className="service-item  position-relative">
+                    <div className="icon" >
+                      <i className="bi bi-activity" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                    </div>
+                    <h3>Explore Data</h3>
+                    <p>Over 2.3 million observations to explore</p>
+                    <a href="#" className="readmore stretched-link" >Read more <i className="bi bi-arrow-right" /></a>
                   </div>
-                  <h3>Explore Data</h3>
-                  <p>Over 2.3 million observations to explore</p>
-                  <a href="#" className="readmore stretched-link" >Read more <i className="bi bi-arrow-right" /></a>
-                </div>
-              </div> */}
+                </div> */}
 
         {/* End Service Item */}
 
         {/* <div className="col-lg-4 col-md-6">
-                <div className="service-item position-relative">
-                  <div className="icon">
-                    <i className="bi bi-broadcast" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                  <div className="service-item position-relative">
+                    <div className="icon">
+                      <i className="bi bi-broadcast" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                    </div>
+                    <h3>Browse Data Sectors</h3>
+                    <p>browse numerous data over 23 different sectors</p>
+                    <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                   </div>
-                  <h3>Browse Data Sectors</h3>
-                  <p>browse numerous data over 23 different sectors</p>
-                  <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
-                </div>
-              </div> */}
+                </div> */}
 
         {/* End Service Item */}
 
         {/* <div className="col-lg-4 col-md-6">
-                <div className="service-item position-relative">
-                  <div className="icon">
-                    <i className="bi bi-bounding-box-circles" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                  <div className="service-item position-relative">
+                    <div className="icon">
+                      <i className="bi bi-bounding-box-circles" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                    </div>
+                    <h3>Browse Occupation Data</h3>
+                    <p>Browse data across 48 different Occupations</p>
+                    <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                   </div>
-                  <h3>Browse Occupation Data</h3>
-                  <p>Browse data across 48 different Occupations</p>
-                  <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
-                </div>
-              </div> */}
+                </div> */}
 
         {/* End Service Item */}
 
         {/* <div className="col-lg-4 col-md-6">
-                <div className="service-item position-relative">
-                  <div className="icon">
-                    <i className="bi bi-bounding-box-circles" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                  <div className="service-item position-relative">
+                    <div className="icon">
+                      <i className="bi bi-bounding-box-circles" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                    </div>
+                    <h3>Online Tools</h3>
+                    <p>Non et tem ea fuga sit provident adipisci neque.</p>
+                    <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                   </div>
-                  <h3>Online Tools</h3>
-                  <p>Non et tem ea fuga sit provident adipisci neque.</p>
-                  <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
-                </div>
-              </div> */}
+                </div> */}
 
         {/* End Service Item */}
 
         {/* <div className="col-lg-4 col-md-6">
-                <div className="service-item position-relative">
-                  <div className="icon">
-                    <i className="bi bi-calendar4-week" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                  <div className="service-item position-relative">
+                    <div className="icon">
+                      <i className="bi bi-calendar4-week" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                    </div>
+                    <h3>LMIS Budget</h3>
+                    <p>Cumque et suscipit saepe. Est maiores autem  ut</p>
+                    <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                   </div>
-                  <h3>LMIS Budget</h3>
-                  <p>Cumque et suscipit saepe. Est maiores autem  ut</p>
-                  <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
-                </div>
-              </div> */}
+                </div> */}
 
         {/* End Service Item */}
 
         {/* <div className="col-lg-4 col-md-6">
-                <div className="service-item position-relative">
-                  <div className="icon">
-                    <i className="bi bi-chat-square-text" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                  <div className="service-item position-relative">
+                    <div className="icon">
+                      <i className="bi bi-chat-square-text" style={{ marginLeft: '15PX', marginBottom: '10px' }} />
+                    </div>
+                    <h3>Key Data</h3>
+                    <p>Hic molestias ea quibusdam eos. Fugiat enim.</p>
+                    <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
                   </div>
-                  <h3>Key Data</h3>
-                  <p>Hic molestias ea quibusdam eos. Fugiat enim.</p>
-                  <a href="#" className="readmore stretched-link">Read more <i className="bi bi-arrow-right" /></a>
-                </div>
-              </div> */}
+                </div> */}
 
         {/* End Service Item */}
 
         {/* </div>
-          </div>
-        </section> */}
+            </div>
+          </section> */}
 
         {/* End Our Services Section */}
 
@@ -368,15 +370,15 @@ function Home() {
           </header>
 
           {/* <div className="jumbotron p-2 p-md-5 text-white rounded bg-white">
-     <div className="col-md-12  card box-shadow p-4">
-     <center>  <h3 className="mb-0">
-            <a className="text-dark" href="#">Enterpreneurship</a>
-           </h3></center> 
+       <div className="col-md-12  card box-shadow p-4">
+       <center>  <h3 className="mb-0">
+              <a className="text-dark" href="#">Enterpreneurship</a>
+             </h3></center>
 
-           <p className="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-           <a href="#">View Details</a>
-     </div>
-   </div> */}
+             <p className="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+             <a href="#">View Details</a>
+       </div>
+     </div> */}
           <Labourdata />
         </div>
 
