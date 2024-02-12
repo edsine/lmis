@@ -1,0 +1,16 @@
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Handle requests to the root directory
+    RewriteRule ^$ index.html [L]
+
+    # Handle requests to other files and directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.html [L]
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
