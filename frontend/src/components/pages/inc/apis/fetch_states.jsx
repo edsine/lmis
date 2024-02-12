@@ -12,7 +12,7 @@ const State = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/states`)
+    fetch(`${BACKEND_URL}/states?pagination[limit]=100`)
       .then((response) => response.json())
       .then((data) => {
         setPosts(data.data);

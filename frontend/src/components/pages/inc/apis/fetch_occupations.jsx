@@ -6,7 +6,7 @@ const Occupations = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/occupations`)
+    fetch(`${BACKEND_URL}/occupations?pagination[limit]=100`)
       .then((response) => response.json())
       .then((data) => {
         setPosts(data.data);
