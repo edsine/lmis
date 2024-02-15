@@ -87,7 +87,7 @@ function Occupation() {
 
       <div className="container-fluid">
         <div className="container my-5">
-          <div className="row">
+          <div className="row" style={{ padding: '100px' }}>
             <div className="col-6">
               <label>States</label>
               <div>

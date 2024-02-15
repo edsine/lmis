@@ -144,7 +144,7 @@ export function DataPage() {
   };
 
   return (
-    <div>
+    <div style={{ padding: '100px' }}>
       {/* <script src="http://localhost:3000/bootstrap.bundle.js"></script>
 
       <Script url="http://localhost:3000/aos/aos.js" />
@@ -155,17 +155,17 @@ export function DataPage() {
 
       <Script url="http://localhost:3000/main.js" /> */}
 
-      <Common />
+      <Common/>
 
-      <div className="container" style={{}}>
+      <div className="container">
         <br></br>
         <p>
           Home || <b style={{ color: "green" }}>Data Insights</b>
         </p>
-        <div className="row">
+        <div className="row" >
           {dataInsights?.map((value, index) => {
             return (
-              <div key={index} className="col-sm-4">
+              <div key={index} className="col-sm-4" >
                 <div
                   className="card"
                   style={{
@@ -174,6 +174,7 @@ export function DataPage() {
                     marginTop: "15px",
                   }}
                 >
+                  
                   <div className="card-block">
                     <img
                       style={{

@@ -28,7 +28,7 @@ function Indicators() {
       <Common />
 
       <section id="team" className="team">
-        <div className="container" data-aos="fade-up">
+        <div className="container" data-aos="fade-up" style={{ padding: '60px' }}>
           <p>
             Home || <b style={{ color: "green" }}>Indicators Category</b>
           </p>
