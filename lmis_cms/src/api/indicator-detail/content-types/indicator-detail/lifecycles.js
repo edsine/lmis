@@ -34,7 +34,7 @@ module.exports = {
         contentType: event.model.tableName,
         action: "Delete Content",
         content: result,
-        author: result.createdBy, authorEmail: result.createdBy.email,
+        // author: result.createdBy, authorEmail: result.createdBy.email,
         params: params,
         request: event,
       },
