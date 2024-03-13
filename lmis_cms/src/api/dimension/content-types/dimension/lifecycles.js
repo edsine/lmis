@@ -20,7 +20,7 @@ module.exports = {
         contentType: event.model.tableName,
         action: "Update Content",
         content: result,
-        author: result.createdBy, authorEmail: result.createdBy.email,
+        author: result.updatedBy, authorEmail: result.updatedBy.email,
         params: params,
         request: event,
       },
