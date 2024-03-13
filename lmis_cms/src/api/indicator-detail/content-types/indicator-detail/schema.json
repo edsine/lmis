@@ -26,11 +26,6 @@
       "relation": "oneToMany",
       "target": "api::dimension.dimension"
     },
-    "feasible_charts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::feasible-chart.feasible-chart"
-    },
     "indicator": {
       "type": "relation",
       "relation": "oneToOne",

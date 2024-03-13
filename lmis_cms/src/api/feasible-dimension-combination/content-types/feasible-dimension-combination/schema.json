@@ -4,7 +4,8 @@
   "info": {
     "singularName": "feasible-dimension-combination",
     "pluralName": "feasible-dimension-combinations",
-    "displayName": "Feasible Dimension Combinations"
+    "displayName": "Feasible Dimension Combinations",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true,
@@ -20,6 +21,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::dimension.dimension"
+    },
+    "feasible_charts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feasible-chart.feasible-chart"
     }
   }
 }
