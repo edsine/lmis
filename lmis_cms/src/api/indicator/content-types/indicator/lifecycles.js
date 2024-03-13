@@ -6,7 +6,7 @@ module.exports = {
         contentType: event.model.tableName,
         action: "Create Content",
         content: result,
-        author: result.createdBy, authorEmail: result.createdBy.email,
+        author: result.createdBy, authorEmail: result.createdBy?.email,
         params: params,
         request: event,
       },
@@ -15,12 +15,13 @@ module.exports = {
 
   afterUpdate(event) {
     const { result, params } = event;
+    console.log(event);
     strapi.entityService.create("api::audit-trail.audit-trail", {
       data: {
         contentType: event.model.tableName,
         action: "Update Content",
         content: result,
-        author: result.updatedBy, authorEmail: result.updatedBy.email,
+        author: result.updatedBy, authorEmail: result.updatedBy?.email,
         params: params,
         request: event,
       },
@@ -34,7 +35,8 @@ module.exports = {
         contentType: event.model.tableName,
         action: "Delete Content",
         content: result,
-        // author: result.createdBy, authorEmail: result.createdBy.email,
+        author: result.updatedBy,
+        authorEmail: result.updatedBy?.email || result.updatedBy?.target,
         params: params,
         request: event,
       },
@@ -48,7 +50,7 @@ module.exports = {
   //       contentType: "Indicator",
   //       action: "Single Content Search",
   //       content: result.Content,
-  //       author: result.createdBy, authorEmail: result.createdBy.email,
+  //       author: result.createdBy, authorEmail: result.createdBy?.email,
   //       params: params,
   //       request: event,
   //     },
@@ -62,7 +64,7 @@ module.exports = {
   //       contentType: "Indicator",
   //       action: "Multiple Content Search",
   //       content: result.Content,
-  //       author: result.createdBy, authorEmail: result.createdBy.email,
+  //       author: result.createdBy, authorEmail: result.createdBy?.email,
   //       params: params,
   //       request: event,
   //     },
