@@ -18,9 +18,6 @@
       "relation": "oneToOne",
       "target": "api::indicator-detail.indicator-detail"
     },
-    "date_of_measurement": {
-      "type": "date"
-    },
     "gender": {
       "type": "enumeration",
       "enum": [
