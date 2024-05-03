@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuc_part_time_graduate_outputs",
+  "info": {
+    "singularName": "nuc-part-time-graduate-output",
+    "pluralName": "nuc-part-time-graduate-outputs",
+    "displayName": "NUC Part-time Graduate Output"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "university": {
+      "type": "string"
+    },
+    "male_first_class": {
+      "type": "biginteger"
+    },
+    "female_first_class": {
+      "type": "biginteger"
+    },
+    "male_second_class_upper": {
+      "type": "biginteger"
+    },
+    "female_second_class_upper": {
+      "type": "biginteger"
+    },
+    "male_second_class_lower": {
+      "type": "biginteger"
+    },
+    "female_second_class_lower": {
+      "type": "biginteger"
+    },
+    "male_third_class": {
+      "type": "biginteger"
+    },
+    "female_third_class": {
+      "type": "biginteger"
+    },
+    "male_pass": {
+      "type": "biginteger"
+    },
+    "female_pass": {
+      "type": "biginteger"
+    },
+    "male_unclassified": {
+      "type": "biginteger"
+    },
+    "female_unclassified": {
+      "type": "biginteger"
+    }
+  }
+}

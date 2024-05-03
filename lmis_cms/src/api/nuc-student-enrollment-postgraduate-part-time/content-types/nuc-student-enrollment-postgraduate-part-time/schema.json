@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuc_student_enrollment_postgraduate_part_times",
+  "info": {
+    "singularName": "nuc-student-enrollment-postgraduate-part-time",
+    "pluralName": "nuc-student-enrollment-postgraduate-part-times",
+    "displayName": "NUC Student Enrollment Postgraduate Part-Time"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "university": {
+      "type": "string"
+    },
+    "pgd": {
+      "type": "biginteger"
+    },
+    "masters": {
+      "type": "biginteger"
+    },
+    "phd": {
+      "type": "biginteger"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuc_affliate_undergraduate_student_enrollments",
+  "info": {
+    "singularName": "nuc-affliate-undergraduate-student-enrollment",
+    "pluralName": "nuc-affliate-undergraduate-student-enrollments",
+    "displayName": "NUC Affliate Undergraduate Student Enrollment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "university": {
+      "type": "string"
+    },
+    "level100": {
+      "type": "biginteger"
+    },
+    "level200": {
+      "type": "biginteger"
+    },
+    "level300": {
+      "type": "biginteger"
+    },
+    "level400": {
+      "type": "biginteger"
+    },
+    "level500": {
+      "type": "biginteger"
+    }
+  }
+}

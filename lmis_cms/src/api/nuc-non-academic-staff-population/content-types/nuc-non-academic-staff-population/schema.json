@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuc_non_academic_staff_populations",
+  "info": {
+    "singularName": "nuc-non-academic-staff-population",
+    "pluralName": "nuc-non-academic-staff-populations",
+    "displayName": "NUC Non-Academic Staff Population"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "university": {
+      "type": "string"
+    },
+    "male_senior_tech": {
+      "type": "biginteger"
+    },
+    "female_senior_tech": {
+      "type": "biginteger"
+    },
+    "male_senior_admin_non_sec": {
+      "type": "biginteger"
+    },
+    "female_senior_admin_non_sec": {
+      "type": "biginteger"
+    },
+    "male_senior_admin_sec": {
+      "type": "biginteger"
+    },
+    "female_senior_admin_sec": {
+      "type": "biginteger"
+    },
+    "male_junior_tech": {
+      "type": "biginteger"
+    },
+    "female_junior_tech": {
+      "type": "biginteger"
+    },
+    "male_junior_non_tech": {
+      "type": "biginteger"
+    },
+    "female_junior_non_tech": {
+      "type": "biginteger"
+    }
+  }
+}

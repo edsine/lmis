@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuc_academic_staff_populations",
+  "info": {
+    "singularName": "nuc-academic-staff-population",
+    "pluralName": "nuc-academic-staff-populations",
+    "displayName": "NUC Academic Staff Population"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "university": {
+      "type": "string"
+    },
+    "male_professors": {
+      "type": "biginteger"
+    },
+    "female_professors": {
+      "type": "biginteger"
+    },
+    "male_readers": {
+      "type": "biginteger"
+    },
+    "female_readers": {
+      "type": "biginteger"
+    },
+    "male_senior_lecturers": {
+      "type": "biginteger"
+    },
+    "female_senior_lecturers": {
+      "type": "biginteger"
+    },
+    "male_lecturer_one_and_below": {
+      "type": "biginteger"
+    },
+    "female_lecturer_one_and_below": {
+      "type": "biginteger"
+    }
+  }
+}

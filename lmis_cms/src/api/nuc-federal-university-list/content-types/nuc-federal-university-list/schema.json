@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuc_federal_university_lists",
+  "info": {
+    "singularName": "nuc-federal-university-list",
+    "pluralName": "nuc-federal-university-lists",
+    "displayName": "NUC Federal University List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

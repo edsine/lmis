@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuc_student_enrollment_postgraduate_full_times",
+  "info": {
+    "singularName": "nuc-student-enrollment-postgraduate-full-time",
+    "pluralName": "nuc-student-enrollment-postgraduate-full-times",
+    "displayName": "NUC Student Enrollment Postgraduate Full-Time"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "university": {
+      "type": "string"
+    },
+    "pgd": {
+      "type": "biginteger"
+    },
+    "masters": {
+      "type": "biginteger"
+    },
+    "phd": {
+      "type": "biginteger"
+    }
+  }
+}

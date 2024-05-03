@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuc_student_enrollment_undergraduate_full_times",
+  "info": {
+    "singularName": "nuc-student-enrollment-undergraduate-full-time",
+    "pluralName": "nuc-student-enrollment-undergraduate-full-times",
+    "displayName": "NUC Student Enrollment Undergraduate Full-Time"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "university": {
+      "type": "string"
+    },
+    "level100": {
+      "type": "biginteger"
+    },
+    "level200": {
+      "type": "biginteger"
+    },
+    "level300": {
+      "type": "biginteger"
+    },
+    "level400": {
+      "type": "biginteger"
+    },
+    "level500": {
+      "type": "biginteger"
+    },
+    "level600": {
+      "type": "biginteger"
+    }
+  }
+}

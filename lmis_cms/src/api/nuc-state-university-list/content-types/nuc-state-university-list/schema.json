@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuc_state_university_lists",
+  "info": {
+    "singularName": "nuc-state-university-list",
+    "pluralName": "nuc-state-university-lists",
+    "displayName": "NUC State University List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

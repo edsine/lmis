@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nuc_private_university_lists",
+  "info": {
+    "singularName": "nuc-private-university-list",
+    "pluralName": "nuc-private-university-lists",
+    "displayName": "NUC Private University List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
