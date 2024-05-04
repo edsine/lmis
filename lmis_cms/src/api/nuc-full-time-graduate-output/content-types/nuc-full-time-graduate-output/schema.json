@@ -4,7 +4,8 @@
   "info": {
     "singularName": "nuc-full-time-graduate-output",
     "pluralName": "nuc-full-time-graduate-outputs",
-    "displayName": "NUC Full-time Graduate Output"
+    "displayName": "NUC Full-time Graduate Output",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -42,6 +43,12 @@
       "type": "biginteger"
     },
     "female_pass": {
+      "type": "biginteger"
+    },
+    "male_unclassified": {
+      "type": "biginteger"
+    },
+    "female_unclassified": {
       "type": "biginteger"
     }
   }
